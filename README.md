@@ -1,0 +1,1 @@
+This is a boilerplate for me to use. It contains next 13 with tailwind css
