@@ -9,9 +9,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="flex h-screen w-screen bg-[#49c1bf]">
-        <NavBar />
-        <main className="flex-1 overflow-y-scroll">{children}</main>
+      <body className="h-full bg-gray-300">
+        <main className="h-full">
+          <NavBar />
+          {children}
+        </main>
       </body>
     </html>
   );
