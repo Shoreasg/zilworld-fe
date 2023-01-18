@@ -1,26 +1,31 @@
-async function getTokenData() {
+import Link from "next/link";
+import { ITokens } from "../../types";
+
+async function getTokensData() {
   const res = await fetch("http://localhost:3001/tokens/");
   return res.json();
 }
 
 export default async function TokenCards() {
-  const data = await getTokenData();
-  const mapData = data.data.map((token: any) => {
+  const tokens: { data: [ITokens] } = await getTokensData();
+  const mapData = tokens.data.map((token: ITokens, key: number) => {
     return (
-      <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1">
-        <div className="h-[300px] w-[300px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
-          <div className="flex flex-1 flex-col p-8">
-            <img
-              className="mx-auto h-32 w-32"
-              src={token.icon}
-              alt="token icon"
-            />
-            <h3 className="mt-6 text-m font-medium text-center text-gray-900">
-              {token.name}
-            </h3>
+      <Link key={key} href={`/${token.address}`}>
+        <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110">
+          <div className="h-[250px] w-[300px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+            <div className="flex flex-1 flex-col p-8">
+              <img
+                className="mx-auto h-32 w-32"
+                src={token.icon}
+                alt="token icon"
+              />
+              <h3 className="mt-6 text-m font-medium text-center text-gray-900">
+                {token.name}
+              </h3>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     );
   });
 
