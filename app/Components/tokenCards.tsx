@@ -21,6 +21,7 @@ export default async function TokenCards() {
               />
               <h3 className="mt-6 text-m font-medium text-center text-gray-900">
                 {token.name}
+                <p className="text-gray-400">{token.symbol}</p>
               </h3>
             </div>
           </div>
