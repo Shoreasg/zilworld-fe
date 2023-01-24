@@ -29,3 +29,11 @@ export interface ITokens {
   discord: string;
   marketdata: IMarketdata;
 }
+
+export interface TokenDetailsCardProps {
+  token: ITokens;
+}
+
+export interface TokenStatsCardProps {
+  token: ITokens;
+}

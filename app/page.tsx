@@ -1,4 +1,4 @@
-import TokenCards from "./Components/tokenCards";
+import TokenCards from "./components/tokenCards";
 
 export default function Home() {
   return (
