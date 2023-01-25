@@ -1,4 +1,4 @@
-import { ITokens } from "../../types";
+import { ITokens, IMarketdata } from "../../types";
 import TokenDetailsCard from "./components/tokenDetailsCard";
 import TokenStatsCard from "./components/tokenStatsCard";
 
@@ -16,11 +16,12 @@ async function getTokenData(tokenAddress: string) {
 export default async function Token({ params }: IParams) {
   const tokenData = await getTokenData(params.token);
   const token: ITokens = tokenData.data;
+  const tokenMarketData: IMarketdata = tokenData.data.marketdata;
 
   return (
     <>
       <TokenDetailsCard token={token} />
-      <TokenStatsCard token={token} />
+      <TokenStatsCard marketData={tokenMarketData} />
     </>
   );
 }

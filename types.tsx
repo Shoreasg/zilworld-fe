@@ -35,5 +35,5 @@ export interface TokenDetailsCardProps {
 }
 
 export interface TokenStatsCardProps {
-  token: ITokens;
+  marketData: IMarketdata;
 }
