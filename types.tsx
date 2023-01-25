@@ -30,10 +30,25 @@ export interface ITokens {
   marketdata: IMarketdata;
 }
 
+interface IDataSet {
+  time: string;
+  value: number;
+}
+
+export interface ITokenChart {
+  address: string;
+  updated_at: string;
+  dataset: Array<IDataSet>;
+}
+
 export interface TokenDetailsCardProps {
   token: ITokens;
 }
 
 export interface TokenStatsCardProps {
   marketData: IMarketdata;
+}
+
+export interface TokenChartProps {
+  chartData: ITokenChart;
 }
