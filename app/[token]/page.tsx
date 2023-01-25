@@ -10,11 +10,15 @@ type IParams = {
 };
 
 async function getTokenData(tokenAddress: string) {
-  const res = await fetch(`http://localhost:3001/tokens/${tokenAddress}`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/tokens/${tokenAddress}`
+  );
   return res.json();
 }
 async function getTokenChart(tokenAddress: string) {
-  const res = await fetch(`http://localhost:3001/chart/${tokenAddress}`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/chart/${tokenAddress}`
+  );
   return res.json();
 }
 

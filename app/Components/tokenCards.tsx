@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ITokens } from "../../types";
 
 async function getTokensData() {
-  const res = await fetch("http://localhost:3001/tokens/");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/tokens/`);
   return res.json();
 }
 
