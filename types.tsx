@@ -42,7 +42,7 @@ export interface ITokenChart {
 }
 
 export interface TokenDetailsCardProps {
-  token: ITokens;
+  tokenData: ITokens;
 }
 
 export interface TokenStatsCardProps {

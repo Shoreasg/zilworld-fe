@@ -59,13 +59,11 @@ export default function TokenStatsCard({ marketData }: TokenStatsCardProps) {
   return (
     <div className="flex flex-1 flex-col md:pl-64">
       <div className="p-6">
-        <h3 className="text-lg font-medium leading-6 text-gray-900">
-          Market data
-        </h3>
+        <h3 className="text-2xl font-semibold text-gray-900">Market data</h3>
         <p className="text-xs font-medium leading-6 text-red-500">
           Note: Market data are in USD
         </p>
-        <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <dl className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
           {stats.map((item) => (
             <div
               key={item.name}

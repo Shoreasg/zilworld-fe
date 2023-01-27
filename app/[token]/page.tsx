@@ -1,7 +1,9 @@
 import { ITokens, IMarketdata, ITokenChart } from "../../types";
+import { Timeline } from "react-twitter-widgets";
 import TokenChart from "./components/tokenChart";
 import TokenDetailsCard from "./components/tokenDetailsCard";
 import TokenStatsCard from "./components/tokenStatsCard";
+import TwitterWidget from "./components/twitterWidget";
 
 type IParams = {
   params: {
@@ -31,9 +33,10 @@ export default async function Token({ params }: IParams) {
 
   return (
     <>
-      <TokenDetailsCard token={token} />
+      <TokenDetailsCard tokenData={token} />
       <TokenStatsCard marketData={tokenMarketData} />
-      <TokenChart chartData={tokenChart} />
+      <TokenChart chartData={tokenChart} />/
+      <TwitterWidget tokenData={token} />
     </>
   );
 }
