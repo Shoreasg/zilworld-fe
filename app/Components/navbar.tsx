@@ -13,6 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import Link from "next/link";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -23,7 +24,7 @@ export default function NavBar() {
       name: "Tokens",
       icon: CurrencyDollarIcon,
       href: "/",
-      current: pathname === "/",
+      current: pathname === "/" || pathname?.includes("/zil"),
     },
     {
       name: "DEX",
@@ -122,7 +123,7 @@ export default function NavBar() {
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
                       {navigation.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
                           href={item.href}
                           className={classNames(
@@ -142,7 +143,7 @@ export default function NavBar() {
                             aria-hidden="true"
                           />
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </nav>
                   </div>
@@ -162,7 +163,7 @@ export default function NavBar() {
               </div>
               <nav className="mt-5 flex-1 space-y-1 px-2" aria-label="Sidebar">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className={classNames(
@@ -182,7 +183,7 @@ export default function NavBar() {
                       aria-hidden="true"
                     />
                     <span className="flex-1">{item.name}</span>
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
