@@ -3,13 +3,10 @@
 import { usePathname } from "next/navigation";
 import {
   CurrencyDollarIcon,
-  ArrowsRightLeftIcon,
-  PhotoIcon,
-  BuildingStorefrontIcon,
-  WalletIcon,
-  PlayCircleIcon,
   XMarkIcon,
   Bars3Icon,
+  FolderIcon,
+  QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
@@ -27,34 +24,16 @@ export default function NavBar() {
       current: pathname === "/" || pathname?.includes("/zil"),
     },
     {
-      name: "DEX",
-      icon: ArrowsRightLeftIcon,
-      href: "/dex",
-      current: pathname === "/dex",
+      name: "Projects",
+      icon: FolderIcon,
+      href: "/projects",
+      current: pathname?.includes("/projects"),
     },
     {
-      name: "NFT",
-      icon: PhotoIcon,
-      href: "/nft",
-      current: pathname === "/nft",
-    },
-    {
-      name: "NFT Marketplace",
-      icon: BuildingStorefrontIcon,
-      href: "/marketplace",
-      current: pathname === "/marketplace",
-    },
-    {
-      name: "Wallets",
-      icon: WalletIcon,
-      href: "/wallets",
-      current: pathname === "/wallets",
-    },
-    {
-      name: "Play2Earn",
-      icon: PlayCircleIcon,
-      href: "/play2earn",
-      current: pathname === "/play2earn",
+      name: "FAQ",
+      icon: QuestionMarkCircleIcon,
+      href: "/faq",
+      current: pathname === "/faq",
     },
   ];
 

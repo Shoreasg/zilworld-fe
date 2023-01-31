@@ -1,3 +1,5 @@
+import { DeleteExpression } from "typescript";
+
 export interface IMarketdata {
   usd_rate: number;
   ath: number;
@@ -30,6 +32,22 @@ export interface ITokens {
   marketdata: IMarketdata;
 }
 
+export interface IProjects {
+  name: string;
+  description: string;
+  icon: string;
+  updated_at: string;
+  category: string;
+  tokens: string[];
+  marketplace_arky: boolean;
+  marketplace_zildex: boolean;
+  marketplace_cathulu: boolean;
+  website: string;
+  telegram: string;
+  twitter: string;
+  discord: string;
+}
+
 interface IDataSet {
   time: string;
   value: number;
@@ -38,11 +56,15 @@ interface IDataSet {
 export interface ITokenChart {
   address: string;
   updated_at: string;
-  dataset: Array<IDataSet>;
+  dataset: IDataSet[];
 }
 
 export interface TokenDetailsCardProps {
   tokenData: ITokens;
+}
+
+export interface ProjectDetailsCardProps {
+  projectData: IProjects;
 }
 
 export interface TokenStatsCardProps {
@@ -52,3 +74,19 @@ export interface TokenStatsCardProps {
 export interface TokenChartProps {
   chartData: ITokenChart;
 }
+
+export interface ProjectsCardProps {
+  projectsData: IProjects[];
+}
+
+export type ITokenParams = {
+  params: {
+    token: string;
+  };
+};
+
+export type IProjectNameParams = {
+  params: {
+    project: string;
+  };
+};
