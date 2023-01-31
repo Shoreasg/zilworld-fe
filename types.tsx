@@ -39,6 +39,7 @@ export interface IProjects {
   updated_at: string;
   category: string;
   tokens: string[];
+  NFT_address: string[];
   marketplace_arky: boolean;
   marketplace_zildex: boolean;
   marketplace_cathulu: boolean;

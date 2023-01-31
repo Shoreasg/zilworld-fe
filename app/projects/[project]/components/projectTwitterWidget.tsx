@@ -24,7 +24,7 @@ export default function ProjectTwitterWidget({
             sourceType: "profile",
             screenName: `${projectData.twitter}`,
           }}
-          options={{ height: "500" }}
+          options={{ height: "650" }}
           onLoad={() => setIsLoading(false)}
           renderError={(_err) => (
             <div className="px-4 py-5 sm:p-6 font-semibold opacity-80 text-gray-900 bg-gray-400 text-center">

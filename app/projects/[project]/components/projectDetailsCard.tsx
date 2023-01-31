@@ -80,15 +80,13 @@ export default function ProjectDetailsCard({
                   target={"_blank"}
                   className="hover:text-[#0A7581]"
                 >
-                  {key === 0
-                    ? `Contract Address`
-                    : `Contract Address ${key + 1}`}
+                  {key === 0 ? `Token Address` : `Token Address ${key + 1}`}
                 </Link>
               </div>
             ))}
             {projectData.marketplace_arky ? (
               <>
-                {projectData.tokens?.map((address, key) => (
+                {projectData.NFT_address?.map((address, key) => (
                   <div
                     key={key}
                     className="px-6 py-5 text-center text-sm font-medium "
@@ -108,7 +106,7 @@ export default function ProjectDetailsCard({
             )}
             {projectData.marketplace_cathulu ? (
               <>
-                {projectData.tokens?.map((address, key) => (
+                {projectData.NFT_address?.map((address, key) => (
                   <div
                     key={key}
                     className="px-6 py-5 text-center text-sm font-medium "
@@ -128,7 +126,7 @@ export default function ProjectDetailsCard({
             )}
             {projectData.marketplace_zildex ? (
               <>
-                {projectData.tokens?.map((address, key) => (
+                {projectData.NFT_address?.map((address, key) => (
                   <div
                     key={key}
                     className="px-6 py-5 text-center text-sm font-medium "

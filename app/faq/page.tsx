@@ -27,7 +27,7 @@ function classNames(...classes: string[]) {
 
 export default function Faq() {
   return (
-    <div className="p-6">
+    <div className="flex flex-1 flex-col md:pl-64">
       <div className="mx-auto py-6 max-w-7xl px-4 sm:px-6 md:px-8 flex justify-center">
         <div className="mx-auto max-w-3xl divide-y-2 divide-gray-200">
           <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
