@@ -24,7 +24,7 @@ export default function TokenChart({ chartData }: TokenChartProps) {
     Legend
   );
 
-  const labels = chartData.dataset.map((chartData) => {
+  const labels = chartData.dataset?.map((chartData) => {
     return moment(chartData.time).format("MMM DD, h:mm A");
   });
 
