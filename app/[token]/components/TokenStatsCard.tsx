@@ -4,55 +4,55 @@ export default function TokenStatsCard({ marketData }: TokenStatsCardProps) {
   const stats = [
     {
       name: "Intial Supply",
-      stat: marketData.initial_supply,
+      stat: marketData?.initial_supply,
     },
     {
       name: "Max Supply",
-      stat: marketData.max_supply,
+      stat: marketData?.max_supply,
     },
     {
       name: "Total Supply",
-      stat: marketData.total_supply,
+      stat: marketData?.total_supply,
     },
     {
       name: "Current Supply",
-      stat: marketData.current_supply,
+      stat: marketData?.current_supply,
     },
     {
       name: "Daily Volume",
-      stat: `$${Number(marketData.daily_volume_usd).toFixed(0)}`,
+      stat: `$${Number(marketData?.daily_volume_usd).toFixed(0)}`,
     },
     {
       name: "Market Cap",
-      stat: `$${Number(marketData.market_cap_usd).toFixed(0)}`,
+      stat: `$${Number(marketData?.market_cap_usd).toFixed(0)}`,
     },
     {
       name: "Fully Diluted Market Cap",
-      stat: `$${Number(marketData.fully_diluted_marketcap_usd).toFixed(0)}`,
+      stat: `$${Number(marketData?.fully_diluted_marketcap_usd).toFixed(0)}`,
     },
     {
       name: "Price",
-      stat: `$${Number(marketData.usd_rate).toFixed(3)}`,
+      stat: `$${Number(marketData?.usd_rate).toFixed(3)}`,
     },
     {
       name: "Change (24h)",
-      stat: `$${Number(marketData.change_24h).toFixed(2)}`,
+      stat: `$${Number(marketData?.change_24h).toFixed(2)}`,
     },
     {
       name: "% Change (24h)",
-      stat: `${Number(marketData.change_percentage_24h).toFixed(2)} %`,
+      stat: `${Number(marketData?.change_percentage_24h).toFixed(2)} %`,
     },
     {
       name: "All time low (24h)",
-      stat: `$${Number(marketData.low_24h).toFixed(2)}`,
+      stat: `$${Number(marketData?.low_24h).toFixed(2)}`,
     },
     {
       name: "All time high (24h)",
-      stat: `$${Number(marketData.high_24h).toFixed(2)}`,
+      stat: `$${Number(marketData?.high_24h).toFixed(2)}`,
     },
     {
       name: "% Change (7D)",
-      stat: `${Number(marketData.change_percentage_7d).toFixed(2)} %`,
+      stat: `${Number(marketData?.change_percentage_7d).toFixed(2)} %`,
     },
   ];
 
