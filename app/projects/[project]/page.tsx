@@ -1,6 +1,6 @@
 import { IProjectNameParams, IProjects } from "../../../types";
-import ProjectDetailsCard from "./components/projectDetailsCard";
-import ProjectTwitterWidget from "./components/projectTwitterWidget";
+import ProjectDetailsCard from "./components/ProjectDetailsCard";
+import ProjectTwitterWidget from "./components/ProjectTwitterWidget";
 
 async function getProjectData(projectName: string) {
   const res = await fetch(

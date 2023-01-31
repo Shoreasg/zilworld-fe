@@ -1,5 +1,5 @@
 import { IProjects } from "../../types";
-import ProjectsCard from "./components/projectsCard";
+import ProjectsCard from "./components/ProjectsCard";
 
 async function getProjectsData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects`);

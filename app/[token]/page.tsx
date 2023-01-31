@@ -1,8 +1,8 @@
 import { ITokens, IMarketdata, ITokenChart, ITokenParams } from "../../types";
-import TokenChart from "./components/tokenChart";
-import TokenDetailsCard from "./components/tokenDetailsCard";
-import TokenStatsCard from "./components/tokenStatsCard";
-import TwitterWidget from "./components/twitterWidget";
+import TokenChart from "./components/TokenChart";
+import TokenDetailsCard from "./components/TokenDetailsCard";
+import TokenStatsCard from "./components/TokenStatsCard";
+import TwitterWidget from "./components/TwitterWidget";
 
 async function getTokenData(tokenAddress: string) {
   const res = await fetch(
