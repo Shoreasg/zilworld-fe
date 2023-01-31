@@ -3,16 +3,14 @@
 import { usePathname } from "next/navigation";
 import {
   CurrencyDollarIcon,
-  ArrowsRightLeftIcon,
-  PhotoIcon,
-  BuildingStorefrontIcon,
-  WalletIcon,
-  PlayCircleIcon,
   XMarkIcon,
   Bars3Icon,
+  FolderIcon,
+  QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import Link from "next/link";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -23,37 +21,19 @@ export default function NavBar() {
       name: "Tokens",
       icon: CurrencyDollarIcon,
       href: "/",
-      current: pathname === "/",
+      current: pathname === "/" || pathname?.includes("/zil"),
     },
     {
-      name: "DEX",
-      icon: ArrowsRightLeftIcon,
-      href: "/dex",
-      current: pathname === "/dex",
+      name: "Projects",
+      icon: FolderIcon,
+      href: "/projects",
+      current: pathname?.includes("/projects"),
     },
     {
-      name: "NFT",
-      icon: PhotoIcon,
-      href: "/nft",
-      current: pathname === "/nft",
-    },
-    {
-      name: "NFT Marketplace",
-      icon: BuildingStorefrontIcon,
-      href: "/marketplace",
-      current: pathname === "/marketplace",
-    },
-    {
-      name: "Wallets",
-      icon: WalletIcon,
-      href: "/wallets",
-      current: pathname === "/wallets",
-    },
-    {
-      name: "Play2Earn",
-      icon: PlayCircleIcon,
-      href: "/play2earn",
-      current: pathname === "/play2earn",
+      name: "FAQ",
+      icon: QuestionMarkCircleIcon,
+      href: "/faq",
+      current: pathname === "/faq",
     },
   ];
 
@@ -122,7 +102,7 @@ export default function NavBar() {
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
                       {navigation.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
                           href={item.href}
                           className={classNames(
@@ -142,7 +122,7 @@ export default function NavBar() {
                             aria-hidden="true"
                           />
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </nav>
                   </div>
@@ -162,7 +142,7 @@ export default function NavBar() {
               </div>
               <nav className="mt-5 flex-1 space-y-1 px-2" aria-label="Sidebar">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className={classNames(
@@ -182,7 +162,7 @@ export default function NavBar() {
                       aria-hidden="true"
                     />
                     <span className="flex-1">{item.name}</span>
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>

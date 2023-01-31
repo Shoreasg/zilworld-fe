@@ -8,7 +8,6 @@ import {
   Title,
   Tooltip,
   Legend,
-  plugins,
 } from "chart.js";
 import moment from "moment";
 import { Line } from "react-chartjs-2";
@@ -48,6 +47,12 @@ export default function TokenChart({ chartData }: TokenChartProps) {
 
   return (
     <div className="flex flex-1 p-6 justify-center flex-col md:pl-64 md:ml-6">
+      <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+        Chart
+        <p className="text-xs font-medium leading-6 text-red-500">
+          Note: Chart data are in USD and updates every 30 minutes
+        </p>
+      </h3>
       <div className="bg-white h-[500px] ">
         <Line
           data={chartDataSet}

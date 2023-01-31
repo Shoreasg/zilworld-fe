@@ -1,13 +1,8 @@
-import { ITokens, IMarketdata, ITokenChart } from "../../types";
-import TokenChart from "./components/tokenChart";
-import TokenDetailsCard from "./components/tokenDetailsCard";
-import TokenStatsCard from "./components/tokenStatsCard";
-
-type IParams = {
-  params: {
-    token: string;
-  };
-};
+import { ITokens, IMarketdata, ITokenChart, ITokenParams } from "../../types";
+import TokenChart from "./components/TokenChart";
+import TokenDetailsCard from "./components/TokenDetailsCard";
+import TokenStatsCard from "./components/TokenStatsCard";
+import TwitterWidget from "./components/TwitterWidget";
 
 async function getTokenData(tokenAddress: string) {
   const res = await fetch(
@@ -22,7 +17,7 @@ async function getTokenChart(tokenAddress: string) {
   return res.json();
 }
 
-export default async function Token({ params }: IParams) {
+export default async function Token({ params }: ITokenParams) {
   const tokenData = await getTokenData(params.token);
   const tokenChartData = await getTokenChart(params.token);
   const token: ITokens = tokenData.data;
@@ -31,9 +26,10 @@ export default async function Token({ params }: IParams) {
 
   return (
     <>
-      <TokenDetailsCard token={token} />
+      <TokenDetailsCard tokenData={token} />
       <TokenStatsCard marketData={tokenMarketData} />
-      <TokenChart chartData={tokenChart} />
+      <TokenChart chartData={tokenChart} />/
+      <TwitterWidget tokenData={token} />
     </>
   );
 }
