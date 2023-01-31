@@ -33,8 +33,8 @@ export default function TokenChart({ chartData }: TokenChartProps) {
     datasets: [
       {
         label: "Price",
-        data: chartData?.dataset
-          .sort(
+        data: chartData.dataset
+          ?.sort(
             (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime()
           )
           .map((chartData) => {
