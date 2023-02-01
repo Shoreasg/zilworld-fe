@@ -26,7 +26,7 @@ export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
                   </p>
                 </div>
                 <p className="flex flex-col justify-center text-lg">
-                  {parse(tokenData.description)}
+                  {parse(String(tokenData.description))}
                 </p>
               </div>
             </div>
