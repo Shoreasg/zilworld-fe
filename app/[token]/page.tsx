@@ -28,7 +28,7 @@ export default async function Token({ params }: ITokenParams) {
     <>
       <TokenDetailsCard tokenData={token} />
       <TokenStatsCard marketData={tokenMarketData} />
-      <TokenChart chartData={tokenChart} />/
+      <TokenChart chartData={tokenChart} />
       <TwitterWidget tokenData={token} />
     </>
   );
