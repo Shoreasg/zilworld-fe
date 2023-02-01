@@ -4,39 +4,47 @@ export default function TokenStatsCard({ marketData }: TokenStatsCardProps) {
   const stats = [
     {
       name: "Intial Supply",
-      stat: marketData?.initial_supply,
+      stat: marketData?.initial_supply.toLocaleString("en-US"),
     },
     {
       name: "Max Supply",
-      stat: marketData?.max_supply,
+      stat: marketData?.max_supply.toLocaleString("en-US"),
     },
     {
       name: "Total Supply",
-      stat: marketData?.total_supply,
+      stat: marketData?.total_supply.toLocaleString("en-US"),
     },
     {
       name: "Current Supply",
-      stat: marketData?.current_supply,
+      stat: marketData?.current_supply.toLocaleString("en-US"),
     },
     {
       name: "Daily Volume",
-      stat: `$${Number(marketData?.daily_volume_usd).toFixed(0)}`,
+      stat: `$${Number(marketData?.daily_volume_usd.toFixed(0)).toLocaleString(
+        "en-US"
+      )}`,
     },
     {
       name: "Market Cap",
-      stat: `$${Number(marketData?.market_cap_usd).toFixed(0)}`,
+      stat: `$${Number(marketData?.market_cap_usd.toFixed(0)).toLocaleString(
+        "en-US"
+      )}`,
     },
     {
       name: "Fully Diluted Market Cap",
-      stat: `$${Number(marketData?.fully_diluted_marketcap_usd).toFixed(0)}`,
+      stat: `$${Number(
+        marketData?.fully_diluted_marketcap_usd.toFixed(0)
+      ).toLocaleString("en-US")}`,
     },
     {
       name: "Price",
-      stat: `$${Number(marketData?.usd_rate).toFixed(3)}`,
+      stat: `$${Number(marketData?.usd_rate.toFixed(6))}`,
     },
     {
       name: "Change (24h)",
-      stat: `$${Number(marketData?.change_24h).toFixed(2)}`,
+      stat: `$${Number(marketData?.change_24h.toFixed(2)).toLocaleString(
+        "en-US"
+      )}`,
     },
     {
       name: "% Change (24h)",
@@ -44,15 +52,21 @@ export default function TokenStatsCard({ marketData }: TokenStatsCardProps) {
     },
     {
       name: "All time low (24h)",
-      stat: `$${Number(marketData?.low_24h).toFixed(2)}`,
+      stat: `$${Number(marketData?.low_24h.toFixed(6)).toLocaleString(
+        "en-US"
+      )}`,
     },
     {
       name: "All time high (24h)",
-      stat: `$${Number(marketData?.high_24h).toFixed(2)}`,
+      stat: `$${Number(marketData?.high_24h.toFixed(6)).toLocaleString(
+        "en-US"
+      )}`,
     },
     {
       name: "% Change (7D)",
-      stat: `${Number(marketData?.change_percentage_7d).toFixed(2)} %`,
+      stat: `${Number(
+        marketData?.change_percentage_7d.toFixed(2)
+      ).toLocaleString("en-US")} %`,
     },
   ];
 

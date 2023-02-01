@@ -1,4 +1,5 @@
 import Link from "next/link";
+import parse from "html-react-parser";
 import { TokenDetailsCardProps } from "../../../types";
 
 export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
@@ -25,7 +26,7 @@ export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
                   </p>
                 </div>
                 <p className="flex flex-col justify-center text-lg">
-                  {tokenData.description}
+                  {parse(String(tokenData.description))}
                 </p>
               </div>
             </div>

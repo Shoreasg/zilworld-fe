@@ -12,7 +12,7 @@ export default async function TokenCards() {
     return (
       <Link key={key} href={`/${token.address}`}>
         <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110">
-          <div className="h-[250px] w-[300px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+          <div className="h-[250px] w-[250px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
             <div className="flex flex-1 flex-col p-8">
               <img
                 className="mx-auto h-32 w-32"
