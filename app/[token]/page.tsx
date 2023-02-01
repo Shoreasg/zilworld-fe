@@ -6,13 +6,15 @@ import TwitterWidget from "./components/TwitterWidget";
 
 async function getTokenData(tokenAddress: string) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/tokens/${tokenAddress}`
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/tokens/${tokenAddress}`,
+    { cache: "no-store" }
   );
   return res.json();
 }
 async function getTokenChart(tokenAddress: string) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/chart/${tokenAddress}`
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/chart/${tokenAddress}`,
+    { cache: "no-store" }
   );
   return res.json();
 }
