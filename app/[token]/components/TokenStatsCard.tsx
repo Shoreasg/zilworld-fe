@@ -38,9 +38,7 @@ export default function TokenStatsCard({ marketData }: TokenStatsCardProps) {
     },
     {
       name: "Price",
-      stat: `$${Number(marketData?.usd_rate.toFixed(3)).toLocaleString(
-        "en-US"
-      )}`,
+      stat: `$${Number(marketData?.usd_rate.toFixed(6))}`,
     },
     {
       name: "Change (24h)",
@@ -54,13 +52,13 @@ export default function TokenStatsCard({ marketData }: TokenStatsCardProps) {
     },
     {
       name: "All time low (24h)",
-      stat: `$${Number(marketData?.low_24h.toFixed(2)).toLocaleString(
+      stat: `$${Number(marketData?.low_24h.toFixed(6)).toLocaleString(
         "en-US"
       )}`,
     },
     {
       name: "All time high (24h)",
-      stat: `$${Number(marketData?.high_24h.toFixed(2)).toLocaleString(
+      stat: `$${Number(marketData?.high_24h.toFixed(6)).toLocaleString(
         "en-US"
       )}`,
     },
