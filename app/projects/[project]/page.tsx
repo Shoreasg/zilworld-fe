@@ -4,7 +4,8 @@ import ProjectTwitterWidget from "./components/ProjectTwitterWidget";
 
 async function getProjectData(projectName: string) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/${projectName}`
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/${projectName}`,
+    { cache: "no-store" }
   );
   return res.json();
 }

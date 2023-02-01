@@ -2,7 +2,9 @@ import { IProjects } from "../../types";
 import ProjectsCard from "./components/ProjectsCard";
 
 async function getProjectsData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects`, {
+    cache: "no-store",
+  });
   return res.json();
 }
 export default async function Projects() {
