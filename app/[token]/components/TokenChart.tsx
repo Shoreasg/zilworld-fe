@@ -24,9 +24,11 @@ export default function TokenChart({ chartData }: TokenChartProps) {
     Legend
   );
 
-  const labels = chartData.dataset?.map((chartData) => {
-    return moment(chartData.time).format("MMM DD, h:mm A");
-  });
+  const labels = chartData.dataset
+    ?.sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime())
+    .map((chartData) => {
+      return moment(chartData.time).format("MMM DD, h:mm A");
+    });
 
   const chartDataSet = {
     labels,
