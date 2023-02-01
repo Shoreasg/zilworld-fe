@@ -76,6 +76,12 @@ export default function ProjectsCard({ projectsData }: ProjectsCardProps) {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {mapProjects("Wallets")}
       </div>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
+        News and Infographics
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {mapProjects("News")}
+      </div>
     </div>
   );
 }
