@@ -65,12 +65,6 @@ export default function ProjectsCard({ projectsData }: ProjectsCardProps) {
         {mapProjects("Music")}
       </div>
       <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
-        Developer Tools
-      </h1>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {mapProjects("Developer Tools")}
-      </div>
-      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
         Wallets
       </h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
@@ -81,6 +75,30 @@ export default function ProjectsCard({ projectsData }: ProjectsCardProps) {
       </h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {mapProjects("News")}
+      </div>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
+        Developer Tools
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {mapProjects("Developer Tools")}
+      </div>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
+        Initial Liquidity Offering(ILO)
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {mapProjects("ILO")}
+      </div>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
+        Bridges
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {mapProjects("Bridges")}
+      </div>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
+        Encrypted Messaging
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {mapProjects("Message")}
       </div>
     </div>
   );
