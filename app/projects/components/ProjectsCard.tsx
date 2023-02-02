@@ -8,10 +8,9 @@ export default function ProjectsCard({ projectsData }: ProjectsCardProps) {
       .filter((project) => project.category === category)
       .map((projects: IProjects, key: number) => {
         return (
-          <div key={key}>
-            <Link href={`/projects/${projects.name}`}>
-              <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110">
-                <div className="h-[250px] w-[250px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+            <Link key={projects.name} href={`/projects/${projects.name}`}>
+              <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110 w-fit m-auto">
+              <div className="h-[250px] w-[250px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
                   <div className="flex flex-1 flex-col p-8">
                     <img
                       className="mx-auto h-32 w-32"
@@ -25,13 +24,12 @@ export default function ProjectsCard({ projectsData }: ProjectsCardProps) {
                 </div>
               </div>
             </Link>
-          </div>
         );
       });
   };
 
   return (
-    <div>
+    <div className="ml-6 flex flex-col justify-center">
       <h1 className="text-2xl font-semibold text-gray-900 mb-6">DEX</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {mapProjects("DEX")}
