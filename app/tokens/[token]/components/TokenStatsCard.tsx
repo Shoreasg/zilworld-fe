@@ -1,4 +1,4 @@
-import { TokenStatsCardProps } from "../../../types";
+import { TokenStatsCardProps } from "../../../../types";
 
 export default function TokenStatsCard({ marketData }: TokenStatsCardProps) {
   const stats = [
