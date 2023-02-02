@@ -18,16 +18,16 @@ export default function NavBar() {
 
   const navigation = [
     {
-      name: "Tokens",
-      icon: CurrencyDollarIcon,
-      href: "/",
-      current: pathname === "/" || pathname?.includes("/zil"),
-    },
-    {
       name: "Projects",
       icon: FolderIcon,
       href: "/projects",
       current: pathname?.includes("/projects"),
+    },
+    {
+      name: "Tokens",
+      icon: CurrencyDollarIcon,
+      href: "/tokens",
+      current: pathname === "/tokens" || pathname?.includes("/tokens/zil"),
     },
     {
       name: "FAQ",

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Timeline } from "react-twitter-widgets";
-import { TokenDetailsCardProps } from "../../../types";
+import { TokenDetailsCardProps } from "../../../../types";
 
 export default function TwitterWidget({ tokenData }: TokenDetailsCardProps) {
   const [isLoading, setIsLoading] = useState(true);

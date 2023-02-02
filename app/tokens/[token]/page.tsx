@@ -1,4 +1,5 @@
-import { ITokens, IMarketdata, ITokenChart, ITokenParams } from "../../types";
+import { redirect } from 'next/navigation';
+import { ITokenParams } from "../../../types";
 import TokenChart from "./components/TokenChart";
 import TokenDetailsCard from "./components/TokenDetailsCard";
 import TokenStatsCard from "./components/TokenStatsCard";
@@ -22,9 +23,13 @@ async function getTokenChart(tokenAddress: string) {
 export default async function Token({ params }: ITokenParams) {
   const tokenData = await getTokenData(params.token);
   const tokenChartData = await getTokenChart(params.token);
-  const token: ITokens = tokenData.data;
-  const tokenMarketData: IMarketdata = tokenData.data.marketdata;
-  const tokenChart: ITokenChart = tokenChartData.data;
+  const token = tokenData.data;
+  const tokenMarketData = tokenData.data.marketdata;
+  const tokenChart = tokenChartData.data;
+  if(token === "No token found")
+  {
+    redirect("/tokens")
+  }
 
   return (
     <>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import parse from "html-react-parser";
-import { TokenDetailsCardProps } from "../../../types";
+import { TokenDetailsCardProps } from "../../../../types";
 
 export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
   return (
