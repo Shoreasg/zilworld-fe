@@ -1,4 +1,5 @@
 import Link from "next/link";
+import parse from "html-react-parser";
 import { ProjectDetailsCardProps } from "../../../../types";
 
 export default function ProjectDetailsCard({
@@ -24,7 +25,7 @@ export default function ProjectDetailsCard({
                   </p>
                 </div>
                 <p className="flex flex-col justify-center text-lg">
-                  {projectData.description}
+                  {parse(String(projectData.description))}
                 </p>
               </div>
             </div>
