@@ -76,7 +76,7 @@ export interface TokenChartProps {
   chartData: ITokenChart;
 }
 
-export interface ProjectsCardProps {
+export interface CardProps {
   projectsData: IProjects[];
 }
 
