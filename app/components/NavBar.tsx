@@ -201,7 +201,7 @@ export default function NavBar() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <div className="absolute top-0 right-14 -mr-12 pt-2">
+                    <div className="absolute top-0 right-14 -mr-8 pt-2">
                       <button
                         type="button"
                         className="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -216,8 +216,12 @@ export default function NavBar() {
                     </div>
                   </Transition.Child>
                   <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
-                    <div className="font-sans font-bold text-2xl text-[#49c1bf] text-center select-none">
-                      ZilWorld
+                    <div className="flex flex-row justify-center">
+                      <img
+                        className="h-20 w-auto"
+                        src="/ZilWorld logo.png"
+                        alt="Your Company"
+                      />
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
                       {navigation.map((item) => (
@@ -255,8 +259,12 @@ export default function NavBar() {
           <div className="flex min-h-0 flex-1 flex-col  bg-[#077a8f]">
             <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
               <div className="flex justify-center">
-                <div className="font-sans font-bold text-2xl text-[#49c1bf] select-none">
-                  ZilWorld
+                <div className="flex flex-row justify-center">
+                  <img
+                    className=" h-28 w-auto"
+                    src="/ZilWorld logo.png"
+                    alt="Your Company"
+                  />
                 </div>
               </div>
               <nav className="mt-5 flex-1 space-y-1 px-2" aria-label="Sidebar">
