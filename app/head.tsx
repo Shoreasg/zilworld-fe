@@ -4,7 +4,7 @@ export default function Head() {
       <title>ZilWorld-Ecosystem of Zilliqa</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="Ecosystem of Zilliqa" />
-      <link rel="icon" href="/ZilWorld logo.png" />
+      <link rel="icon" href="/ZilWorld Logo.png" />
     </>
   );
 }
