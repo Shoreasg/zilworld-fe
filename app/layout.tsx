@@ -14,7 +14,7 @@ export default function RootLayout({
         <main className="h-full">
           <NavBar />
           {children}
-          <AnalyticsWrapper/>
+          <AnalyticsWrapper />
         </main>
       </body>
     </html>

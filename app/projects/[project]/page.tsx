@@ -1,7 +1,7 @@
 import { IProjectNameParams } from "../../../types";
 import ProjectDetailsCard from "./components/ProjectDetailsCard";
 import ProjectTwitterWidget from "./components/ProjectTwitterWidget";
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 async function getProjectData(projectName: string) {
   const res = await fetch(
@@ -14,9 +14,8 @@ async function getProjectData(projectName: string) {
 export default async function Project({ params }: IProjectNameParams) {
   const projectData = await getProjectData(params.project);
   const project = projectData.data;
-  if(project === "No projects found")
-  {
-    redirect("/projects")
+  if (project === "No projects found") {
+    redirect("/projects");
   }
   return (
     <>
