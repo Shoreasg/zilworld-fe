@@ -21,6 +21,9 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
   CreditCardIcon,
   WrenchScrewdriverIcon,
+  UserGroupIcon,
+  EyeDropperIcon,
+  FingerPrintIcon,
 } from "@heroicons/react/24/outline";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
@@ -41,7 +44,7 @@ export default function NavBar() {
       name: "DEX",
       icon: ArrowPathIcon,
       href: "/dex",
-      current: pathname ==="/dex",
+      current: pathname === "/dex",
     },
     {
       name: "NFT",
@@ -53,7 +56,7 @@ export default function NavBar() {
       name: "Analytics & Dashboard",
       icon: ChartBarIcon,
       href: "/analytics",
-      current: pathname ==="/analytics",
+      current: pathname === "/analytics",
     },
     {
       name: "NFT MarketPlace",
@@ -89,37 +92,55 @@ export default function NavBar() {
       name: "News & Infographics",
       icon: NewspaperIcon,
       href: "/news",
-      current: pathname  === "/news",
+      current: pathname === "/news",
     },
     {
       name: "Initial Liquidity Offering & Grants",
       icon: CakeIcon,
       href: "/ilo",
-      current: pathname  === "/ilo",
+      current: pathname === "/ilo",
     },
     {
       name: "Bridges",
       icon: ArrowsRightLeftIcon,
       href: "/bridges",
-      current: pathname  === "/bridges",
+      current: pathname === "/bridges",
     },
     {
       name: "Messaging",
       icon: ChatBubbleOvalLeftEllipsisIcon,
       href: "/messaging",
-      current: pathname  === "/messaging",
+      current: pathname === "/messaging",
     },
     {
-      name: "Payments",
+      name: "Finance",
       icon: CreditCardIcon,
-      href: "/payments",
-      current: pathname === "/payments",
+      href: "/finance",
+      current: pathname === "/finance",
+    },
+    {
+      name: "Creator DAO",
+      icon: UserGroupIcon,
+      href: "/creatordao",
+      current: pathname === "/creatordao",
+    },
+    {
+      name: "Decentralized Identity",
+      icon: FingerPrintIcon,
+      href: "/decentralizedidentity",
+      current: pathname === "/decentralizedidentity",
+    },
+    {
+      name: "Liquid Staking",
+      icon: EyeDropperIcon,
+      href: "/liquidstaking",
+      current: pathname === "/liquidstaking",
     },
     {
       name: "Developer Tools",
       icon: WrenchScrewdriverIcon,
       href: "/developertools",
-      current: pathname  === "/developertools",
+      current: pathname === "/developertools",
     },
     {
       name: "Tokens",
