@@ -219,8 +219,8 @@ export default function NavBar() {
                     <div className="flex flex-row justify-center">
                       <img
                         className="h-20 w-auto"
-                        src="/ZilWorld logo.png"
-                        alt="Your Company"
+                        src="./ZilWorld logo.png"
+                        alt="ZilWorld logo"
                       />
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
@@ -262,8 +262,8 @@ export default function NavBar() {
                 <div className="flex flex-row justify-center">
                   <img
                     className=" h-28 w-auto"
-                    src="/ZilWorld logo.png"
-                    alt="Your Company"
+                    src="./ZilWorld logo.png"
+                    alt="ZilWorld logo"
                   />
                 </div>
               </div>
