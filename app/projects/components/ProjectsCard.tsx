@@ -4,7 +4,13 @@ import { mapProjects } from "../../functions";
 export default function ProjectsCard({ projectsData }: CardProps) {
   return (
     <div className="ml-6 flex flex-col justify-center">
-      <h1 className="text-2xl font-semibold text-gray-900 mb-6">DEX</h1>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6">
+        Wallets
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {mapProjects("Wallets", projectsData)}
+      </div>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">DEX</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {mapProjects("DEX", projectsData)}
       </div>
@@ -35,12 +41,6 @@ export default function ProjectsCard({ projectsData }: CardProps) {
       <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">Music</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {mapProjects("Music", projectsData)}
-      </div>
-      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
-        Wallets
-      </h1>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {mapProjects("Wallets", projectsData)}
       </div>
       <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
         News and Infographics

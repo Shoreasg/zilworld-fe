@@ -41,6 +41,12 @@ export default function NavBar() {
       current: pathname === "/projects",
     },
     {
+      name: "Wallets",
+      icon: WalletIcon,
+      href: "/wallets",
+      current: pathname === "/wallets",
+    },
+    {
       name: "DEX",
       icon: ArrowPathIcon,
       href: "/dex",
@@ -81,12 +87,6 @@ export default function NavBar() {
       icon: MusicalNoteIcon,
       href: "/music",
       current: pathname === "/music",
-    },
-    {
-      name: "Wallets",
-      icon: WalletIcon,
-      href: "/wallets",
-      current: pathname === "/wallets",
     },
     {
       name: "News & Infographics",
