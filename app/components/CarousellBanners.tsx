@@ -11,22 +11,14 @@ export default function CarousellBanners() {
     ImageHeight: number;
     target: string;
   }[] = [
-    // {
-    //   href: "/",
-    //   src: "/soulless_woman.png",
-    //   alt: "soulless_logo",
-    //   ImageWidth: 728,
-    //   ImageHeight: 90,
-    //   target: "_blank",
-    // },
-    // {
-    //   href: "/",
-    //   src: "/WTF logo.png",
-    //   alt: "soulless_logo",
-    //   ImageWidth: 728,
-    //   ImageHeight: 90,
-    //   target: "_blank",
-    // },
+    {
+      href: "https://torchwallet.io/",
+      src: "/TorchWalletBanner.png",
+      alt: "TorchBanner",
+      ImageWidth: 728,
+      ImageHeight: 90,
+      target: "_blank",
+    }
   ];
 
   return BannerImages.length === 0 ? (
