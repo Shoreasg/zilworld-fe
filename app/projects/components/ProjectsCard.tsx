@@ -79,10 +79,10 @@ export default function ProjectsCard({ projectsData }: CardProps) {
         {mapProjects("Finance", projectsData)}
       </div>
       <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
-        Creator DAO
+        Create
       </h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {mapProjects("Creator DAO", projectsData)}
+        {mapProjects("Create", projectsData)}
       </div>
       <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
         Decentralized Identity
@@ -95,6 +95,18 @@ export default function ProjectsCard({ projectsData }: CardProps) {
       </h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {mapProjects("Liquid Staking", projectsData)}
+      </div>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
+        Ecommerce
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {mapProjects("Ecommerce", projectsData)}
+      </div>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6 mt-6">
+        Education
+      </h1>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {mapProjects("Education", projectsData)}
       </div>
     </div>
   );

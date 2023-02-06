@@ -24,6 +24,8 @@ import {
   UserGroupIcon,
   EyeDropperIcon,
   FingerPrintIcon,
+  ArchiveBoxIcon,
+  AcademicCapIcon,
 } from "@heroicons/react/24/outline";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
@@ -119,10 +121,10 @@ export default function NavBar() {
       current: pathname === "/finance",
     },
     {
-      name: "Creator DAO",
+      name: "Create",
       icon: UserGroupIcon,
-      href: "/creatordao",
-      current: pathname === "/creatordao",
+      href: "/create",
+      current: pathname === "/create",
     },
     {
       name: "Decentralized Identity",
@@ -135,6 +137,18 @@ export default function NavBar() {
       icon: EyeDropperIcon,
       href: "/liquidstaking",
       current: pathname === "/liquidstaking",
+    },
+    {
+      name: "Ecommerce",
+      icon: ArchiveBoxIcon,
+      href: "/ecommerce",
+      current: pathname === "/ecommerce",
+    },
+    {
+      name: "Education",
+      icon: AcademicCapIcon,
+      href: "/education",
+      current: pathname === "/education",
     },
     {
       name: "Developer Tools",
@@ -248,6 +262,13 @@ export default function NavBar() {
                         </Link>
                       ))}
                     </nav>
+                    <a className="text-gray-400 hover:text-gray-500 text flex flex-row justify-center mt-2 border-t " href="https://twitter.com/zilworldapp" target={"_blank"}>
+                  <svg fill="currentColor" viewBox="0 0 24 24" width={20} height={16} className="mt-4" >
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                </a>
+                <div className="text-center text-white text-sm mt-2">Created by ShoreaSG</div>
+                <div className="text-center text-white text-sm mt-2">#Zilfam</div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
@@ -292,6 +313,13 @@ export default function NavBar() {
                   </Link>
                 ))}
               </nav>
+              <a className="text-gray-400 hover:text-gray-500 text flex flex-row justify-center mt-2 border-t " href="https://twitter.com/zilworldapp" target={"_blank"}>
+                  <svg fill="currentColor" viewBox="0 0 24 24" width={20} height={16} className="mt-4" >
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                </a>
+                <div className="flex justify-center text-white text-sm mt-2">Created by ShoreaSG</div>
+                <div className="text-center text-white text-sm mt-2">#Zilfam</div>
             </div>
           </div>
         </div>
