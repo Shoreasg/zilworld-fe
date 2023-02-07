@@ -31,10 +31,6 @@ export default function CarousellBanners() {
       wrapAround={true}
       renderCenterLeftControls={null}
       renderCenterRightControls={null}
-      defaultControlsConfig={{
-        pagingDotsClassName: "ml-2",
-        pagingDotsStyle: { fill: "grey", width: "10px", height: "10px" },
-      }}
       autoplayInterval={5000}
       className="mt-6 pb-8"
     >
