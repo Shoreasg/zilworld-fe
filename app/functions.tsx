@@ -15,7 +15,7 @@ export const mapProjects = (category: string, data: IProjects[]) => {
                   src={projects.icon}
                   alt="token icon"
                 />
-                <h3 className="mt-4 text-m font-medium text-center text-gray-900">
+                <h3 className="mt-3 text-sm font-medium text-center text-gray-900">
                   {projects.name}
                 </h3>
               </div>
