@@ -50,11 +50,11 @@ export const mapProjects = (category: string, data: IProjects[]) => {
           <div className="h-[280px] w-[280px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
               <div className="flex flex-1 flex-col p-8">
                 <img
-                  className="mx-auto h-32 w-32"
+                  className="mx-auto h-24 w-24"
                   src={projects.icon}
                   alt="token icon"
                 />
-                <h3 className="mt-4 text-m font-medium text-center text-gray-900">
+                <h3 className="mt-3 text-sm font-medium text-center text-gray-900">
                   {projects.name}
                 </h3>
                 {projects.category.length === 1 ? <div className="flex flex-row justify-center mt-2">
