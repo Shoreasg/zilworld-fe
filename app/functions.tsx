@@ -2,13 +2,52 @@ import Link from "next/link";
 import { IProjects } from "../types";
 export const mapProjects = (category: string, data: IProjects[]) => {
   //function to map the projects into category
+  if (!data.some(p => p.category.includes(category))) {
+    return data.map((projects: IProjects, key: number) => {
+      return (
+        <Link key={projects.name} href={`/projects/${projects.name}`}>
+          <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110 w-fit m-auto">
+            <div className="h-[280px] w-[280px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+              <div className="flex flex-1 flex-col p-8">
+                <img
+                  className="mx-auto h-32 w-32"
+                  src={projects.icon}
+                  alt="token icon"
+                />
+                <h3 className="mt-4 text-m font-medium text-center text-gray-900">
+                  {projects.name}
+                </h3>
+                {projects.category.length === 1 ? <div className="flex flex-row justify-center mt-2">
+                  {projects.category.map((value) => {
+                    return (
+                      <span key={projects.name} className="inline-flex justify-center items-center rounded-full bg-gray-300 px-3 py-0.5 text-xs text-center font-medium text-gray-800">
+                        {value}
+                      </span>
+                    )
+                  })}
+                </div> : <div className="grid grid-cols-2 gap-2 mt-2">
+                  {projects.category.map((value) => {
+                    return (
+                      <span key={projects.name} className="inline-flex justify-center items-center rounded-full bg-gray-300 px-3 py-0.5 text-xs text-center font-medium text-gray-800">
+                        {value}
+                      </span>
+                    )
+                  })}
+                </div>}
+              </div>
+            </div>
+          </div>
+        </Link>
+      );
+    });
+  }
   return data
-    .filter((project) => project.category === category)
+    .filter((project) => project.category.includes(category))
     .map((projects: IProjects, key: number) => {
       return (
         <Link key={projects.name} href={`/projects/${projects.name}`}>
           <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110 w-fit m-auto">
-            <div className="h-[200px] w-[200px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+          <div className="h-[280px] w-[280px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
               <div className="flex flex-1 flex-col p-8">
                 <img
                   className="mx-auto h-24 w-24"
@@ -18,6 +57,23 @@ export const mapProjects = (category: string, data: IProjects[]) => {
                 <h3 className="mt-3 text-sm font-medium text-center text-gray-900">
                   {projects.name}
                 </h3>
+                {projects.category.length === 1 ? <div className="flex flex-row justify-center mt-2">
+                  {projects.category.map((value) => {
+                    return (
+                      <span key={projects.name} className="inline-flex justify-center items-center rounded-full bg-gray-300 px-3 py-0.5 text-xs text-center font-medium text-gray-800">
+                        {value}
+                      </span>
+                    )
+                  })}
+                </div> : <div className="grid grid-cols-2 gap-2 mt-2">
+                  {projects.category.map((value) => {
+                    return (
+                      <span key={projects.name} className="inline-flex justify-center items-center rounded-full bg-gray-300 px-3 py-0.5 text-xs text-center font-medium text-gray-800">
+                        {value}
+                      </span>
+                    )
+                  })}
+                </div>}
               </div>
             </div>
           </div>

@@ -19,6 +19,11 @@ const faqs = [
     answer:
       "Zilworld gets its token statistics from Zilstream. For more in-depth statistics, visit https://zilstream.com/.",
   },
+  {
+    question: "Do you accept donations?",
+    answer:
+      "Yes, Please donate to zil1pytaesxsedaw7rvvcx2qwx58n74wpfywckde6s. Donation will contribute to the development of our site",
+  },
 ];
 
 function classNames(...classes: string[]) {
