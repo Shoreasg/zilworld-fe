@@ -2,6 +2,7 @@ import { IProjectNameParams } from "../../../types";
 import ProjectDetailsCard from "./components/ProjectDetailsCard";
 import ProjectTwitterWidget from "./components/ProjectTwitterWidget";
 import { redirect } from "next/navigation";
+import ProjectAnnouncement from "./components/ProjectAnnouncement";
 
 async function getProjectData(projectName: string) {
   const res = await fetch(
@@ -20,6 +21,7 @@ export default async function Project({ params }: IProjectNameParams) {
   return (
     <>
       <ProjectDetailsCard projectData={project} />
+      <ProjectAnnouncement projectData={project} />
       <ProjectTwitterWidget projectData={project} />
     </>
   );

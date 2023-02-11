@@ -2,10 +2,11 @@ import { IProjects } from "../../types";
 import CarousellBanners from "../components/CarousellBanners";
 import getProjectsData from "../functions";
 import ProjectsCard from "./components/ProjectsCard";
+import * as _ from 'lodash';
 
 export default async function Projects() {
   const projectsData = await getProjectsData();
-  const projects: IProjects[] = projectsData.data;
+  const projects: IProjects[] = _.shuffle(projectsData.data);
   return (
     <>
       <div className="flex flex-1 flex-col md:pl-64">

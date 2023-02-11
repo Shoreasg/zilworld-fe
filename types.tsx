@@ -1,5 +1,3 @@
-import { DeleteExpression } from "typescript";
-
 export interface IMarketdata {
   usd_rate: number;
   ath: number;
@@ -16,6 +14,11 @@ export interface IMarketdata {
   daily_volume_usd: number;
   market_cap_usd: number;
   fully_diluted_marketcap_usd: number;
+}
+
+export interface IAnnouncement {
+  title: string,
+  preview: string,
 }
 
 export interface ITokens {
@@ -37,7 +40,7 @@ export interface IProjects {
   description: string;
   icon: string;
   updated_at: string;
-  category: string;
+  category: string[];
   tokens: string[];
   NFT_address: string[];
   marketplace_arky: boolean;
@@ -47,6 +50,10 @@ export interface IProjects {
   telegram: string;
   twitter: string;
   discord: string;
+  isActive: boolean;
+  isBuilding: boolean;
+  isNew: boolean;
+  announcements: [IAnnouncement];
 }
 
 interface IDataSet {

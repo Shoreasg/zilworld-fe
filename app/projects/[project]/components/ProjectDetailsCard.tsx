@@ -23,6 +23,8 @@ export default function ProjectDetailsCard({
                   <p className="text-xl text-center font-bold text-gray-900 sm:text-2xl">
                     {projectData.name}
                   </p>
+                  {projectData.isActive ? <p className=" text-sm text-center font-bold text-green-400 sm:text-sm">Status: Active</p>: <p className=" text-sm text-center font-bold text-red-400 sm:text-lg">Status: Inactive</p>}
+            
                 </div>
                 <p className="flex flex-col justify-center text-lg">
                   {parse(String(projectData.description))}
