@@ -17,8 +17,8 @@ export interface IMarketdata {
 }
 
 export interface IAnnouncement {
-  title: string,
-  preview: string,
+  title: string;
+  preview: string;
 }
 
 export interface ITokens {
@@ -75,6 +75,10 @@ export interface ProjectDetailsCardProps {
   projectData: IProjects;
 }
 
+export interface NewProjectDetailsCardProps {
+  NewProjectData: IProjects;
+}
+
 export interface TokenStatsCardProps {
   marketData: IMarketdata;
 }
@@ -96,5 +100,11 @@ export type ITokenParams = {
 export type IProjectNameParams = {
   params: {
     project: string;
+  };
+};
+
+export type INewProjectNameParams = {
+  params: {
+    newproject: string;
   };
 };

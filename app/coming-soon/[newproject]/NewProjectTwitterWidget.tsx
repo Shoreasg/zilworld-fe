@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { Timeline } from "react-twitter-widgets";
-import { ProjectDetailsCardProps } from "../../../../types";
+import { NewProjectDetailsCardProps } from "../../../types";
 
-export default function ProjectTwitterWidget({
-  projectData,
-}: ProjectDetailsCardProps) {
+export default function NewProjectTwitterWidget({
+  NewProjectData,
+}: NewProjectDetailsCardProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   console.log(isLoading);
@@ -16,7 +16,7 @@ export default function ProjectTwitterWidget({
         <h3 className="text-2xl font-semibold text-gray-900 mb-6">
           Twitter Updates
         </h3>
-        {isLoading && isError === false && projectData.twitter && (
+        {isLoading && isError === false && NewProjectData.twitter && (
           <div className="px-4 py-5 sm:p-6 font-semibold opacity-80 text-gray-900 bg-gray-500 text-center animate-pulse ">
             Loading
           </div>
@@ -29,7 +29,7 @@ export default function ProjectTwitterWidget({
           <Timeline
             dataSource={{
               sourceType: "profile",
-              screenName: `${projectData.twitter}`,
+              screenName: `${NewProjectData.twitter}`,
             }}
             options={{ height: "650" }}
             onLoad={() => setIsLoading(false)}

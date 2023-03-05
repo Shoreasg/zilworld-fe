@@ -1,10 +1,10 @@
 import Link from "next/link";
 import parse from "html-react-parser";
-import { ProjectDetailsCardProps } from "../../../../types";
+import { NewProjectDetailsCardProps } from "../../../types";
 
-export default function ProjectDetailsCard({
-  projectData,
-}: ProjectDetailsCardProps) {
+export default function NewProjectDetailsCard({
+  NewProjectData,
+}: NewProjectDetailsCardProps) {
   return (
     <div className="flex flex-1 flex-col md:pl-64">
       <div className="p-6">
@@ -15,41 +15,36 @@ export default function ProjectDetailsCard({
                 <div className="flex-shrink-0 flex flex-col justify-center">
                   <img
                     className="mx-auto h-20 w-20"
-                    src={projectData.icon}
+                    src={NewProjectData.icon}
                     alt="token icon"
                   />
                 </div>
                 <div className="flex flex-col justify-center text-center sm:text-left">
                   <p className="text-xl text-center font-bold text-gray-900 sm:text-2xl">
-                    {projectData.name}
+                    {NewProjectData.name}
                   </p>
-                  {projectData.isActive ? (
-                    <p className=" text-sm text-center font-bold text-green-400 sm:text-sm">
-                      Status: Active
-                    </p>
-                  ) : (
-                    false
-                  )}
-                  {projectData.isBuilding ? (
+                  {NewProjectData.isBuilding ? (
                     <p className=" text-sm text-center font-bold text-green-400 sm:text-sm">
                       Status: Building
                     </p>
                   ) : (
-                    false
+                    <p className=" text-sm text-center font-bold text-red-400 sm:text-lg">
+                      Status: Inactive
+                    </p>
                   )}
                 </div>
                 <p className="flex flex-col justify-center text-lg">
-                  {parse(String(projectData.description))}
+                  {parse(String(NewProjectData.description))}
                 </p>
               </div>
             </div>
           </div>
           <div className="grid grid-flow-col overflow-auto divide-y divide-gray-200 border-t border-gray-200 bg-gray-50 sm:auto-cols-auto sm:divide-y-0 sm:divide-x">
-            {projectData.website ? (
+            {NewProjectData.website ? (
               <div className="px-6 py-5 text-center text-sm font-medium ">
                 <Link
                   target={"_blank"}
-                  href={projectData.website}
+                  href={NewProjectData.website}
                   className="hover:text-[#0A7581]"
                 >
                   Website
@@ -58,11 +53,11 @@ export default function ProjectDetailsCard({
             ) : (
               true
             )}
-            {projectData.telegram ? (
+            {NewProjectData.telegram ? (
               <div className="px-6 py-5 text-center text-sm font-medium">
                 <Link
                   target={"_blank"}
-                  href={projectData.telegram}
+                  href={NewProjectData.telegram}
                   className="hover:text-[#0A7581]"
                 >
                   Telegram
@@ -72,11 +67,11 @@ export default function ProjectDetailsCard({
               true
             )}
 
-            {projectData.discord ? (
+            {NewProjectData.discord ? (
               <div className="px-6 py-5 text-center text-sm font-medium ">
                 <Link
                   target={"_blank"}
-                  href={projectData.discord}
+                  href={NewProjectData.discord}
                   className="projectDatahover:text-[#0A7581]"
                 >
                   Discord
@@ -85,7 +80,7 @@ export default function ProjectDetailsCard({
             ) : (
               true
             )}
-            {projectData.tokens?.map((address, key) => (
+            {NewProjectData.tokens?.map((address, key) => (
               <div
                 key={key}
                 className="px-6 py-5 text-center text-sm font-medium"
@@ -99,9 +94,9 @@ export default function ProjectDetailsCard({
                 </Link>
               </div>
             ))}
-            {projectData.marketplace_arky ? (
+            {NewProjectData.marketplace_arky ? (
               <>
-                {projectData.NFT_address?.map((address, key) => (
+                {NewProjectData.NFT_address?.map((address, key) => (
                   <div
                     key={key}
                     className="px-6 py-5 text-center text-sm font-medium "
@@ -119,9 +114,9 @@ export default function ProjectDetailsCard({
             ) : (
               true
             )}
-            {projectData.marketplace_cathulu ? (
+            {NewProjectData.marketplace_cathulu ? (
               <>
-                {projectData.NFT_address?.map((address, key) => (
+                {NewProjectData.NFT_address?.map((address, key) => (
                   <div
                     key={key}
                     className="px-6 py-5 text-center text-sm font-medium "
@@ -139,9 +134,9 @@ export default function ProjectDetailsCard({
             ) : (
               true
             )}
-            {projectData.marketplace_zildex ? (
+            {NewProjectData.marketplace_zildex ? (
               <>
-                {projectData.NFT_address?.map((address, key) => (
+                {NewProjectData.NFT_address?.map((address, key) => (
                   <div
                     key={key}
                     className="px-6 py-5 text-center text-sm font-medium "
