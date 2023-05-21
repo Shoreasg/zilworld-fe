@@ -6,7 +6,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        plusjakartasans: 'var(--font-jakarta-sans)',
+        lato: 'var(--font-lato)',
+      }
+    },
   },
   plugins: [],
 }

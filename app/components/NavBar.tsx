@@ -8,6 +8,12 @@ import {
   FolderIcon,
   QuestionMarkCircleIcon,
   FireIcon,
+  Squares2X2Icon,
+  MegaphoneIcon,
+  PhotoIcon,
+  GifIcon,
+  SquaresPlusIcon,
+  NewspaperIcon,
 } from "@heroicons/react/24/outline";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
@@ -20,7 +26,7 @@ export default function NavBar() {
   const navigation = [
     {
       name: "Projects",
-      icon: FolderIcon,
+      icon: Squares2X2Icon,
       href: "/projects",
       current: pathname?.includes("/projects"),
     },
@@ -31,14 +37,53 @@ export default function NavBar() {
       current: pathname?.includes("/coming-soon"),
     },
     {
+      name: "Latest News",
+      icon: MegaphoneIcon,
+      href: "/latest-news",
+      current: pathname?.includes("/tokens"),
+    },
+    {
       name: "Tokens",
       icon: CurrencyDollarIcon,
       href: "/tokens",
       current: pathname?.includes("/tokens"),
     },
+  ];
+
+  const secondNavigation = [
+    {
+      name: "Advertising",
+      icon: PhotoIcon,
+      href: "/faq",
+      current: pathname === "/faq",
+    },
+    {
+      name: "Connect",
+      icon: FolderIcon,
+      href: "/faq",
+      current: pathname === "/faq",
+    },
+    {
+      name: "Donate",
+      icon: GifIcon,
+      href: "/faq",
+      current: pathname === "/faq",
+    },
     {
       name: "FAQ",
       icon: QuestionMarkCircleIcon,
+      href: "/faq",
+      current: pathname === "/faq",
+    },
+    {
+      name: "Get Listed",
+      icon: SquaresPlusIcon,
+      href: "/faq",
+      current: pathname === "/faq",
+    },
+    {
+      name: "Update Listing",
+      icon: NewspaperIcon,
       href: "/faq",
       current: pathname === "/faq",
     },
@@ -51,7 +96,7 @@ export default function NavBar() {
   return (
     <>
       <div>
-        <Transition.Root show={sidebarOpen} as={Fragment}>
+        {/* <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
             as="div"
             className="relative z-40 md:hidden"
@@ -163,29 +208,32 @@ export default function NavBar() {
               <div className="w-14 flex-shrink-0"></div>
             </div>
           </Dialog>
-        </Transition.Root>
+        </Transition.Root> */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-          <div className="flex min-h-0 flex-1 flex-col  bg-[#077a8f]">
-            <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
+          <div className="flex min-h-0 flex-1 flex-col  bg-[#36788C]">
+            <div className="flex flex-1 flex-col overflow-y-auto pt-[11.5px] pb-[19.5px]">
               <div className="flex justify-center">
                 <div className="flex flex-row justify-center">
                   <img
-                    className=" h-28 w-auto"
+                    className=" h-28 w-28"
                     src="/ZilWorld Logo.png"
                     alt="ZilWorld logo"
                   />
                 </div>
               </div>
-              <nav className="mt-5 flex-1 space-y-1 px-2" aria-label="Sidebar">
+              <nav
+                className="mt-[19.5px] space-y-1"
+                aria-label="Sidebar"
+              >
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-slate-900 text-white"
-                        : "text-gray-300 hover:bg-[#49c1bf] hover:text-white",
-                      "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                        ? "bg-[#E6EAEB] text-[#275B6B] font-plusjakartasans"
+                        : "text-gray-300 hover:text-[#275B6B]",
+                      "group flex items-center px-2 py-2 text-sm font-bold font-plusjakartasans"
                     )}
                   >
                     <item.icon
@@ -193,11 +241,40 @@ export default function NavBar() {
                         item.current
                           ? "text-gray-300"
                           : "text-gray-400 group-hover:text-gray-300",
-                        "mr-3 flex-shrink-0 h-6 w-6"
+                        "ml-5 flex-shrink-0 h-4 w-4"
                       )}
                       aria-hidden="true"
                     />
-                    <span className="flex-1">{item.name}</span>
+                    <span className="flex-1 ml-3">{item.name}</span>
+                  </Link>
+                ))}
+              </nav>
+              <div className="flex flex-row justify-end">button here</div>
+              <nav
+                className="mt-[19.5px] flex-1 space-y-1"
+                aria-label="Sidebar"
+              >
+                {secondNavigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={classNames(
+                      item.current
+                        ? "bg-[#E6EAEB] text-[#275B6B] font-plusjakartasans"
+                        : "text-gray-300 hover:text-[#275B6B]",
+                      "group flex items-center px-2 py-2 text-sm font-bold font-plusjakartasans"
+                    )}
+                  >
+                    <item.icon
+                      className={classNames(
+                        item.current
+                          ? "text-gray-300"
+                          : "text-gray-400 group-hover:text-gray-300",
+                        "ml-5 flex-shrink-0 h-4 w-4"
+                      )}
+                      aria-hidden="true"
+                    />
+                    <span className="flex-1 ml-3">{item.name}</span>
                   </Link>
                 ))}
               </nav>
