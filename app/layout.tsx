@@ -26,8 +26,8 @@ export default function RootLayout({
     <html lang="en" className={`${plusJakartaSans.variable} ${lato.variable}`}>
       <head />
       <body>
-        <main className="bg-[#f5f5f5] h-screen w-screen flex">
-          <NavBarV2 />
+        <main className="bg-[#f5f5f5] flex w-screen h-screen">
+        <NavBarV2 />
           {/* {children} */}
           <AnalyticsWrapper />
         </main>

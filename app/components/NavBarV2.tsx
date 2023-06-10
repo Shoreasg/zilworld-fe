@@ -34,17 +34,19 @@ export default function NavBarV2() {
     },
 
     {
+      name: "Coming Soon",
+      icon: FireIcon,
+      href: "/coming-soon",
+      current: pathname?.includes("/coming-soon"),
+    },
+
+    {
       name: "Latest News",
       icon: MegaphoneIcon,
       href: "/latest-news",
       current: pathname?.includes("/latest-news"),
     },
-    {
-      name: "Coming soon",
-      icon: FireIcon,
-      href: "/coming-soon",
-      current: pathname?.includes("/coming-soon"),
-    },
+
   ];
 
   const secondNavigation = [
@@ -98,9 +100,9 @@ export default function NavBarV2() {
   }
 
   return (
-    <div className="flex flex-col justify-between min-w-[16rem] h-full bg-[#097A8E] p-0 m-0">
+    <div className="flex flex-col justify-between min-w-[16rem] h-screen bg-[#097A8E] p-0 m-0 overflow-y-auto">
       <div className="flex flex-col justify-center items-start p-0 w-full">
-        <div className="flex flex-col justify-center items-center max-h-[8.25rem] p-[0.5rem] w-full">
+        <div className="flex flex-col justify-center items-center h-[8.25rem] p-0 w-full">
           <img
             className="h-[7rem] w-[7rem]"
             src="/ZilWorld Logo.png"
@@ -113,7 +115,7 @@ export default function NavBarV2() {
               key={item.name}
               href={item.href}
               className={classNames(
-                item.current ? "bg-[#f5f5f5] text-[#36788C]" : "text-[#f5f5f5]",
+                item.current ? "bg-[#f5f5f5] text-[#36788C] " : "text-[#f5f5f5]",
                 "flex flex-row items-center justify-start gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch flex-grow-0 hover:bg-[#f5f5f5] hover:text-[#36788C]"
               )}
             >
@@ -129,8 +131,8 @@ export default function NavBarV2() {
         </div>
       </div>
       <div className="flex flex-row justify-end items-center p-0 self-stretch bg-[#097A8E]">
-        <button className="bg-[#275B6B] border-none shadow-[-4px_0px_20px_rgba(6,36,46,0.15)] rounded-[0.375rem] pt-[0.375rem] pb-[0.375rem] pl-[0.25rem] pr-[0.25rem] content-center">
-          <ChevronDoubleLeftIcon className="text-[#F9F9F9] w-6 h-6" />
+        <button className="bg-[#275B6B] border-none shadow-[-4px_0px_20px_rgba(6,36,46,0.15)] rounded-l-[0.375rem] pt-[0.375rem] pb-[0.375rem] pl-[0.25rem] pr-[0.25rem] content-center">
+          <ChevronDoubleLeftIcon className="text-[#F9F9F9] w-6 h-6 stroke-2" />
         </button>
       </div>
       <div className="flex flex-col justify-center items-start p-0 w-full">
@@ -174,8 +176,8 @@ export default function NavBarV2() {
           ))}
         </div>
         <div className="bg-[#097A8E] text-center pt-[0.5rem] pb-[0.5rem] pl-0 pr-0 w-full">
-          <div className="pt-0 pb-0 pl-[1rem] pr-[1rem]">
-            <hr className="border-t border-solid border-[#E6EAEB] m-0" />
+          <div className="pt-0 pb-0 pl-[1rem] pr-[1rem]   ">
+            <hr className="border-b-0 border-r-0 border-l-0 border-t border-solid border-[#e6eaeb] opacity-10 m-0 "  />
           </div>
         </div>
         <div className="w-full">
@@ -221,13 +223,13 @@ export default function NavBarV2() {
                   </svg>
                 )}
 
-                <span className="p-0 font-plusjakartasans font-medium text-base">
+                <span className="p-0 font-plusjakartasans font-normal text-sm">
                   {item.name}
                 </span>
               </Link>
             ))}
           </div>
-          <div className="w-full flex flex-row justify-center items-center pt-2 pb-2 pl-0 pr-0 m-0 bg-[#275B6B] shadow-[0px_0px_10px_rgb(6, 36, 46, 0.15)]">
+          <div className="w-full flex flex-row justify-center items-center pt-2 pb-2 pl-0 pr-0 m-0 bg-[#275B6B] shadow-[0px_0px_10px_rgba(6,36,46,0.15)]">
             <span className="text-[#f5f5f5] font-plusjakartasans p-0 m-0 font-normal text-sm tracking-[0.03125rem]">#zilfam</span>
           </div>
         </div>
