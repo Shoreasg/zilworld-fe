@@ -28,7 +28,7 @@ export default function RootLayout({
       <body>
         <main className="bg-[#f5f5f5] flex w-screen h-screen">
         <NavBarV2 />
-          {/* {children} */}
+          {children}
           <AnalyticsWrapper />
         </main>
       </body>

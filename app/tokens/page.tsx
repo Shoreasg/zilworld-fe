@@ -5,7 +5,7 @@ import TokenCards from "./components/TokenCards";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-1 flex-col md:pl-64">
+      <div className="pt-[3.5rem] pr-[3.5rem] pb-0 pl-[3.5rem] m-0 w-full overflow-y-auto flex flex-col">
         <CarousellBanners />
         <div className="border-t"></div>
         <div className="flex flex-row justify-center mt-6">

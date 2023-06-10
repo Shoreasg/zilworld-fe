@@ -59,39 +59,37 @@ export default function NavBarV2() {
     {
       name: "Listing",
       icon: SquaresPlusIcon,
-      href: "/faq",
-      current: pathname === "/faq",
+      href: "/listing",
+      current: pathname === "/listing",
     },
     {
       name: "Advertise",
       icon: PhotoIcon,
-      href: "/faq",
-      current: pathname === "/faq",
+      href: "/advertise",
+      current: pathname === "/advertise",
     },
     {
       name: "Donate",
       icon: GiftIcon,
-      href: "/faq",
-      current: pathname === "/faq",
+      href: "/donate",
+      current: pathname === "/donate",
     },
     {
       name: "Connect",
       icon: "",
-      href: "/faq",
-      current: pathname === "/faq",
+      href: "/connect",
+      current: pathname === "/connect",
     },
   ];
 
   const thirdNavigation = [
     {
       name: "Developed by ShoreaSG",
-      href: "/faq",
-      current: pathname === "/faq",
+      href: "https://github.com/Shoreasg",
     },
     {
       name: "Designed by DeFiDesigns",
-      href: "/faq",
-      current: pathname === "/faq",
+      href: "https://defi-designs.com/",
     },
   ];
 
@@ -186,12 +184,9 @@ export default function NavBarV2() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={classNames(
-                  item.current
-                    ? "bg-[#f5f5f5] text-[#36788C]"
-                    : "text-[#f5f5f5]",
-                  "flex flex-row items-center justify-start gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch flex-grow-0 hover:bg-[#f5f5f5] hover:text-[#36788C]"
-                )}
+                target="_blank"
+                className="flex flex-row items-center justify-start gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch flex-grow-0"
+             
               >
                 {item.name === "Developed by ShoreaSG" ? (
                   <svg
