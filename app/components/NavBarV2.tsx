@@ -100,15 +100,15 @@ export default function NavBarV2() {
     return classes.filter(Boolean).join(" ");
   }
 
+
   return (
     <>
       {sideBarClose ? (
         <div
         className={
-          "flex flex-col justify-between w-[80px] h-screen bg-[#097A8E] flex-shrink-0 self-stretch overflow-y-auto "
-        }
+          `flex flex-col justify-between w-[80px] h-screen bg-[#097A8E] flex-shrink-0 self-stretch overflow-y-auto transition-all ease-in-out duration-200`}
       >
-        <div className="flex flex-col justify-center items-start p-2 w-full">
+        <div className="flex flex-col justify-center items-start p-0 w-full">
           <div className="flex flex-col justify-center items-center h-[8.25rem] p-0 w-full">
             <img
               className="h-[4rem] w-[4rem] flex-shrink-0"
@@ -125,7 +125,7 @@ export default function NavBarV2() {
                   item.current
                     ? "bg-[#f5f5f5] text-[#36788C] "
                     : "text-[#f5f5f5]",
-                  "flex flex-row items-center justify-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch hover:bg-[#f5f5f5] hover:text-[#36788C]"
+                  "flex flex-row items-center justify-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] self-stretch hover:bg-[#f5f5f5] hover:text-[#36788C]"
                 )}
               >
                 <item.icon
@@ -154,7 +154,7 @@ export default function NavBarV2() {
                   item.current
                     ? "bg-[#f5f5f5] text-[#36788C]"
                     : "text-[#f5f5f5]",
-                  "flex flex-row items-center justify-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch hover:bg-[#f5f5f5] hover:text-[#36788C]"
+                  "flex flex-row items-center justify-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] self-stretch hover:bg-[#f5f5f5] hover:text-[#36788C]"
                 )}
               >
                 {item.name !== "Connect" ? (
@@ -194,7 +194,7 @@ export default function NavBarV2() {
                   key={item.name}
                   href={item.href}
                   target="_blank"
-                  className="flex flex-row items-center justify-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch"
+                  className="flex flex-row items-center justify-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] self-stretch"
                 >
                   {item.name === "Developed by ShoreaSG" ? (
                     <svg
@@ -239,7 +239,7 @@ export default function NavBarV2() {
       ) : (
         <div
           className={
-            "flex flex-col justify-between min-w-[16rem] h-screen bg-[#097A8E] p-0 m-0 overflow-y-auto "
+            `flex flex-col justify-between w-[16rem] h-screen bg-[#097A8E] p-0 m-0 overflow-y-auto flex-shrink-0 self-stretch transition-all ease-in-out duration-150`
           }
         >
           <div className="flex flex-col justify-center items-start p-0 w-full">
