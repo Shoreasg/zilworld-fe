@@ -10,7 +10,7 @@ export default async function Projects() {
   const projects: IProjects[] = _.shuffle(projectsData.data);
   return (
     <>
-      <div className="pt-[3.5rem] pr-[3.5rem] pb-0 pl-[3.5rem] m-0 w-full overflow-y-auto flex flex-col">
+      <div className="pt-[3.5rem] pr-[3.5rem] pb-0 pl-[3.5rem] m-0 w-screen overflow-y-auto flex flex-col">
         <CarousellBanners />
         <div className="border-t"></div>
         <div className="flex flex-row justify-center mt-6">
