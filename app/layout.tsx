@@ -35,21 +35,22 @@ export default function RootLayout({
         {/* Mobile View */}
         <div className="block md:hidden">
           <Header setMenuClick={setonMenuClick} menuClick={onMenuClick} />
-          {onMenuClick? 
-            <main className="bg-[#f5f5f5] flex w-screen h-screen">
-              <MobileNavBar menuClick={onMenuClick} />
-              {children}
-            </main>:
-             <main className="bg-[#f5f5f5] flex w-screen h-screen">
-             <MobileNavBar menuClick={onMenuClick} />
-             <Overlay/>
+          <main className="bg-[#f5f5f5] flex w-screen h-screen">
+            {onMenuClick ? (
+              <>
+                <MobileNavBar menuClick={onMenuClick} />
+              </>
+            ) : (
+              <>
+                <MobileNavBar menuClick={onMenuClick} />
+                <Overlay />
+              </>
+            )}
             {children}
-           </main>
-
-        }      
+          </main>
         </div>
         {/* Web View */}
-        <div className="hidden lg:block">
+        <div className="hidden md:block">
           <main className="bg-[#f5f5f5] flex w-screen h-screen">
             <NavBarV2 />
             {children}

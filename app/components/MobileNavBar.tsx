@@ -112,7 +112,7 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
       ) : (
         <div
           className={
-            `fixed inset-0 top-14 flex flex-col justify-between w-[16rem] h-screen bg-[#097A8E] p-0 m-0 overflow-y-auto flex-shrink-0 self-stretch transition-all ease-in-out duration-150 z-40`
+            `absolute top-14 flex flex-col justify-between w-[16rem] h-screen bg-[#097A8E] p-0 m-0 overflow-y-auto flex-shrink-0 self-stretch transition-all ease-in-out duration-150 z-40`
           }
         >
           <div className="flex flex-col justify-center items-start p-0 w-full">
