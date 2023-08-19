@@ -1,6 +1,4 @@
 "use client";
-
-import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/20/solid";
 import {
   CurrencyDollarIcon,
   FireIcon,

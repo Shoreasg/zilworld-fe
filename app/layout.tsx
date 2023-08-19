@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { AnalyticsWrapper } from "./analytics";
 import Header from "./components/Header";
-import NavBar from "./components/NavBar";
 import NavBarV2 from "./components/NavBarV2";
 import "./globals.css";
 import { Plus_Jakarta_Sans, Lato } from "@next/font/google";
@@ -27,7 +26,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [onMenuClick, setonMenuClick] = useState(false);
-  console.log(onMenuClick);
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${lato.variable}`}>
       <head />
