@@ -25,7 +25,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [onMenuClick, setonMenuClick] = useState(false);
+  const [onMenuClick, setonMenuClick] = useState(true);
+  console.log(onMenuClick);
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${lato.variable}`}>
       <head />
@@ -40,8 +41,8 @@ export default function RootLayout({
               </>
             ) : (
               <>
+                <Overlay setMenuClick={setonMenuClick} menuClick={onMenuClick}/>
                 <MobileNavBar menuClick={onMenuClick} />
-                <Overlay />
               </>
             )}
             {children}

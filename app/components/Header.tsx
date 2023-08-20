@@ -1,6 +1,5 @@
 "use client";
-import { Dispatch, SetStateAction, useState } from "react"
-import NavBarV2 from "./NavBarV2";
+import { Dispatch, SetStateAction } from "react"
 
 interface HeaderProps {
     setMenuClick: Dispatch<SetStateAction<boolean>>;
@@ -17,10 +16,10 @@ return(
               src="/ZilWorld Logo.png"
               alt="ZilWorld Logo"
             ></img>
-           <div className="text-light-mode-neutral-green-500 text-center font-Lato font-semibold text-sm uppercase tracking-wider"
+           <button className="text-light-mode-neutral-green-500 text-center font-Lato font-semibold text-sm uppercase tracking-wider"
             onClick={()=>setMenuClick(!menuClick)}>
                 {menuClick ? "Menu": "Close"}
-            </div>
+            </button>
     </div>
     </>)
 }

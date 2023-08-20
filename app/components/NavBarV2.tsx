@@ -17,7 +17,7 @@ import { useState } from "react";
 
 export default function NavBarV2() {
   const pathname = usePathname();
-  const [sideBarClose, setsideBarClose] = useState(false);
+  const [sideBarClose, setsideBarClose] = useState(true);
 
   const toggleNavbar = () => {
     setsideBarClose(!sideBarClose);
