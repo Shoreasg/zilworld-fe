@@ -102,43 +102,39 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
   return (
     <>
       {menuClick ? (
-        <div
-        className={
-          ` flex-shrink-0 self-stretch overflow-y-auto transition-all ease-in-out duration-200 `}
-      >
-      </div>
+        ''
       ) : (
         <div
           className={
-            `absolute top-14 flex flex-col justify-between w-[195px] h-screen bg-[#097A8E] p-0 m-0 overflow-y-auto flex-shrink-0 self-stretch transition-all ease-in-out duration-150 z-40`
+            `absolute top-[56px] w-[50vw] h-screen flex flex-col justify-between  bg-[#097A8E] z-40`
           }
         >
-          <div className="flex flex-col justify-center items-start p-0 w-full">
-            <div className=" w-full">
+          <div className=" w-full h-[192px]">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-[#f5f5f5] text-[#36788C] "
+                      ? "bg-[#f5f5f5] text-[#36788C]"
                       : "text-[#f5f5f5]",
-                    "flex flex-row items-center justify-start gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch flex-grow-0 hover:bg-[#f5f5f5] hover:text-[#36788C]"
+                    "flex flex-row gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] w-full h-[48px] hover:bg-[#f5f5f5] hover:text-[#36788C]"
                   )}
                 >
                   <item.icon
-                    className={classNames("w-[1.5rem] h-[1.5rem] p-0")}
+                    className={classNames("w-[1.5rem] h-[1.5rem]")}
                     aria-hidden="true"
                   />
-                  <span className="p-0  font-plusjakartasans font-medium text-base">
+                  <span className="p-0 font-plusjakartasans font-semibold text-sm leading-[21px] text-[14px]">
                     {item.name}
                   </span>
                 </Link>
               ))}
-            </div>
           </div>
-          <div className="flex flex-col justify-center items-start p-0 w-full">
-            <div className="w-full">
+          <div className="pt-0 pb-0 pl-[1rem] pr-[1rem]">
+                <hr className="border-b-0 border-r-0 border-l-0 border-t border-solid border-[#e6eaeb] opacity-20 m-0 " />
+          </div>
+            <div className="w-full h-[240px]">
               {secondNavigation.map((item) => (
                 <Link
                   key={item.name}
@@ -147,7 +143,7 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                     item.current
                       ? "bg-[#f5f5f5] text-[#36788C]"
                       : "text-[#f5f5f5]",
-                    "flex flex-row items-center justify-start gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch flex-grow-0 hover:bg-[#f5f5f5] hover:text-[#36788C]"
+                      "flex flex-row gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] w-full h-[48px] hover:bg-[#f5f5f5] hover:text-[#36788C]"
                   )}
                 >
                   {item.name !== "Connect" ? (
@@ -173,19 +169,17 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                     </svg>
                   )}
 
-                  <span className="p-0  font-plusjakartasans font-medium text-base">
+                  <span className="p-0 font-plusjakartasans font-semibold text-sm leading-[21px] text-[14px]">
                     {item.name}
                   </span>
                 </Link>
               ))}
-            </div>
-            <div className="bg-[#097A8E] text-center pt-[0.5rem] pb-[0.5rem] pl-0 pr-0 w-full">
-              <div className="pt-0 pb-0 pl-[1rem] pr-[1rem]   ">
+            </div>    
+              <div className="pt-0 pb-0 pl-[1rem] pr-[1rem]">
                 <hr className="border-b-0 border-r-0 border-l-0 border-t border-solid border-[#e6eaeb] opacity-10 m-0 " />
               </div>
-            </div>
-            <div className="w-full">
-              <div className="flex flex-col items-start pb-[0.5rem] text-[#f5f5f5] bg-[#097A8E] font-normal text-[0.875rem] w-full">
+            <div className="w-full h-[172px]">
+              <div className="pb-[0.5rem] text-[#f5f5f5] bg-[#097A8E] font-normal text-[0.875rem] w-full h-[140px]">
                 {thirdNavigation.map((item) => (
                   <Link
                     key={item.name}
@@ -223,7 +217,7 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                       </svg>
                     )}
 
-                    <span className="p-0 font-plusjakartasans font-normal text-sm">
+                    <span className="p-0 font-plusjakartasans font-normal text-sm leading-[21px] text-[14px]">
                       {item.name}
                     </span>
                   </Link>
@@ -236,7 +230,6 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
               </div>
             </div>
           </div>
-        </div>
       )}
     </>
   );
