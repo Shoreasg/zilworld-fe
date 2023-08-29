@@ -106,7 +106,7 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
       ) : (
         <div
           className={
-            `absolute top-[56px] w-[50vw] h-screen flex flex-col justify-between  bg-[#097A8E] z-40`
+            `absolute pt-[56px] w-[50vw] h-screen flex flex-col justify-between  bg-[#097A8E] z-40`
           }
         >
           <div className=" w-full h-[192px]">
