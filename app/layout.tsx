@@ -28,7 +28,7 @@ export default function RootLayout({
   const [onMenuClick, setonMenuClick] = useState(true);
   
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${lato.variable}`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${lato.variable} h-full`}>
       <head />
       <body>
         {/* Mobile View */}
