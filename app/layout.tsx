@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${lato.variable} h-full`}>
       <head />
-      <body>
+      <body className="h-full">
         {/* Mobile View */}
         <div className="block md:hidden">
           <Header setMenuClick={setonMenuClick} menuClick={onMenuClick} />
