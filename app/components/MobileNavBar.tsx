@@ -11,7 +11,6 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 
 interface NavBarProps {
@@ -104,12 +103,13 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
       {menuClick ? (
         ''
       ) : (
+        <div className="flex flex-col w-[50vw] h-screen items-start flex-shrink-0 bg-[#097A8E] z-40">
         <div
           className={
-            `absolute pt-[56px] w-[50vw] h-screen flex flex-col justify-between  bg-[#097A8E] z-40`
+            `flex pt-14 flex-col justify-between flex-grow flex-shrink-0 basis-0 self-stretch `
           }
         >
-          <div className=" w-full h-[192px]">
+          <div className=" flex flex-col justify-center items-center self-stretch">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -118,23 +118,23 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                     item.current
                       ? "bg-[#f5f5f5] text-[#36788C]"
                       : "text-[#f5f5f5]",
-                    "flex flex-row gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] w-full h-[48px] hover:bg-[#f5f5f5] hover:text-[#36788C]"
+                    "flex gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] items-center self-stretch hover:bg-[#f5f5f5] hover:text-[#36788C]"
                   )}
                 >
                   <item.icon
                     className={classNames("w-[1.5rem] h-[1.5rem]")}
                     aria-hidden="true"
                   />
-                  <span className="p-0 font-plusjakartasans font-semibold text-sm leading-[21px] text-[14px]">
+                  <span className="font-plusjakartasans font-semibold leading-[21px] text-[14px]">
                     {item.name}
                   </span>
                 </Link>
               ))}
           </div>
-          <div className="pt-0 pb-0 pl-[1rem] pr-[1rem]">
-                <hr className="border-b-0 border-r-0 border-l-0 border-t border-solid border-[#e6eaeb] opacity-20 m-0 " />
+          <div className="flex flex-col justify-center items-center self-stretch pt-0 pb-0 pl-[1rem] pr-[1rem]">
+                <hr className="border-b-0 border-r-0 border-l-0 border-t border-solid border-[#e6eaeb] opacity-10 self-stretch " />
           </div>
-            <div className="w-full h-[240px]">
+          <div className=" flex flex-col justify-center items-center self-stretch">
               {secondNavigation.map((item) => (
                 <Link
                   key={item.name}
@@ -143,7 +143,7 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                     item.current
                       ? "bg-[#f5f5f5] text-[#36788C]"
                       : "text-[#f5f5f5]",
-                      "flex flex-row gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] w-full h-[48px] hover:bg-[#f5f5f5] hover:text-[#36788C]"
+                      "flex gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] items-center self-stretch hover:bg-[#f5f5f5] hover:text-[#36788C]"
                   )}
                 >
                   {item.name !== "Connect" ? (
@@ -168,28 +168,27 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                       ></path>
                     </svg>
                   )}
-
-                  <span className="p-0 font-plusjakartasans font-semibold text-sm leading-[21px] text-[14px]">
+                  <span className="font-plusjakartasans font-semibold leading-[21px] text-[14px]">
                     {item.name}
                   </span>
                 </Link>
               ))}
             </div>    
-              <div className="pt-0 pb-0 pl-[1rem] pr-[1rem]">
-                <hr className="border-b-0 border-r-0 border-l-0 border-t border-solid border-[#e6eaeb] opacity-10 m-0 " />
+            <div className="flex flex-col justify-center items-center self-stretch pt-0 pb-0 pl-[1rem] pr-[1rem]">
+                <hr className="border-b-0 border-r-0 border-l-0 border-t border-solid border-[#e6eaeb] opacity-10 self-stretch" />
               </div>
-            <div className="w-full h-[172px]">
-              <div className="pb-[0.5rem] text-[#f5f5f5] bg-[#097A8E] font-normal text-[0.875rem] w-full h-[140px]">
+              <div className=" flex flex-col items-start self-stretch">
+              <div className="pb-0 flex flex-col items-start text-[#f5f5f5] bg-[#097A8E]">
                 {thirdNavigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     target="_blank"
-                    className="flex flex-row items-center justify-start gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch flex-grow-0"
+                    className="flex items-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem]"
                   >
                     {item.name === "Developed by ShoreaSG" ? (
                       <svg
-                        className={classNames("w-[1.5rem] h-[1.5rem] p-0")}
+                        className={classNames("w-[1.5rem] h-[1.5rem] flex-shrink-0")}
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +202,7 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                       </svg>
                     ) : (
                       <svg
-                        className={classNames("w-[1.5rem] h-[1.5rem] p-0")}
+                        className={classNames("w-[1.5rem] h-[1.5rem] flex-shrink-0")}
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -217,18 +216,19 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                       </svg>
                     )}
 
-                    <span className="p-0 font-plusjakartasans font-normal text-sm leading-[21px] text-[14px]">
+                    <span className="font-plusjakartasans font-normal leading-[21px] text-[14px]">
                       {item.name}
                     </span>
                   </Link>
                 ))}
               </div>
-              <div className="w-full flex flex-row justify-center items-center pt-2 pb-2 pl-0 pr-0 m-0 bg-[#275B6B] shadow-[0px_0px_10px_rgba(6,36,46,0.15)]">
+              <div className="flex justify-center items-center gap-4 self-stretch py-[6px] px-4 bg-[#275B6B] shadow-[0px_0px_10px_rgba(6,36,46,0.15)]">
                 <span className="text-[#f5f5f5] font-plusjakartasans p-0 m-0 font-normal text-sm tracking-[0.03125rem]">
                   #zilfam
                 </span>
               </div>
             </div>
+          </div>
           </div>
       )}
     </>

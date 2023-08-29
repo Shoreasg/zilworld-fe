@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [onMenuClick, setonMenuClick] = useState(true);
-  console.log(onMenuClick);
+  
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${lato.variable}`}>
       <head />
