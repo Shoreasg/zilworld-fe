@@ -148,12 +148,12 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                 >
                   {item.name !== "Connect" ? (
                     <item.icon
-                      className={classNames("w-[1.5rem] h-[1.5rem] p-0")}
+                      className={classNames("w-[1.5rem] h-[1.5rem]")}
                       aria-hidden="true"
                     />
                   ) : (
                     <svg
-                      className={classNames("w-[1.5rem] h-[1.5rem] p-0")}
+                      className={classNames("w-[1.5rem] h-[1.5rem]")}
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -168,7 +168,7 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
                       ></path>
                     </svg>
                   )}
-                  <span className="font-plusjakartasans font-semibold leading-[21px] text-[14px]">
+                  <span className="font-plusjakartasans font-semibold leading-[21px] text-[14px] text-right">
                     {item.name}
                   </span>
                 </Link>
