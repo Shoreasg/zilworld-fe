@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { IProjects } from "../../types";
-import CarousellBanners from "../components/CarousellBanners";
+import CarousellBanners from "../components/MobileCarousellBanners";
 import Note from "../components/Note";
 import getProjectsData from "../functions";
 import ComingSoonCard from "./components/ComingSoonCard";

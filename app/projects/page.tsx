@@ -1,16 +1,19 @@
 import { IProjects } from "../../types";
-import CarousellBanners from "../components/CarousellBanners";
 import getProjectsData from "../functions";
 import ProjectsCard from "./components/ProjectsCard";
 import * as _ from "lodash";
-import Note from "../components/Note";
+import MobileCarousellBanners from "../components/MobileCarousellBanners";
+import CarousellBanners from "../components/CarousellBanners";
 
 export default async function Projects() {
   const projectsData = await getProjectsData();
   const projects: IProjects[] = _.shuffle(projectsData.data);
   return (
     <>
-      <div className="pt-[3.5rem] pr-[3.5rem] pb-0 pl-[3.5rem] m-0 w-screen h-screen overflow-y-auto flex flex-col">
+    <div className="block md:hidden mt-14 z-20 absolute">
+      <MobileCarousellBanners />
+    {/* old code */}
+      {/* <div className="pt-[3.5rem] pr-[3.5rem] pb-0 pl-[3.5rem] m-0 w-screen h-screen overflow-y-auto flex flex-col">
         <CarousellBanners />
         <div className="border-t"></div>
         <div className="flex flex-row justify-center mt-6">
@@ -33,7 +36,11 @@ export default async function Projects() {
         <div className="flex flex-row justify-center">
           <ProjectsCard projectsData={projects} />
         </div>
-      </div>
+      </div> */}
+    </div>
+    <div className="hidden md:flex flex-grow basis-0 flex-shrink-0 self-stretch">
+    <CarousellBanners />
+    </div>
     </>
   );
 }

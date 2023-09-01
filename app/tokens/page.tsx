@@ -1,4 +1,4 @@
-import CarousellBanners from "../components/CarousellBanners";
+import CarousellBanners from "../components/MobileCarousellBanners";
 import Note from "../components/Note";
 import TokenCards from "./components/TokenCards";
 

@@ -2,7 +2,7 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Carousel from "nuka-carousel";
 
-export default function CarousellBanners() {
+export default function MobileCarousellBanners() {
   const BannerImages: {
     href: string;
     src: string;
@@ -34,7 +34,6 @@ export default function CarousellBanners() {
         renderCenterRightControls={null}
         autoplayInterval={5000}
         renderBottomCenterControls={({ currentSlide }) => null}
-        className=" pl-14 pr-14 "
       >
         {BannerImages.map((item, index) => (
           <div key={index} className="relative">
@@ -47,7 +46,7 @@ export default function CarousellBanners() {
                 className=" flex-shrink-0"
               />
             </a>
-            <div className="absolute inline-flex items-center gap-1 top-1 text-right right-1 font-normal text-[12px] leading-[18px] font-plusjakartasans text-[#F5F5F5] ">
+            <div className="absolute inline-flex items-center gap-1 top-1 text-right right-1 font-normal text-[10px] leading-[15px] font-plusjakartasans text-[#F5F5F5] ">
               Sponsored
               <InformationCircleIcon className=" w-3 h-3" />
             </div>
