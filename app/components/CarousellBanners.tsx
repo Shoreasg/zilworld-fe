@@ -44,6 +44,7 @@ export default function CarousellBanners() {
         className={carouselClass}
         beforeSlide={() => setIsShownPopUp(false)}
         dragging={false}
+        swiping={false}
       >
         {BannerImages.map((item, index) => (
           <div key={index} className="relative h-[8.25rem]">

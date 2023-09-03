@@ -35,6 +35,7 @@ export default function MobileCarousellBanners() {
         renderBottomCenterControls={({ currentSlide }) => null}
         beforeSlide={() => setIsShownPopUp(false)}
         swiping={false}
+        dragging={false}
       >
         {BannerImages.map((item, index) => (
           <div key={index} className="relative h-[112px]">
@@ -56,7 +57,7 @@ export default function MobileCarousellBanners() {
         ))}
       </Carousel>
       {isShownPopUp && (
-        <p className="absolute top-5 right-1 inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md font-plusjakartasans text-[#06242E] text-sm leading-[21px] font-normal">
+        <p className="absolute top-[74px] right-1 inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md font-plusjakartasans text-[#06242E] text-sm leading-[21px] font-normal">
           Advertising helps fund ZilWorld development.
         </p>
       )}
