@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useContext } from "react";
-import { onMenuClickContext } from "../layout";
+import { onMenuClickContext } from "../context/MenuContext";
 
 interface overlayProps{
   setMenuClick: Dispatch<SetStateAction<boolean>>;

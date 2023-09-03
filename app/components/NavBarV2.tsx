@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction, useContext, useState } from "react";
-import { onMenuClickContext } from "../layout";
+import { onMenuClickContext } from "../context/MenuContext";
 
 interface NavBarProps {
   setMenuClick: Dispatch<SetStateAction<boolean>>;

@@ -2,7 +2,7 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Carousel from "nuka-carousel";
 import { useContext, useState } from "react";
-import { onMenuClickContext } from "../layout";
+import { onMenuClickContext } from "../context/MenuContext";
 
 export default function CarousellBanners() {
   const [isShownPopUp, setIsShownPopUp] = useState(false);

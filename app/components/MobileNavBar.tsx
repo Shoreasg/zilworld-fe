@@ -12,7 +12,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
-import { onMenuClickContext } from "../layout";
+import { onMenuClickContext } from "../context/MenuContext";
 
 
 

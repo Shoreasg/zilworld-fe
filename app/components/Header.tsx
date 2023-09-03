@@ -1,6 +1,7 @@
 "use client";
 import { Dispatch, SetStateAction, useContext } from "react"
-import { onMenuClickContext } from "../layout";
+import { onMenuClickContext } from "../context/MenuContext";
+
 
 interface HeaderProps {
     setMenuClick: Dispatch<SetStateAction<boolean>>;

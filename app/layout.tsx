@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { AnalyticsWrapper } from "./analytics";
 import Header from "./components/Header";
 import NavBarV2 from "./components/NavBarV2";
@@ -7,6 +7,7 @@ import "./globals.css";
 import { Plus_Jakarta_Sans, Lato } from "@next/font/google";
 import MobileNavBar from "./components/MobileNavBar";
 import Overlay from "./components/Overlay";
+import { onMenuClickContext } from "./context/MenuContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -20,7 +21,6 @@ const lato = Lato({
   weight: ["400", "700"],
 });
 
-export const onMenuClickContext = createContext(true);
 
 export default function RootLayout({
   children,
