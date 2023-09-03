@@ -13,14 +13,19 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useContext, useState } from "react";
+import { onMenuClickContext } from "../layout";
 
-export default function NavBarV2() {
+interface NavBarProps {
+  setMenuClick: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function NavBarV2({setMenuClick }:NavBarProps) {
   const pathname = usePathname();
-  const [sideBarClose, setsideBarClose] = useState(true);
+  const menuClickContext = useContext(onMenuClickContext)
 
   const toggleNavbar = () => {
-    setsideBarClose(!sideBarClose);
+    setMenuClick(!menuClickContext);
   };
 
   const navigation = [
@@ -103,7 +108,7 @@ export default function NavBarV2() {
 
   return (
     <>
-      {sideBarClose ? (
+      {menuClickContext ? (
         <div
         className={
           `flex flex-col justify-between w-[80px] h-screen bg-[#097A8E] flex-shrink-0 self-stretch overflow-y-auto transition-all ease-in-out duration-200`}

@@ -1,12 +1,14 @@
 "use client";
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction, useContext } from "react"
+import { onMenuClickContext } from "../layout";
 
 interface HeaderProps {
     setMenuClick: Dispatch<SetStateAction<boolean>>;
-    menuClick: boolean;
   }
 
-export default function Header({ setMenuClick, menuClick }: HeaderProps){
+export default function Header({setMenuClick }: HeaderProps){
+
+  const menuClickContext = useContext(onMenuClickContext)
 
 return(
     <>
@@ -17,8 +19,8 @@ return(
               alt="ZilWorld Logo"
             ></img>
            <button className="text-light-mode-neutral-green-500 text-center font-Lato font-semibold text-sm uppercase tracking-wider"
-            onClick={()=>setMenuClick(!menuClick)}>
-                {menuClick ? "Menu": "Close"}
+            onClick={()=>setMenuClick(!menuClickContext)}>
+                {menuClickContext ? "Menu": "Close"}
             </button>
     </div>
     </>)

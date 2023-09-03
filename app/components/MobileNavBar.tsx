@@ -11,13 +11,12 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
+import { onMenuClickContext } from "../layout";
 
 
-interface NavBarProps {
-  menuClick: boolean;
-}
 
-export default function MobileNavBar({menuClick}:NavBarProps) {
+export default function MobileNavBar() {
   const pathname = usePathname();
 
   const navigation = [
@@ -97,10 +96,12 @@ export default function MobileNavBar({menuClick}:NavBarProps) {
     return classes.filter(Boolean).join(" ");
   }
 
+  const menuClickContext = useContext(onMenuClickContext)
+
 
   return (
     <>
-      {menuClick ? (
+      {menuClickContext ? (
         ''
       ) : (
         <div className="flex flex-col w-[50vw] h-screen items-start flex-shrink-0 bg-[#097A8E] z-40">

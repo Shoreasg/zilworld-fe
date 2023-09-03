@@ -1,10 +1,19 @@
 "use client";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Carousel from "nuka-carousel";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { onMenuClickContext } from "../layout";
 
 export default function CarousellBanners() {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
+
+  const menuClickContext = useContext(onMenuClickContext)
+
+  const carouselClass = menuClickContext ? "px-36" : "px-14";
+
+  const SponsoredClass = menuClickContext ? "absolute top-5 right-[146px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md font-plusjakartasans text-[#06242E] text-sm leading-[21px] font-normal":
+  "absolute top-5 right-[58px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md font-plusjakartasans text-[#06242E] text-sm leading-[21px] font-normal"
+
   const BannerImages: {
     href: string;
     src: string;
@@ -32,7 +41,7 @@ export default function CarousellBanners() {
         renderCenterRightControls={null}
         autoplayInterval={5000}
         renderBottomCenterControls={({ currentSlide }) => null}
-        className="px-14"
+        className={carouselClass}
         beforeSlide={() => setIsShownPopUp(false)}
         dragging={false}
       >
@@ -53,7 +62,7 @@ export default function CarousellBanners() {
         ))}
       </Carousel>
       {isShownPopUp && (
-        <p className="absolute top-5 right-[58px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md font-plusjakartasans text-[#06242E] text-sm leading-[21px] font-normal">
+        <p className={SponsoredClass}>
           Advertising helps fund ZilWorld development.
         </p>
       )}
