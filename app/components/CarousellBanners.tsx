@@ -32,9 +32,9 @@ export default function CarousellBanners() {
         renderCenterRightControls={null}
         autoplayInterval={5000}
         renderBottomCenterControls={({ currentSlide }) => null}
-        className=" pl-14 pr-14 "
-        onDragStart={() => setIsShownPopUp(false)}
+        className="px-14"
         beforeSlide={() => setIsShownPopUp(false)}
+        dragging={false}
       >
         {BannerImages.map((item, index) => (
           <div key={index} className="relative h-[8.25rem]">

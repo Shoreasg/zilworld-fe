@@ -33,8 +33,8 @@ export default function MobileCarousellBanners() {
         renderCenterRightControls={null}
         autoplayInterval={5000}
         renderBottomCenterControls={({ currentSlide }) => null}
-        onDragStart={() => setIsShownPopUp(false)}
         beforeSlide={() => setIsShownPopUp(false)}
+        swiping={false}
       >
         {BannerImages.map((item, index) => (
           <div key={index} className="relative h-[112px]">

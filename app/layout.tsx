@@ -34,7 +34,7 @@ export default function RootLayout({
         {/* Mobile View */}
         <div className="block md:hidden">
           <Header setMenuClick={setonMenuClick} menuClick={onMenuClick} />
-          <main className="bg-[#f5f5f5] flex w-screen h-full">
+          <main className="bg-[#f5f5f5] flex flex-col w-screen h-full">
             {onMenuClick ? (
               <>
                 <MobileNavBar menuClick={onMenuClick} />
