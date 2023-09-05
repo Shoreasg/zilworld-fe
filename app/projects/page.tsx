@@ -6,6 +6,7 @@ import MobileCarousellBanners from "../components/MobileCarousellBanners";
 import CarousellBanners from "../components/CarousellBanners";
 import Hero from "./components/Hero";
 import MobileHero from "./components/MobileHero";
+import SearchBar from "./components/SearchBar";
 
 export default async function Projects() {
   const projectsData = await getProjectsData();
@@ -45,6 +46,9 @@ export default async function Projects() {
         <div className="flex flex-col">
           <CarousellBanners />
           <Hero />
+          <div className="sticky top-0 flex w-full py-6 items-end gap-2 px-14">
+            <SearchBar/>
+          </div>
         </div>
       </div>
     </>
