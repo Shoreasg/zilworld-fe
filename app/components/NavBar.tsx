@@ -19,6 +19,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { plusJakartaSans } from "./font";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -232,9 +233,9 @@ export default function NavBar() {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-[#E6EAEB] text-[#275B6B] font-plusjakartasans"
+                        ? `bg-[#E6EAEB] text-[#275B6B] ${plusJakartaSans.className}`
                         : "text-gray-300 hover:text-[#275B6B]",
-                      "group flex items-center px-2 py-2 text-sm font-bold font-plusjakartasans"
+                      `group flex items-center px-2 py-2 text-sm font-bold ${plusJakartaSans.className}`
                     )}
                   >
                     <item.icon
@@ -261,9 +262,9 @@ export default function NavBar() {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-[#E6EAEB] text-[#275B6B] font-plusjakartasans"
+                        ? `bg-[#E6EAEB] text-[#275B6B] ${plusJakartaSans.className}`
                         : "text-gray-300 hover:text-[#275B6B]",
-                      "group flex items-center px-2 py-2 text-sm font-bold font-plusjakartasans"
+                      `group flex items-center px-2 py-2 text-sm font-bold ${plusJakartaSans.className}`
                     )}
                   >
                     <item.icon

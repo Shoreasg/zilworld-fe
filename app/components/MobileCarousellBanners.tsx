@@ -3,6 +3,7 @@ import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Carousel from "nuka-carousel";
 import { useState } from "react";
+import { plusJakartaSans } from "./font";
 
 export default function MobileCarousellBanners() {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
@@ -48,7 +49,7 @@ export default function MobileCarousellBanners() {
                 className=" flex-shrink-0 h-[112px] w-full"
               />
             </a>
-            <div className="absolute inline-flex items-center gap-1 top-1 text-right right-1 font-normal text-[10px] leading-[15px] font-plusjakartasans text-[#F5F5F5] ">
+            <div className={`absolute inline-flex items-center gap-1 top-1 text-right right-1 font-normal text-[10px] leading-[15px] ${plusJakartaSans.className} text-[#F5F5F5] `}>
               Sponsored
               <InformationCircleIcon
                 onClick={() => setIsShownPopUp(!isShownPopUp)}
@@ -59,7 +60,7 @@ export default function MobileCarousellBanners() {
         ))}
       </Carousel>
       {isShownPopUp && (
-        <p className="absolute top-[74px] right-1 inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md font-plusjakartasans text-[#06242E] text-sm leading-[21px] font-normal">
+        <p className={`absolute top-[74px] right-1 inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`}>
           Advertising helps fund ZilWorld development.
         </p>
       )}

@@ -16,6 +16,7 @@ import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction, useContext, useState } from "react";
 import { onMenuClickContext } from "../context/MenuContext";
 import Image from "next/image";
+import { plusJakartaSans } from "./font";
 
 interface NavBarProps {
   setMenuClick: Dispatch<SetStateAction<boolean>>;
@@ -238,7 +239,7 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
               ))}
             </div>
             <div className="w-full flex flex-row justify-center items-center pt-2 pb-2 pl-0 pr-0 m-0 bg-[#275B6B] shadow-[0px_0px_10px_rgba(6,36,46,0.15)]">
-              <span className="text-[#f5f5f5] font-plusjakartasans p-0 m-0 font-normal text-sm tracking-[0.03125rem]">
+              <span className={`text-[#f5f5f5] ${plusJakartaSans.className} p-0 m-0 font-normal text-sm tracking-[0.03125rem]`}>
                 #zilfam
               </span>
             </div>
@@ -276,7 +277,7 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
                     className={classNames("w-[1.5rem] h-[1.5rem] p-0")}
                     aria-hidden="true"
                   />
-                  <span className="p-0  font-plusjakartasans font-medium text-base">
+                  <span className={`p-0  ${plusJakartaSans.className} font-medium text-base`}>
                     {item.name}
                   </span>
                 </Link>
@@ -327,7 +328,7 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
                     </svg>
                   )}
 
-                  <span className="p-0  font-plusjakartasans font-medium text-base">
+                  <span className={`p-0 ${plusJakartaSans.className} font-medium text-base`}>
                     {item.name}
                   </span>
                 </Link>
@@ -378,14 +379,14 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
                       </svg>
                     )}
 
-                    <span className="p-0 font-plusjakartasans font-normal text-sm">
+                    <span className={`p-0 ${plusJakartaSans.className} font-normal text-sm`}>
                       {item.name}
                     </span>
                   </Link>
                 ))}
               </div>
               <div className="w-full flex flex-row justify-center items-center pt-2 pb-2 pl-0 pr-0 m-0 bg-[#275B6B] shadow-[0px_0px_10px_rgba(6,36,46,0.15)]">
-                <span className="text-[#f5f5f5] font-plusjakartasans p-0 m-0 font-normal text-sm tracking-[0.03125rem]">
+                <span className={`text-[#f5f5f5] ${plusJakartaSans.className} p-0 m-0 font-normal text-sm tracking-[0.03125rem]`}>
                   #zilfam
                 </span>
               </div>

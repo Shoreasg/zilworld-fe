@@ -4,24 +4,9 @@ import { AnalyticsWrapper } from "./analytics";
 import Header from "./components/Header";
 import NavBarV2 from "./components/NavBarV2";
 import "./globals.css";
-import { Plus_Jakarta_Sans, Lato } from "next/font/google";
 import MobileNavBar from "./components/MobileNavBar";
 import Overlay from "./components/Overlay";
 import { onMenuClickContext } from "./context/MenuContext";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-jakarta-sans",
-  style: ["normal", "italic"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-  display: "auto",
-  preload: false,
-});
-
-const lato = Lato({
-  variable: "--font-lato",
-  weight: ["400", "700"],
-  preload: false,
-});
 
 export default function RootLayout({
   children,

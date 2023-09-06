@@ -2,7 +2,7 @@
 import { Dispatch, SetStateAction, useContext } from "react"
 import { onMenuClickContext } from "../context/MenuContext";
 import Image from "next/image";
-
+import { lato } from "./font";
 
 interface HeaderProps {
     setMenuClick: Dispatch<SetStateAction<boolean>>;
@@ -22,7 +22,7 @@ return(
               height={48}
               alt="ZilWorld Logo"
             ></Image>
-           <button className="text-light-mode-neutral-green-500 text-center font-Lato font-semibold text-sm uppercase tracking-wider"
+           <button className={`text-light-mode-neutral-green-500 text-center ${lato.className} font-semibold text-sm uppercase tracking-wider`}
             onClick={()=>setMenuClick(!menuClickContext)}>
                 {menuClickContext ? "Menu": "Close"}
             </button>

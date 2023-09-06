@@ -13,6 +13,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
 import { onMenuClickContext } from "../context/MenuContext";
+import { plusJakartaSans } from "./font";
 
 
 
@@ -126,7 +127,7 @@ export default function MobileNavBar() {
                     className={classNames("w-[1.5rem] h-[1.5rem]")}
                     aria-hidden="true"
                   />
-                  <span className="font-plusjakartasans font-semibold leading-[21px] text-[14px]">
+                  <span className={`${plusJakartaSans.className} font-semibold leading-[21px] text-[14px]`}>
                     {item.name}
                   </span>
                 </Link>
@@ -169,7 +170,7 @@ export default function MobileNavBar() {
                       ></path>
                     </svg>
                   )}
-                  <span className="font-plusjakartasans font-semibold leading-[21px] text-[14px] text-right">
+                  <span className={`${plusJakartaSans.className} font-semibold leading-[21px] text-[14px] text-right`}>
                     {item.name}
                   </span>
                 </Link>
@@ -218,14 +219,14 @@ export default function MobileNavBar() {
                       </svg>
                     )}
 
-                    <span className="font-plusjakartasans font-normal leading-[21px] text-[14px]">
+                    <span className={`${plusJakartaSans.className}font-normal leading-[21px] text-[14px]`}>
                       {item.name}
                     </span>
                   </Link>
                 ))}
               </div>
               <div className="flex justify-center items-center gap-4 self-stretch py-[6px] px-4 bg-[#275B6B] shadow-[0px_0px_10px_rgba(6,36,46,0.15)]">
-                <span className="text-[#f5f5f5] font-plusjakartasans p-0 m-0 font-normal text-sm tracking-[0.03125rem]">
+                <span className={`text-[#f5f5f5] ${plusJakartaSans.className} p-0 m-0 font-normal text-sm tracking-[0.03125rem]`}>
                   #zilfam
                 </span>
               </div>

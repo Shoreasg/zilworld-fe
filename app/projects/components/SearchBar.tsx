@@ -6,6 +6,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import { plusJakartaSans } from "../../components/font";
 
 const Categories = [
   { id: 1, name: "All Projects" },
@@ -35,7 +36,7 @@ export default function SearchBar() {
 
   return (
     <>
-      <div className="flex items-start gap-1 font-lato text-2xl font-extrabold tracking-[1px] text-[#06242E]">
+      <div className={`flex items-start gap-1 text-2xl ${plusJakartaSans.className} font-extrabold tracking-[1px] text-[#06242E]`}>
         Projects
         <InformationCircleIcon className=" w-[14px] h-[14px]" />
       </div>
@@ -44,7 +45,7 @@ export default function SearchBar() {
           <input
             type="text"
             placeholder="Search projects"
-            className=" font-plusjakartasans text-base leading-[26px] font-normal bg-[#ECF0F1] text-left focus:outline-none"
+            className={`${plusJakartaSans.className} text-base leading-[26px] font-normal bg-[#ECF0F1] text-left focus:outline-none`}
           />
           <MagnifyingGlassIcon className=" w-5 h-5" />
         </div>
@@ -69,10 +70,10 @@ export default function SearchBar() {
                 {({ selected }) => (
                   <>
                     <div className="flex items-center gap-2 cursor-pointer">
-                      <div className=" font-plusjakartasans text-sm leading-[21px] font-semibold text-[#3B4242]">
+                      <div className={`${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-[#3B4242]`}>
                         {category.name}
                       </div>
-                      <div className=" font-plusjakartasans text-xs leading-[18px] font-normal text-center">
+                      <div className={` ${plusJakartaSans.className} text-xs leading-[18px] font-normal text-center`}>
                         (1)
                       </div>
                     </div>

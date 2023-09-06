@@ -4,6 +4,7 @@ import Carousel from "nuka-carousel";
 import { useContext, useState } from "react";
 import { onMenuClickContext } from "../context/MenuContext";
 import Image from "next/image";
+import { plusJakartaSans } from "./font";
 
 export default function CarousellBanners() {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
@@ -12,8 +13,8 @@ export default function CarousellBanners() {
 
   const carouselClass = menuClickContext ? "px-36" : "px-14";
 
-  const SponsoredClass = menuClickContext ? "absolute top-5 right-[146px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md font-plusjakartasans text-[#06242E] text-sm leading-[21px] font-normal":
-  "absolute top-5 right-[58px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md font-plusjakartasans text-[#06242E] text-sm leading-[21px] font-normal"
+  const SponsoredClass = menuClickContext ? `absolute top-5 right-[146px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`:
+  `absolute top-5 right-[58px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`
 
   const BannerImages: {
     href: string;
@@ -57,7 +58,7 @@ export default function CarousellBanners() {
                 className="h-[8.25rem] w-full flex-shrink-0"
               />
             </a>
-            <div className="absolute inline-flex items-center gap-1 top-1 text-right right-1 font-normal text-[12px] leading-[18px] font-plusjakartasans text-[#F5F5F5] ">
+            <div className={`absolute inline-flex items-center gap-1 top-1 text-right right-1 font-normal text-[12px] leading-[18px] ${plusJakartaSans.className} text-[#F5F5F5] `}>
               Sponsored
               <InformationCircleIcon className=" w-3 h-3 cursor-pointer" onMouseEnter={()=> setIsShownPopUp(true)} onMouseLeave={()=>setIsShownPopUp(false)} />
             </div>
