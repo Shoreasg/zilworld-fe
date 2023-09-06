@@ -18,6 +18,7 @@ import {
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -150,7 +151,7 @@ export default function NavBar() {
                   </Transition.Child>
                   <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
                     <div className="flex flex-row justify-center">
-                      <img
+                      <Image
                         className="h-20 w-auto"
                         src="/ZilWorld Logo.png"
                         alt="ZilWorld logo"
@@ -214,7 +215,7 @@ export default function NavBar() {
             <div className="flex flex-1 flex-col overflow-y-auto pt-[11.5px] pb-[19.5px]">
               <div className="flex justify-center">
                 <div className="flex flex-row justify-center">
-                  <img
+                  <Image
                     className=" h-28 w-28"
                     src="/ZilWorld Logo.png"
                     alt="ZilWorld logo"

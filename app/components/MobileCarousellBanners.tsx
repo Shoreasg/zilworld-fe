@@ -1,5 +1,6 @@
 "use client";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import Carousel from "nuka-carousel";
 import { useState } from "react";
 
@@ -40,7 +41,7 @@ export default function MobileCarousellBanners() {
         {BannerImages.map((item, index) => (
           <div key={index} className="relative h-[112px]">
             <a href={item.href} target={item.target} key={item.alt}>
-              <img
+              <Image
                 src={item.src}
                 alt={item.alt}
                 className=" flex-shrink-0 h-[112px] w-full"

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import parse from "html-react-parser";
 import { TokenDetailsCardProps } from "../../../../types";
+import Image from "next/image";
 
 export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
   return (
@@ -11,7 +12,7 @@ export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
             <div className="sm:flex sm:items-center sm:justify-between">
               <div className="sm:flex sm:space-x-5">
                 <div className="flex-shrink-0 flex flex-col justify-center">
-                  <img
+                  <Image
                     className="mx-auto h-20 w-20"
                     src={tokenData.icon}
                     alt="token icon"

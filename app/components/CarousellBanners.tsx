@@ -3,6 +3,7 @@ import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Carousel from "nuka-carousel";
 import { useContext, useState } from "react";
 import { onMenuClickContext } from "../context/MenuContext";
+import Image from "next/image";
 
 export default function CarousellBanners() {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
@@ -49,7 +50,7 @@ export default function CarousellBanners() {
         {BannerImages.map((item, index) => (
           <div key={index} className="relative h-[8.25rem]">
             <a href={item.href} target={item.target} key={item.alt}>
-              <img
+              <Image
                 src={item.src}
                 alt={item.alt}
                 className="h-[8.25rem] w-full flex-shrink-0"

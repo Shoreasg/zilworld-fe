@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IProjects } from "../types";
+import Image from "next/image";
 export const mapProjects = (category: string, data: IProjects[]) => {
   //function to map the projects into category
   if (!data.some((p) => p.category.includes(category))) {
@@ -9,7 +10,7 @@ export const mapProjects = (category: string, data: IProjects[]) => {
           <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110 w-fit m-auto">
             <div className="h-[280px] w-[280px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
               <div className="flex flex-1 flex-col p-8">
-                <img
+                <Image
                   className="mx-auto h-32 w-32"
                   src={projects.icon}
                   alt="token icon"
@@ -59,7 +60,7 @@ export const mapProjects = (category: string, data: IProjects[]) => {
           <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110 w-fit m-auto">
             <div className="h-[280px] w-[280px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
               <div className="flex flex-1 flex-col p-8">
-                <img
+                <Image
                   className="mx-auto h-24 w-24"
                   src={projects.icon}
                   alt="token icon"
@@ -114,7 +115,7 @@ export const mapComingSoonProjects = (data: IProjects[]) => {
             <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110 w-fit m-auto">
               <div className="h-[280px] w-[280px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
                 <div className="flex flex-1 flex-col p-8">
-                  <img
+                  <Image
                     className="mx-auto h-32 w-32"
                     src={newProjects.icon}
                     alt="token icon"

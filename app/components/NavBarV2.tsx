@@ -15,6 +15,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction, useContext, useState } from "react";
 import { onMenuClickContext } from "../context/MenuContext";
+import Image from "next/image";
 
 interface NavBarProps {
   setMenuClick: Dispatch<SetStateAction<boolean>>;
@@ -115,11 +116,11 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
       >
         <div className="flex flex-col justify-center items-start p-0 w-full">
           <div className="flex flex-col justify-center items-center h-[8.25rem] p-0 w-full">
-            <img
+            <Image
               className="h-[4rem] w-[4rem] flex-shrink-0"
               src="/ZilWorld Logo.png"
               alt="ZilWorld Logo"
-            ></img>
+            ></Image>
           </div>
           <div className=" w-full">
             {navigation.map((item) => (
@@ -249,11 +250,11 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
         >
           <div className="flex flex-col justify-center items-start p-0 w-full">
             <div className="flex flex-col justify-center items-center h-[8.25rem] p-0 w-full">
-              <img
+              <Image
                 className="h-[7rem] w-[7rem]"
                 src="/ZilWorld Logo.png"
                 alt="ZilWorld Logo"
-              ></img>
+              ></Image>
             </div>
             <div className=" w-full">
               {navigation.map((item) => (

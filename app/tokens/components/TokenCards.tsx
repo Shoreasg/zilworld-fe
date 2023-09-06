@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ITokens } from "../../../types";
+import Image from "next/image";
 
 async function getTokensData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/tokens/`, {
@@ -16,7 +17,7 @@ export default async function TokenCards() {
         <div className="rounded-md bg-gradient-to-r to-[#0A7581] from-[#4DBBBA] p-1 hover:scale-110">
           <div className="h-[200px] w-[200px] divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
             <div className="flex flex-1 flex-col p-8">
-              <img
+              <Image
                 className="mx-auto h-24 w-24"
                 src={token.icon}
                 alt="token icon"
