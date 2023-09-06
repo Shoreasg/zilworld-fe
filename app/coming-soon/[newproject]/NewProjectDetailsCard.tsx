@@ -45,6 +45,7 @@ export default function NewProjectDetailsCard({
               <div className="px-6 py-5 text-center text-sm font-medium ">
                 <Link
                   target={"_blank"}
+                  rel="noreferrer"
                   href={NewProjectData.website}
                   className="hover:text-[#0A7581]"
                 >
@@ -58,6 +59,7 @@ export default function NewProjectDetailsCard({
               <div className="px-6 py-5 text-center text-sm font-medium">
                 <Link
                   target={"_blank"}
+                  rel="noreferrer"
                   href={NewProjectData.telegram}
                   className="hover:text-[#0A7581]"
                 >
@@ -72,6 +74,7 @@ export default function NewProjectDetailsCard({
               <div className="px-6 py-5 text-center text-sm font-medium ">
                 <Link
                   target={"_blank"}
+                  rel="noreferrer"
                   href={NewProjectData.discord}
                   className="projectDatahover:text-[#0A7581]"
                 >
@@ -89,6 +92,7 @@ export default function NewProjectDetailsCard({
                 <Link
                   href={`https://viewblock.io/zilliqa/address/${address}`}
                   target={"_blank"}
+                  rel="noreferrer"
                   className="hover:text-[#0A7581]"
                 >
                   {key === 0 ? `Token Address` : `Token Address ${key + 1}`}
@@ -105,6 +109,7 @@ export default function NewProjectDetailsCard({
                     <Link
                       href={`https://zilswap.io/arky/collections/${address}`}
                       target={"_blank"}
+                      rel="noreferrer"
                       className="hover:text-[#0A7581]"
                     >
                       Get on ARKY
@@ -125,6 +130,7 @@ export default function NewProjectDetailsCard({
                     <Link
                       href={`https://cathulhu.tools/market/${address}`}
                       target={"_blank"}
+                      rel="noreferrer"
                       className="hover:text-[#0A7581]"
                     >
                       Get on CATHULHU.TOOLS
@@ -145,6 +151,7 @@ export default function NewProjectDetailsCard({
                     <Link
                       href={`https://zilswap.io/arky/collections/${address}`}
                       target={"_blank"}
+                      rel="noreferrer"
                       className="hover:text-[#0A7581]"
                     >
                       Get on Arky

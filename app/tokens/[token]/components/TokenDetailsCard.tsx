@@ -38,6 +38,7 @@ export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
                 <Link
                   target={"_blank"}
                   href={tokenData.website}
+                  rel="noreferrer"
                   className="hover:text-[#0A7581]"
                 >
                   Website
@@ -51,6 +52,7 @@ export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
                 <Link
                   target={"_blank"}
                   href={tokenData.telegram}
+                  rel="noreferrer"
                   className="hover:text-[#0A7581]"
                 >
                   Telegram
@@ -65,6 +67,7 @@ export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
                 <Link
                   target={"_blank"}
                   href={tokenData.discord}
+                  rel="noreferrer"
                   className="hover:text-[#0A7581]"
                 >
                   Discord
@@ -77,6 +80,7 @@ export default function TokenDetailsCard({ tokenData }: TokenDetailsCardProps) {
               <Link
                 href={`https://viewblock.io/zilliqa/address/${tokenData.address}`}
                 target={"_blank"}
+                rel="noreferrer"
                 className="hover:text-[#0A7581]"
               >
                 Viewblock

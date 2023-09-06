@@ -185,6 +185,7 @@ export default function MobileNavBar() {
                     key={item.name}
                     href={item.href}
                     target="_blank"
+                    rel="noreferrer"
                     className="flex items-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem]"
                   >
                     {item.name === "Developed by ShoreaSG" ? (

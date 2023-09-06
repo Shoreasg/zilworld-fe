@@ -283,6 +283,7 @@ export default function NavBar() {
                 className="text-gray-400 hover:text-gray-500 text flex flex-row justify-center mt-2 border-t "
                 href="https://twitter.com/zilworldapp"
                 target={"_blank"}
+                rel="noreferrer"
               >
                 <svg
                   fill="currentColor"

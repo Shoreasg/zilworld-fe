@@ -200,6 +200,7 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
                   key={item.name}
                   href={item.href}
                   target="_blank"
+                  rel="noreferrer"
                   className="flex flex-row items-center justify-center gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] self-stretch"
                 >
                   {item.name === "Developed by ShoreaSG" ? (
@@ -341,6 +342,7 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
                     key={item.name}
                     href={item.href}
                     target="_blank"
+                    rel="noreferrer"
                     className="flex flex-row items-center justify-start gap-[0.5rem] pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] self-stretch flex-grow-0"
                   >
                     {item.name === "Developed by ShoreaSG" ? (

@@ -49,7 +49,7 @@ export default function CarousellBanners() {
       >
         {BannerImages.map((item, index) => (
           <div key={index} className="relative h-[8.25rem]">
-            <a href={item.href} target={item.target} key={item.alt}>
+            <a href={item.href} target={item.target} key={item.alt} rel="noreferrer">
               <Image
                 src={item.src}
                 alt={item.alt}
