@@ -43,7 +43,7 @@ export default async function Projects() {
       </div> */}
       </div>
       <div className="hidden md:flex flex-grow basis-0 flex-shrink-0 self-stretch">
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full h-full">
           <CarousellBanners />
           <Hero />
           <div className="sticky top-0 flex w-full py-6 items-end gap-2 px-14">

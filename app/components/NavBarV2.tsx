@@ -117,8 +117,10 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
         <div className="flex flex-col justify-center items-start p-0 w-full">
           <div className="flex flex-col justify-center items-center h-[8.25rem] p-0 w-full">
             <Image
-              className="h-[4rem] w-[4rem] flex-shrink-0"
+              className="flex-shrink-0"
               src="/ZilWorld Logo.png"
+              width={64}
+              height={64}
               alt="ZilWorld Logo"
             ></Image>
           </div>
@@ -252,8 +254,9 @@ export default function NavBarV2({setMenuClick }:NavBarProps) {
           <div className="flex flex-col justify-center items-start p-0 w-full">
             <div className="flex flex-col justify-center items-center h-[8.25rem] p-0 w-full">
               <Image
-                className="h-[7rem] w-[7rem]"
                 src="/ZilWorld Logo.png"
+                width={112}
+                height={112}
                 alt="ZilWorld Logo"
               ></Image>
             </div>

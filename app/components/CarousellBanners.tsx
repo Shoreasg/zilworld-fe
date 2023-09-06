@@ -53,6 +53,7 @@ export default function CarousellBanners() {
               <Image
                 src={item.src}
                 alt={item.alt}
+                fill={true}
                 className="h-[8.25rem] w-full flex-shrink-0"
               />
             </a>

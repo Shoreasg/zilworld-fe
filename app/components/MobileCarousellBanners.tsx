@@ -44,6 +44,7 @@ export default function MobileCarousellBanners() {
               <Image
                 src={item.src}
                 alt={item.alt}
+                fill={true}
                 className=" flex-shrink-0 h-[112px] w-full"
               />
             </a>
