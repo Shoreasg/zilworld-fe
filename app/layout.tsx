@@ -14,11 +14,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   style: ["normal", "italic"],
   weight: ["200", "300", "400", "500", "600", "700", "800"],
   display: "auto",
+  preload:false
 });
 
 const lato = Lato({
   variable: "--font-lato",
   weight: ["400", "700"],
+  preload:false
 });
 
 
