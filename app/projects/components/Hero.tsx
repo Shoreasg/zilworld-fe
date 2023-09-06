@@ -15,7 +15,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="absloute inset flex justify-center items-center gap-6 pt-6">
-          <button className={`flex py-2 px-4 items-center gap-2 rounded-lg bg-[#FFC224] text-[#06242E] ${plusJakartaSans.className} text-base leading-[26px] font-semibold`}>
+          <button className={`flex py-2 px-4 items-center gap-2 rounded-lg border-2 border-[#06242E] bg-[#FFC224] text-[#06242E] ${plusJakartaSans.className} text-base leading-[26px] font-semibold`}>
             Start Browsing
           </button>
           <button className={`flex items-center gap-2 py-2 px-4 rounded-lg border-2 border-[#06242E] text-base leading-[26px] font-semibold ${plusJakartaSans.className} text-center`}>
