@@ -8,23 +8,28 @@ import Hero from "./components/Hero";
 import MobileHero from "./components/MobileHero";
 import SearchBar from "./components/SearchBar";
 import { Metadata } from "next";
+import MobileSearchBar from "./components/MobileSearchBar";
 
 export const metadata: Metadata = {
-  title: 'ZilWorld-Ecosystem of Zilliqa',
-  description: 'Ecosystem of Zilliqa',
-  icons:{
-    icon: '/ZilWorld Logo.png'
-  }
-}
+  title: "ZilWorld-Ecosystem of Zilliqa",
+  description: "Ecosystem of Zilliqa",
+  icons: {
+    icon: "/ZilWorld Logo.png",
+  },
+};
 
 export default async function Projects() {
   const projectsData = await getProjectsData();
   const projects: IProjects[] = _.shuffle(projectsData.data);
   return (
     <>
-      <div className="block md:hidden pt-[54px] z-20">
-        <MobileCarousellBanners />
-        <MobileHero/>
+      <div className="block lg:hidden pt-[54px] z-20">
+        <div className="flex flex-col w-full h-full">
+          <MobileCarousellBanners />
+          <MobileHero />
+          <MobileSearchBar />
+        </div>
+
         {/* old code */}
         {/* <div className="pt-[3.5rem] pr-[3.5rem] pb-0 pl-[3.5rem] m-0 w-screen h-screen overflow-y-auto flex flex-col">
         <CarousellBanners />
@@ -51,12 +56,12 @@ export default async function Projects() {
         </div>
       </div> */}
       </div>
-      <div className="hidden md:flex flex-grow basis-0 flex-shrink-0 self-stretch">
+      <div className="hidden lg:flex flex-grow basis-0 flex-shrink-0 self-stretch overflow-y-auto">
         <div className="flex flex-col w-full h-full">
           <CarousellBanners />
           <Hero />
           <div className="sticky top-0 flex w-full py-6 items-end gap-2 px-14">
-            <SearchBar/>
+            <SearchBar />
           </div>
         </div>
       </div>

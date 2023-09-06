@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className="h-full w-full">
         {/* Mobile View */}
         <onMenuClickContext.Provider value={onMenuClick}>
-          <div className="block md:hidden w-screen h-screen">
+          <div className="block lg:hidden w-screen h-screen">
             <Header setMenuClick={setonMenuClick} />
             <main className=" flex flex-col w-full h-full">
               {onMenuClick ? (
@@ -38,7 +38,7 @@ export default function RootLayout({
             </main>
           </div>
           {/* Web View */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block w-screen h-screen">
             <main className="flex w-full h-full">
               <NavBarV2 setMenuClick={setonMenuClick} />
               {children}

@@ -9,7 +9,16 @@ const nextConfig = {
       destination: '/projects',
       permanent: true,
     }]
-  }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*',
+        port: '',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig
