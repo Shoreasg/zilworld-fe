@@ -8,7 +8,6 @@ import { Plus_Jakarta_Sans, Lato } from "next/font/google";
 import MobileNavBar from "./components/MobileNavBar";
 import Overlay from "./components/Overlay";
 import { onMenuClickContext } from "./context/MenuContext";
-import Head from "next/head";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -37,9 +36,9 @@ export default function RootLayout({
       <body className="h-full w-full">
         {/* Mobile View */}
         <onMenuClickContext.Provider value={onMenuClick}>
-          <div className="block md:hidden">
+          <div className="block md:hidden w-screen h-screen">
             <Header setMenuClick={setonMenuClick} />
-            <main className="bg-[#f5f5f5] flex flex-col w-full h-full">
+            <main className=" flex flex-col w-full h-full">
               {onMenuClick ? (
                 <>
                   <MobileNavBar />
@@ -55,7 +54,7 @@ export default function RootLayout({
           </div>
           {/* Web View */}
           <div className="hidden md:block">
-            <main className="bg-[#f5f5f5] flex w-full h-full">
+            <main className="flex w-full h-full">
               <NavBarV2 setMenuClick={setonMenuClick} />
               {children}
               <AnalyticsWrapper />

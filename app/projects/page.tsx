@@ -22,7 +22,7 @@ export default async function Projects() {
   const projects: IProjects[] = _.shuffle(projectsData.data);
   return (
     <>
-      <div className="block md:hidden pt-[54px] z-20 absolute">
+      <div className="block md:hidden pt-[54px] z-20">
         <MobileCarousellBanners />
         <MobileHero/>
         {/* old code */}

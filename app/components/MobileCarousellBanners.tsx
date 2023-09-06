@@ -52,7 +52,7 @@ export default function MobileCarousellBanners() {
               Sponsored
               <InformationCircleIcon
                 onClick={() => setIsShownPopUp(!isShownPopUp)}
-                className=" w-3 h-3"
+                className="w-3 h-3"
               />
             </div>
           </div>
