@@ -7,6 +7,15 @@ import CarousellBanners from "../components/CarousellBanners";
 import Hero from "./components/Hero";
 import MobileHero from "./components/MobileHero";
 import SearchBar from "./components/SearchBar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'ZilWorld-Ecosystem of Zilliqa',
+  description: 'Ecosystem of Zilliqa',
+  icons:{
+    icon: '/ZilWorld Logo.png'
+  }
+}
 
 export default async function Projects() {
   const projectsData = await getProjectsData();

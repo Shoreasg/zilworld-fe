@@ -9,7 +9,6 @@ import MobileNavBar from "./components/MobileNavBar";
 import Overlay from "./components/Overlay";
 import { onMenuClickContext } from "./context/MenuContext";
 import Head from "next/head";
-import { Metadata } from "next";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -24,14 +23,6 @@ const lato = Lato({
   weight: ["400", "700"],
   preload: false,
 });
-
-export const metadata: Metadata = {
-  title: 'ZilWorld-Ecosystem of Zilliqa',
-  description: 'Ecosystem of Zilliqa',
-  icons:{
-    icon: '/ZilWorld Logo.png'
-  }
-}
 
 export default function RootLayout({
   children,
