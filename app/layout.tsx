@@ -31,7 +31,7 @@ export default function RootLayout({
 
   
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${lato.variable} h-full`}>
+    <html lang="en">
       <head />
       <body className="h-full">
         {/* Mobile View */}
