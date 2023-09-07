@@ -16,7 +16,7 @@ export default function MobileCarousellBanners() {
   }[] = [
     {
       href: "https://torchwallet.io/",
-      src: "/TorchWalletBanner.png",
+      src: "/samplebanner-min.png",
       alt: "TorchBanner",
       target: "_blank",
     },

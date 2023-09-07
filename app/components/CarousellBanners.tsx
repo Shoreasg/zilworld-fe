@@ -13,8 +13,8 @@ export default function CarousellBanners() {
 
   const carouselClass = menuClickContext ? "px-36  rounded-b-lg" : "px-14  rounded-b-lg";
 
-  const SponsoredClass = menuClickContext ? `absolute top-5 right-[146px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`:
-  `absolute top-5 right-[58px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-md ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`
+  const SponsoredClass = menuClickContext ? `absolute top-8 right-[152px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-[0_4px_16px_0_rgba(36,87,102,0.15) ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`:
+  `absolute top-8 right-[64px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-[0_4px_16px_0_rgba(36,87,102,0.15) ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`
 
   const BannerImages: {
     href: string;
@@ -24,7 +24,7 @@ export default function CarousellBanners() {
   }[] = [
     {
       href: "https://torchwallet.io/",
-      src: "/TorchWalletBanner.png",
+      src: "/samplebanner-min.png",
       alt: "TorchBanner",
       target: "_blank",
     },
@@ -49,16 +49,16 @@ export default function CarousellBanners() {
         swiping={false}
       >
         {BannerImages.map((item, index) => (
-          <div key={index} className="relative h-[8.25rem]">
+          <div key={index} className="relative h-[180px]">
             <a href={item.href} target={item.target} key={item.alt} rel="noreferrer">
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill={true}
-                className="h-[8.25rem] w-full flex-shrink-0  rounded-b-lg"
+                className=" w-full flex-shrink-0  rounded-b-lg]"
               />
             </a>
-            <div className={`absolute inline-flex items-center gap-1 top-1 text-right right-1 font-normal text-[12px] leading-[18px] ${plusJakartaSans.className} text-[#F5F5F5] `}>
+            <div className={`absolute inline-flex items-center gap-1 top-2 text-right right-1 font-normal text-[12px] leading-[18px] ${plusJakartaSans.className} text-[#F5F5F5] `}>
               Sponsored
               <InformationCircleIcon className=" w-3 h-3 cursor-pointer" onMouseEnter={()=> setIsShownPopUp(true)} onMouseLeave={()=>setIsShownPopUp(false)} />
             </div>

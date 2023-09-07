@@ -41,7 +41,7 @@ export default function MobileSearchBar() {
         Projects
         <InformationCircleIcon className=" w-[14px] h-[14px] cursor-pointer relative" onClick={()=> setIsShownPopUp(!isShownPopUp)}/>
       </div>
-      {isShownPopUp && (<div className=" absolute -bottom-[230px] inline-flex px-6 py-4 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-[0_4px_16px_0_rgba(36, 87, 102, 0.15)]">
+      {isShownPopUp && (<div className=" absolute -bottom-[230px] inline-flex px-6 py-4 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)]">
         <p className={`w-[345px] ${plusJakartaSans.className} font-semibold text-base leading-6 text-[#06242E]`}>Disclaimer </p>
         <p className=" w-[345px]">Please note that listing entities and applications on this site does not imply an endorsement by ZilWorld or Zilliqa in any way, nor does it constitute an official statement or affiliation with either organization. It is important to conduct independent due diligence before engaging with or using any Dapps listed on this site, and to not rely solely on the information provided. ZilWorld and Zilliqa take no responsibility for the accuracy of the information provided by the entities, projects, or applications listed on this site. ZilWorld is providing this site and its information as a resource for all users of the Zilliqa blockchain and those seeking to further engage with Zilliqa through applications and projects, or otherwise be connected with other developers and projects within the Zilliqa ecosystem. ZilWorld may update or stop supporting this site at any time as necessary.</p>
       </div>)}
@@ -65,7 +65,7 @@ export default function MobileSearchBar() {
               <FunnelIcon className="w-5 h-5" />
             </div>
           </Listbox.Button>
-          <Listbox.Options className=" absolute -bottom-28 w-[360px] h-[272px] flex pt-2 pb-6 flex-col items-start gap-[2px] overflow-auto no-scrollbar rounded-lg border-[#D5DEE0] bg-[#ECF0F1] shadow-[0_6px_20px_0_rgba(13, 50, 62, 0.05)]">
+          <Listbox.Options className=" absolute -bottom-28 w-[360px] h-[272px] flex pt-2 pb-6 flex-col items-start gap-[2px] overflow-auto no-scrollbar rounded-lg border-[#D5DEE0] bg-[#ECF0F1] shadow-[0_6px_20px_0_rgba(13,50,62,0.05)]">
             {Categories.map((category) => (
               <Listbox.Option
                 key={category.id}
