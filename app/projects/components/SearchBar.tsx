@@ -97,9 +97,9 @@ export default function SearchBar() {
         </Listbox>
       </div>
       {isShownPopUp && (<div className=" absolute top-14 left-[164px] inline-flex px-6 py-4 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)]">
-        <p className={`w-[345px] ${plusJakartaSans.className} font-semibold text-base leading-6 text-[#06242E]`}>Disclaimer </p>
-        <p className=" w-[345px]">Please note that listing entities and applications on this site does not imply an endorsement by ZilWorld or Zilliqa in any way, nor does it constitute an official statement or affiliation with either organization.</p>
-        <p className=" w-[345px]">It is important to conduct independent due diligence before engaging with or using any Dapps listed on this site and to not rely solely on the information provided. ZilWorld and Zilliqa take no responsibility for the accuracy of the information provided by the entities, projects, or applications listed on this site.</p>
+        <p className={`w-[345px] ${plusJakartaSans.className} font-semibold text-base leading-[26px] text-[#06242E]`}>Disclaimer </p>
+        <p className={`w-[345px] ${plusJakartaSans.className} font-normal text-sm leading-[21px] text-[#143E4A]`}>Please note that listing entities and applications on this site does not imply an endorsement by ZilWorld or Zilliqa in any way, nor does it constitute an official statement or affiliation with either organization.</p>
+        <p className={`w-[345px] ${plusJakartaSans.className} font-normal text-sm leading-[21px] text-[#143E4A]`}>It is important to conduct independent due diligence before engaging with or using any Dapps listed on this site and to not rely solely on the information provided. ZilWorld and Zilliqa take no responsibility for the accuracy of the information provided by the entities, projects, or applications listed on this site.</p>
       </div>)}
     </>
   );

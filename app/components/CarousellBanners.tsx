@@ -13,8 +13,8 @@ export default function CarousellBanners() {
 
   const carouselClass = menuClickContext ? "px-36  rounded-b-lg" : "px-14  rounded-b-lg";
 
-  const SponsoredClass = menuClickContext ? `absolute top-8 right-[152px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-[0_4px_16px_0_rgba(36,87,102,0.15) ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`:
-  `absolute top-8 right-[64px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-[0_4px_16px_0_rgba(36,87,102,0.15) ${plusJakartaSans.className} text-[#06242E] text-sm leading-[21px] font-normal`
+  const SponsoredClass = menuClickContext ? `absolute top-8 right-[152px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-[0_4px_16px_0_rgba(36,87,102,0.15) ${plusJakartaSans.className} text-[#143E4A] text-sm leading-[21px] font-normal`:
+  `absolute top-8 right-[64px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-[0_4px_16px_0_rgba(36,87,102,0.15) ${plusJakartaSans.className} text-[#143E4A] text-sm leading-[21px] font-normal`
 
   const BannerImages: {
     href: string;
