@@ -2,8 +2,8 @@ import _ from "lodash";
 import { IProjects } from "../../types";
 import CarousellBanners from "../components/MobileCarousellBanners";
 import Note from "../components/Note";
-import getProjectsData from "../functions";
 import ComingSoonCard from "./components/ComingSoonCard";
+import { getProjectsData } from "../functions";
 
 export default async function Coming_Soon() {
   const projectsData = await getProjectsData();
@@ -33,7 +33,7 @@ export default async function Coming_Soon() {
         </div>
 
         <div className="mx-auto py-6 max-w-7xl px-4 sm:px-6 md:px-8 flex justify-center">
-          <ComingSoonCard projectsData={projects} />
+          {/* <ComingSoonCard projectsData={projects} /> */}
         </div>
       </div>
     </>
