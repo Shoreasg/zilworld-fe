@@ -28,8 +28,8 @@ export const mapProjects = (
       project.category.includes(category);
     if (matchesCategory && (matchSearch || search === "")) {
       currentGroups.push(
-        <div className="flex p-6 flex-col items-start gap-4 flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1]">
-          <div className="flex flex-col justify-center items-start gap-1 self-stretch">
+        <div className="flex p-6 h-[180px] flex-col justify-between items-start gap-4 flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1]">
+          <div className="flex flex-col justify-between items-start gap-1 self-stretch">
             <div className="flex items-center gap-2">
               <div className="flex justify-center w-8 h-8 items-center rounded">
                 <Image
@@ -48,7 +48,7 @@ export const mapProjects = (
             </div>
             <div className="flex pt-2 pr-2 pb-2 items-start gap-2 self-stretch">
               <p
-                className={`${plusJakartaSans.className} text-xs leading-[18px] font-normal text-[#3B4242]`}
+                className={`${plusJakartaSans.className} text-xs leading-[18px] font-normal text-[#3B4242] line-clamp-2`}
               >
                 {project.description}
               </p>
@@ -62,7 +62,7 @@ export const mapProjects = (
                   key={key}
                   onClick={()=>onClickSelectedTab(name)}
                 >
-                  {name}
+                  <p className={`${plusJakartaSans.className} text-[10px] leadiing-[15px] font-normal`}>{name}</p>
                 </button>
               );
             })}
