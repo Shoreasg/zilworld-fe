@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface IMarketdata {
   usd_rate: number;
   ath: number;
@@ -56,6 +58,12 @@ export interface IProjects {
   announcements: [IAnnouncement];
 }
 
+export interface IProjectCategories{
+  name:string;
+  numClicks: number;
+  numCategories: number;
+}
+
 interface IDataSet {
   time: string;
   value: number;
@@ -88,6 +96,28 @@ export interface TokenChartProps {
 }
 
 export interface CardProps {
+  projectsData: IProjects[];
+  selected: string;
+  setSelected:  Dispatch<SetStateAction<string>>
+  search: string;
+}
+
+export interface ProjectCategoriesProps{
+  categories: IProjectCategories[];
+  numProjects: number;
+  selected: string;
+  setSelected:  Dispatch<SetStateAction<string>>
+  setSearch: Dispatch<SetStateAction<string>>
+}
+
+export interface ProjectPopularFilterProps{
+  categories: IProjectCategories[];
+  setSelected:  Dispatch<SetStateAction<string>>
+}
+
+export interface ProjectWithFilterProps{
+  categories: IProjectCategories[];
+  numProjects: number;
   projectsData: IProjects[];
 }
 

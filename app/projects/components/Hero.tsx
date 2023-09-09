@@ -3,6 +3,7 @@ import { lato, plusJakartaSans } from "../../components/font";
 
 export default function Hero() {
   return (
+    <div>
     <div className="relative mx-14 mt-[27px] h-[314px] rounded-lg">
       <div className="absolute inset-0 bg-[url('/HeroBG.jpg')] bg-cover bg-no-repeat bg-center opacity-10 rounded-lg" />
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
@@ -24,6 +25,7 @@ export default function Hero() {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -1,14 +1,14 @@
 import { IProjects } from "../../types";
-import getProjectsData from "../functions";
 import ProjectsCard from "./components/ProjectsCard";
 import * as _ from "lodash";
 import MobileCarousellBanners from "../components/MobileCarousellBanners";
 import CarousellBanners from "../components/CarousellBanners";
 import Hero from "./components/Hero";
 import MobileHero from "./components/MobileHero";
-import SearchBar from "./components/SearchBar";
 import { Metadata } from "next";
 import MobileSearchBar from "./components/MobileSearchBar";
+import ProjectsWithFilter from "./components/ProjectsWithFilter";
+import { getProjectsCategoriesData, getProjectsData } from "../functions";
 
 export const metadata: Metadata = {
   title: "ZilWorld-Ecosystem of Zilliqa",
@@ -20,7 +20,8 @@ export const metadata: Metadata = {
 
 export default async function Projects() {
   const projectsData = await getProjectsData();
-  const projects: IProjects[] = _.shuffle(projectsData.data);
+  const projectCategoriesData = await getProjectsCategoriesData();
+  const totalProjects:number = projectsData.data.length;
   return (
     <>
       <div className="block lg:hidden pt-[54px] z-20">
@@ -60,9 +61,7 @@ export default async function Projects() {
         <div className="flex flex-col w-full h-full">
           <CarousellBanners />
           <Hero />
-          <div className="sticky top-0 flex w-full py-6 items-end gap-2 px-14">
-            <SearchBar />
-          </div>
+          <ProjectsWithFilter categories={projectCategoriesData.data} numProjects={totalProjects} projectsData={projectsData.data}/>
         </div>
       </div>
     </>

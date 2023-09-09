@@ -5,35 +5,21 @@ import {
   InformationCircleIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { plusJakartaSans } from "../../components/font";
+import { IProjectCategories, ProjectCategoriesProps } from "../../../types";
+import { updateProjectCategoriesClicks } from "../../functions";
 
-const Categories = [
-  { id: 1, name: "All Projects" },
-  { id: 2, name: "Wallets" },
-  { id: 3, name: "DEX" },
-  { id: 4, name: "NFT" },
-  { id: 5, name: "Analytics" },
-  { id: 6, name: "NFT MarketPlace" },
-  { id: 7, name: "Watch" },
-  { id: 8, name: "Games" },
-  { id: 9, name: "Music" },
-  { id: 10, name: "News" },
-  { id: 11, name: "Funds" },
-  { id: 12, name: "Bridges" },
-  { id: 13, name: "Message" },
-  { id: 14, name: "Finance" },
-  { id: 15, name: "Create" },
-  { id: 16, name: "Decentralized Identity" },
-  { id: 17, name: "Liquid Staking" },
-  { id: 18, name: "Ecommerce" },
-  { id: 19, name: "Education" },
-  { id: 20, name: "Developer Tools" },
-];
 
-export default function SearchBar() {
-  const [selected, setSelected] = useState<string>("");
+export default function SearchBar({categories,numProjects,setSelected,selected, setSearch}:ProjectCategoriesProps) {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
+
+  const onFilterChange = async (selectedValue:string) =>{
+    
+    setSelected(selectedValue)
+    await updateProjectCategoriesClicks(selectedValue);
+
+  }
 
   return (
     <>
@@ -47,10 +33,11 @@ export default function SearchBar() {
             type="text"
             placeholder="Search projects"
             className={`${plusJakartaSans.className} text-base leading-[26px] font-normal bg-[#ECF0F1] text-left focus:outline-none`}
+            onChange={e=>setSearch(e.target.value)}
           />
           <MagnifyingGlassIcon className=" w-5 h-5" />
         </div>
-        <Listbox value={selected} onChange={setSelected}>
+        <Listbox value={selected ? selected : "All Projects"} onChange={onFilterChange}>
           <Listbox.Button>
             <div className="flex w-[268px] h-12 px-4 justify-between items-center rounded-lg bg-[#ECF0F1]">
               {selected ? (
@@ -62,9 +49,38 @@ export default function SearchBar() {
             </div>
           </Listbox.Button>
           <Listbox.Options className=" absolute -bottom-[256px] w-[268px] h-[272px] flex pt-2 pb-6 flex-col items-start gap-[2px] overflow-auto no-scrollbar rounded-lg border-[#D5DEE0] bg-[#ECF0F1] shadow-[0_6px_20px_0_rgba(13,50,62,0.05)]">
-            {Categories.map((category) => (
+          <Listbox.Option
+                key={0}
+                value={"All Projects"}
+                className="flex py-2 px-4 justify-between items-center self-stretch border-t-0 border-r-0 border-l-0 border-b border-solid border-[#E6EAEB]"
+              >
+              {({active, selected }) => (
+                  <>
+                    <div className={`flex items-center gap-2 cursor-pointer ${active || selected ? `${plusJakartaSans.className} text-sm leading-[21px] text-[#3B4242] font-semibold`:`${plusJakartaSans.className} text-xs leading-[18px] font-normal text-center`}`} >
+                      <div>
+                      All Projects
+                      </div>
+                      <div>
+                        ({numProjects})
+                      </div>
+                    </div>
+                    {selected ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="13"
+                        viewBox="0 0 12 13"
+                        fill="none"
+                      >
+                        <circle cx="6" cy="6.5" r="6" fill="#097A8E" />
+                      </svg>
+                    ) : null}
+                       </>
+                )}
+            </Listbox.Option>
+            {categories.map((category:IProjectCategories,key:number) => (
               <Listbox.Option
-                key={category.id}
+                key={key+1}
                 value={category.name}
                 className="flex py-2 px-4 justify-between items-center self-stretch border-t-0 border-r-0 border-l-0 border-b border-solid border-[#E6EAEB]"
               >
@@ -75,7 +91,7 @@ export default function SearchBar() {
                         {category.name}
                       </div>
                       <div>
-                        (1)
+                        ({category.numCategories})
                       </div>
                     </div>
                     {selected ? (
