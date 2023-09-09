@@ -10,5 +10,5 @@ export default function ProjectsCard({
   setSelected,
   search,
 }: CardProps) {
-  return <>{mapProjects(selected, projectsData, search)}</>;
+  return <>{mapProjects(selected, projectsData, search,setSelected)}</>;
 }

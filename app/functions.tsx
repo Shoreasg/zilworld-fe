@@ -2,14 +2,21 @@ import Link from "next/link";
 import { IProjects } from "../types";
 import Image from "next/image";
 import { lato, plusJakartaSans } from "./components/font";
+import { Dispatch, SetStateAction } from "react";
 export const mapProjects = (
   category: string,
   data: IProjects[],
-  search: string
+  search: string,
+  setSelected: Dispatch<SetStateAction<string>>
 ) => {
   //function to map the projects into category
   const projectGroups: JSX.Element[] = [];
   let currentGroups: JSX.Element[] = [];
+
+  const onClickSelectedTab = async (catName:string)=>{
+    setSelected(catName);
+    await updateProjectCategoriesClicks(catName);
+  }
 
   data.forEach((project, index) => {
     const matchSearch = project.name
@@ -50,12 +57,13 @@ export const mapProjects = (
           <div className="flex items-start gap-2 self-stretch">
             {project.category.map((name, key) => {
               return (
-                <div
+                <button
                   className="flex h-5 px-2 py-[6px] justify-center items-center gap-1 rounded bg-[#D5DEE0]"
                   key={key}
+                  onClick={()=>onClickSelectedTab(name)}
                 >
                   {name}
-                </div>
+                </button>
               );
             })}
           </div>
