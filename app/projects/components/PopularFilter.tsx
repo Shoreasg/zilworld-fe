@@ -30,7 +30,7 @@ export default function PopularFilter({categories,setSelected}:ProjectPopularFil
                     {category.name}
                   </p>
                   <sup
-                    className={`${plusJakartaSans.className} font-light text-xs text-right text-[#3B4242]`}
+                    className={`${plusJakartaSans.className} font-light text-[10px] text-right text-[#3B4242]`}
                   >
                     ({category.numCategories})
                   </sup>
