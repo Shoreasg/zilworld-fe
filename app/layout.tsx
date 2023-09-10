@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="h-full w-full">
+      <body className="h-full w-full bg-[#F5F5F5]">
         {/* Mobile View */}
         <onMenuClickContext.Provider value={onMenuClick}>
           <div className="block lg:hidden w-screen h-screen">

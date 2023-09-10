@@ -13,9 +13,11 @@ export default function ProjectsWithFilter({categories,numProjects,projectsData}
   
   return (
     <div className="flex flex-col">
-      <div className="sticky border-b-[1px] bg-[#F5F5F5] border-[#D5DEE0]  top-0 flex w-full py-6 items-end gap-2 px-14">
+      <div className="sticky  bg-[#F5F5F5] top-0 flex w-full py-6 items-end gap-2 px-14">
+      
         <SearchBar categories={categories} numProjects={numProjects} setSelected={setSelected} selected={selected} setSearch={setSearch}/>
       </div>
+      <div className="border-t-[1px] border-[#D5DEE0] mx-14"/>
       <PopularFilter categories={categories} setSelected={setSelected} />
       <div className="flex w-full p-8 flex-col px-[88px] items-start gap-6">
        <ProjectsCard projectsData={projectsData} selected={selected} setSelected={setSelected} search={search}/>
