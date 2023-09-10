@@ -15,7 +15,7 @@ export default function PopularFilter({categories,setSelected}:ProjectPopularFil
     (category: IProjectCategories, key: number) => {
       if (category.numClicks >= 50) {
         return (
-            <div className="flex flex-col items-start gap-2 self-stretch px-14" key={key}>
+            <div className="flex flex-col pt-6 items-start gap-2 self-stretch px-14" key={key}>
             <p
               className={`${plusJakartaSans.className} text-sm leading-[21px] font-semibold`}
             >
