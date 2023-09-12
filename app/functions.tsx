@@ -2,12 +2,14 @@ import Link from "next/link";
 import { IProjects } from "../types";
 import Image from "next/image";
 import { lato, plusJakartaSans } from "./components/font";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
+import { onMenuClickContext } from "./context/MenuContext";
 export const mapProjects = (
   category: string,
   data: IProjects[],
   search: string,
-  setSelected: Dispatch<SetStateAction<string>>
+  setSelected: Dispatch<SetStateAction<string>>,
+  menuClickContext: boolean
 ) => {
   //function to map the projects into category
   const projectGroups: JSX.Element[] = [];
@@ -33,7 +35,7 @@ export const mapProjects = (
       project.category.includes(category);
     if (matchesCategory && (matchSearch || search === "")) {
       currentGroups.push(
-        <Link className="flex p-6 h-[180px] flex-col justify-between items-start gap-4 flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1] hover:border-0" href={`/projects/${project.name}`}>
+        <Link className={`flex p-6 h-[180px] ${menuClickContext?"max-w-sm":"max-w-xs"} flex-col justify-between items-start gap-4  flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1] hover:border-0`} href={`/projects/${project.name}`}>
           <div className="flex flex-col justify-between items-start gap-1 self-stretch">
             <div className="flex items-center gap-2">
               <div className="flex justify-center w-8 h-8 items-center rounded">

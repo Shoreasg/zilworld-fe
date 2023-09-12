@@ -1,8 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CardProps } from "../../../types";
 import { mapProjects } from "../../functions";
 import FilterMenu from "./FilterMenu";
+import { onMenuClickContext } from "../../context/MenuContext";
 
 export default function ProjectsCard({
   projectsData,
@@ -10,5 +11,7 @@ export default function ProjectsCard({
   setSelected,
   search,
 }: CardProps) {
-  return <>{mapProjects(selected, projectsData, search,setSelected)}</>;
+
+  const menuClickContext = useContext(onMenuClickContext);
+  return <>{mapProjects(selected, projectsData, search,setSelected, menuClickContext)}</>;
 }
