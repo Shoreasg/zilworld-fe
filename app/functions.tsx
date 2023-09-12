@@ -23,11 +23,10 @@ export const mapProjects = (
       return matchesCategory && (matchSearch || search === "");
     })
     .map((project, index) => (
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden" key={index}>
         <Link
           className={`flex p-6 h-[180px] flex-col justify-between items-start gap-4  flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1] hover:bg-[#F5F5F5]`}
           href={`/projects/${project.name}`}
-          key={index}
         >
           {project.isNew && (  
           <div className="flex w-[73.467px] h-[18px] rotate-45 px-2 justify-center items-center absolute -right-4 top-3 bg-[#FFC224] ">
