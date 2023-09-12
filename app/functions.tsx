@@ -12,13 +12,18 @@ export const mapProjects = (
   //function to map the projects into category
   const projectGroups: JSX.Element[] = [];
   let currentGroups: JSX.Element[] = [];
+  const project = data.sort(function(a, b){
+    if(a.name < b.name) { return -1; }
+    if(a.name > b.name) { return 1; }
+    return 0;
+})
 
   const onClickSelectedTab = async (catName:string)=>{
     setSelected(catName);
     await updateProjectCategoriesClicks(catName);
   }
 
-  data.forEach((project, index) => {
+  project.forEach((project, index) => {
     const matchSearch = project.name
       .toLowerCase()
       .includes(search.toLowerCase());
@@ -28,7 +33,7 @@ export const mapProjects = (
       project.category.includes(category);
     if (matchesCategory && (matchSearch || search === "")) {
       currentGroups.push(
-        <div className="flex p-6 h-[180px] flex-col justify-between items-start gap-4 flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1]">
+        <Link className="flex p-6 h-[180px] flex-col justify-between items-start gap-4 flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1] hover:border-0" href={`/projects/${project.name}`}>
           <div className="flex flex-col justify-between items-start gap-1 self-stretch">
             <div className="flex items-center gap-2">
               <div className="flex justify-center w-8 h-8 items-center rounded">
@@ -67,7 +72,7 @@ export const mapProjects = (
               );
             })}
           </div>
-        </div>
+        </Link>
       );
     }
     if (currentGroups.length === 3 || index === data.length - 1) {

@@ -18,6 +18,8 @@ export default function ProjectDetailsCard({
                     className="mx-auto h-20 w-20"
                     src={projectData.icon}
                     alt="token icon"
+                    width={20}
+                    height={20}
                   />
                 </div>
                 <div className="flex flex-col justify-center text-center sm:text-left">
