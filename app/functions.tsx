@@ -31,7 +31,7 @@ export const mapProjects = (
         >
           {project.isNew && (  
           <div className="flex w-[73.467px] h-[18px] rotate-45 px-2 justify-center items-center absolute -right-4 top-3 bg-[#FFC224] ">
-            <p className={`text-right ${plusJakartaSans.className} text-[10px] leading-3 font-bold capitalize`}>NEW</p>
+            <p className={`text-right ${plusJakartaSans.className} text-[10px] leading-3 font-bold capitalize text-[#06242E]`}>NEW</p>
           </div>
          )
           }
