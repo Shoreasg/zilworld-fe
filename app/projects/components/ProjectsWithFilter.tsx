@@ -19,7 +19,9 @@ export default function ProjectsWithFilter({categories,numProjects,projectsData}
       <div className="border-t-[1px] border-[#D5DEE0] mx-14"/>
       <PopularFilter categories={categories} setSelected={setSelected} />
       <div className="flex w-full p-8 flex-col px-[88px] items-start gap-6">
+      <div className="grid grid-cols-3 gap-6 items-stretch">
        <ProjectsCard projectsData={projectsData} selected={selected} setSelected={setSelected} search={search}/>
+       </div>
       </div>
     </div>
   );

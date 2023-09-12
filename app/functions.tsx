@@ -9,35 +9,27 @@ export const mapProjects = (
   data: IProjects[],
   search: string,
   setSelected: Dispatch<SetStateAction<string>>,
-  menuClickContext: boolean
 ) => {
-  //function to map the projects into category
-  const projectGroups: JSX.Element[] = [];
-  let currentGroups: JSX.Element[] = [];
-  const project = data.sort(function(a, b){
-    if(a.name < b.name) { return -1; }
-    if(a.name > b.name) { return 1; }
-    return 0;
-})
-
-  const onClickSelectedTab = async (catName:string)=>{
-    setSelected(catName);
-    await updateProjectCategoriesClicks(catName);
-  }
-
-  project.forEach((project, index) => {
-    const matchSearch = project.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
-    const matchesCategory =
-      category === "All Projects" ||
-      category === "" ||
-      project.category.includes(category);
-    if (matchesCategory && (matchSearch || search === "")) {
-      currentGroups.push(
-        <Link className={`flex p-6 h-[180px] ${menuClickContext?"max-w-sm":"max-w-xs"} flex-col justify-between items-start gap-4  flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1] hover:border-0`} href={`/projects/${project.name}`}>
+  const projectGroups: JSX.Element[] = data
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .filter((project) => {
+      const matchSearch = project.name
+        .toLowerCase()
+        .includes(search.toLowerCase());
+      const matchesCategory =
+        category === "All Projects" ||
+        category === "" ||
+        project.category.includes(category);
+      return matchesCategory && (matchSearch || search === "");
+    })
+    .map((project, index) => (
+        <Link
+          className={`flex p-6 h-[180px] flex-col justify-between items-start gap-4  flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1] hover:bg-[#F5F5F5]`}
+          href={`/projects/${project.name}`}
+          key={index}
+        >
           <div className="flex flex-col justify-between items-start gap-1 self-stretch">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-full">
               <div className="flex justify-center w-8 h-8 items-center rounded">
                 <Image
                   width={32}
@@ -48,7 +40,7 @@ export const mapProjects = (
                 />
               </div>
               <p
-                className={`${lato.className} font-extrabold text-base tracking-[1px] capitalize`}
+                className={`${lato.className} font-extrabold text-base tracking-[1px] capitalize line-clamp-1`}
               >
                 {project.name}
               </p>
@@ -67,25 +59,19 @@ export const mapProjects = (
                 <button
                   className="flex h-5 px-2 py-[6px] justify-center items-center gap-1 rounded bg-[#D5DEE0]"
                   key={key}
-                  onClick={()=>onClickSelectedTab(name)}
+                  onClick={() => setSelected(name)}
                 >
-                  <p className={`${plusJakartaSans.className} text-[10px] leadiing-[15px] font-normal`}>{name}</p>
+                  <p
+                    className={`${plusJakartaSans.className} text-[10px] leadiing-[15px] font-normal`}
+                  >
+                    {name}
+                  </p>
                 </button>
               );
             })}
           </div>
         </Link>
-      );
-    }
-    if (currentGroups.length === 3 || index === data.length - 1) {
-      projectGroups.push(
-        <div className="flex items-start gap-6 self-stretch">
-          {currentGroups}
-        </div>
-      );
-      currentGroups = [];
-    }
-  });
+    ));
 
   return projectGroups;
 };
