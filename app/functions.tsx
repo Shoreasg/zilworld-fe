@@ -23,11 +23,19 @@ export const mapProjects = (
       return matchesCategory && (matchSearch || search === "");
     })
     .map((project, index) => (
+      <div className="relative overflow-hidden">
         <Link
           className={`flex p-6 h-[180px] flex-col justify-between items-start gap-4  flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1] hover:bg-[#F5F5F5]`}
           href={`/projects/${project.name}`}
           key={index}
         >
+          {project.isNew && (  
+          <div className="flex w-[73.467px] h-[18px] rotate-45 px-2 justify-center items-center absolute -right-4 top-3 bg-[#FFC224] ">
+            <p className={`text-right ${plusJakartaSans.className} text-[10px] leading-3 font-bold capitalize`}>NEW</p>
+          </div>
+         )
+          }
+        
           <div className="flex flex-col justify-between items-start gap-1 self-stretch">
             <div className="flex items-center gap-2 w-full">
               <div className="flex justify-center w-8 h-8 items-center rounded">
@@ -71,6 +79,7 @@ export const mapProjects = (
             })}
           </div>
         </Link>
+        </div>
     ));
 
   return projectGroups;
