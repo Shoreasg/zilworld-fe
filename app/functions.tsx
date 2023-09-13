@@ -2,13 +2,12 @@ import Link from "next/link";
 import { IProjects } from "../types";
 import Image from "next/image";
 import { lato, plusJakartaSans } from "./components/font";
-import { Dispatch, SetStateAction, useContext } from "react";
-import { onMenuClickContext } from "./context/MenuContext";
+import { Dispatch, SetStateAction } from "react";
 export const mapProjects = (
   category: string,
   data: IProjects[],
   search: string,
-  setSelected: Dispatch<SetStateAction<string>>,
+  setSelected: Dispatch<SetStateAction<string>>
 ) => {
   const projectGroups: JSX.Element[] = data
     .sort((a, b) => a.name.localeCompare(b.name))
@@ -24,42 +23,45 @@ export const mapProjects = (
     })
     .map((project, index) => (
       <div className="relative overflow-hidden" key={index}>
-        <Link
+        <div
           className={`flex p-6 h-[180px] flex-col justify-between items-start gap-4  flex-grow flex-shrink-0 basis-0 rounded-lg border border-[#36788C54] bg-[#ECF0F1] hover:border-[#F5F5F5]`}
-          href={`/projects/${project.name}`}
         >
-          {project.isNew && (  
-          <div className="flex w-[73.467px] h-[18px] rotate-45 px-2 justify-center items-center absolute -right-4 top-3 bg-[#FFC224] ">
-            <p className={`text-right ${plusJakartaSans.className} text-[10px] leading-3 font-bold capitalize text-[#06242E]`}>NEW</p>
-          </div>
-         )
-          }
-        
-          <div className="flex flex-col justify-between items-start gap-1 self-stretch">
-            <div className="flex items-center gap-2 w-full">
-              <div className="flex justify-center w-8 h-8 items-center rounded">
-                <Image
-                  width={32}
-                  height={32}
-                  className="flex-shrink-0 rounded-md"
-                  src={project.icon}
-                  alt={project.name}
-                />
+          {project.isNew && (
+            <div className="flex w-[73.467px] h-[18px] rotate-45 px-2 justify-center items-center absolute -right-4 top-3 bg-[#FFC224] ">
+              <p
+                className={`text-right ${plusJakartaSans.className} text-[10px] leading-3 font-bold capitalize text-[#06242E]`}
+              >
+                NEW
+              </p>
+            </div>
+          )}
+          <Link href={`/projects/${project.name}`}>
+            <div className="flex flex-col justify-between items-start gap-1 self-stretch">
+              <div className="flex items-center gap-2 w-full">
+                <div className="flex justify-center w-8 h-8 items-center rounded">
+                  <Image
+                    width={32}
+                    height={32}
+                    className="flex-shrink-0 rounded-md"
+                    src={project.icon}
+                    alt={project.name}
+                  />
+                </div>
+                <p
+                  className={`${lato.className} font-extrabold text-base tracking-[1px] capitalize line-clamp-1`}
+                >
+                  {project.name}
+                </p>
               </div>
-              <p
-                className={`${lato.className} font-extrabold text-base tracking-[1px] capitalize line-clamp-1`}
-              >
-                {project.name}
-              </p>
+              <div className="flex pt-2 pr-2 pb-2 items-start gap-2 self-stretch">
+                <p
+                  className={`${plusJakartaSans.className} text-xs leading-[18px] font-normal text-[#3B4242] line-clamp-2`}
+                >
+                  {project.description}
+                </p>
+              </div>
             </div>
-            <div className="flex pt-2 pr-2 pb-2 items-start gap-2 self-stretch">
-              <p
-                className={`${plusJakartaSans.className} text-xs leading-[18px] font-normal text-[#3B4242] line-clamp-2`}
-              >
-                {project.description}
-              </p>
-            </div>
-          </div>
+          </Link>
           <div className="flex items-start gap-2 self-stretch">
             {project.category.map((name, key) => {
               return (
@@ -77,8 +79,8 @@ export const mapProjects = (
               );
             })}
           </div>
-        </Link>
         </div>
+      </div>
     ));
 
   return projectGroups;
