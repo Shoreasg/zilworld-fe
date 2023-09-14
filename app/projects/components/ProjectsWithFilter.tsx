@@ -5,7 +5,7 @@ import PopularFilter from "./PopularFilter";
 import SearchBar from "./SearchBar";
 import ProjectsCard from "./ProjectsCard";
 
-export default function ProjectsWithFilter({categories,numProjects,projectsData}:ProjectWithFilterProps) {
+export default function ProjectsWithFilter({categories,numProjects,projectsData, projectsRef}:ProjectWithFilterProps) {
   const [selected, setSelected] = useState<string>("");
   const [search, setSearch] = useState("");
 
@@ -13,7 +13,7 @@ export default function ProjectsWithFilter({categories,numProjects,projectsData}
   
   return (
     <div className="flex flex-col">
-      <div className="sticky  bg-[#F5F5F5] top-0 flex w-full py-6 items-end gap-2 px-14 z-20">   
+      <div className="sticky bg-[#F5F5F5] top-0 flex w-full py-6 items-end gap-2 px-14 z-20 " ref={projectsRef}  id="ProjectsDiv">   
         <SearchBar categories={categories} numProjects={numProjects} setSelected={setSelected} selected={selected} setSearch={setSearch}/>
       </div>
       <div className="border-t-[1px] border-[#D5DEE0] mx-14"/>

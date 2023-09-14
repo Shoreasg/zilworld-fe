@@ -1,7 +1,16 @@
+"use client";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { lato, plusJakartaSans } from "../../components/font";
+import { HeroProps } from "../../../types";
+import Link from "next/link";
 
-export default function Hero() {
+export default function Hero({projectsRef}:HeroProps) {
+
+  const onClickProjectRef = (elementRef: React.RefObject<HTMLDivElement>) =>{
+    if (elementRef && elementRef.current) {
+      elementRef.current.scrollIntoView({behavior:"smooth"})
+    }
+  };
   return (
     <div>
     <div className="relative mx-14 mt-[27px] h-[314px] rounded-lg">
@@ -16,7 +25,8 @@ export default function Hero() {
           </div>
         </div>
         <div className="absloute inset flex justify-center items-center gap-6 pt-6">
-          <button className={`flex py-2 px-4 items-center gap-2 rounded-lg border-2 border-[#FFC224] bg-[#FFC224] text-[#06242E] ${plusJakartaSans.className} text-base leading-[26px] font-semibold`}>
+          <button className={`flex py-2 px-4 items-center gap-2 rounded-lg border-2 border-[#FFC224] bg-[#FFC224] text-[#06242E] ${plusJakartaSans.className} text-base leading-[26px] font-semibold`} onClick={()=>onClickProjectRef(projectsRef)}
+           >
             Start Browsing
           </button>
           <button className={`flex items-center gap-2 py-2 px-4 rounded-lg border-2 border-[#06242E] text-base leading-[26px] font-semibold ${plusJakartaSans.className} text-center`}>

@@ -119,6 +119,17 @@ export interface ProjectWithFilterProps{
   categories: IProjectCategories[];
   numProjects: number;
   projectsData: IProjects[];
+  projectsRef: React.RefObject<HTMLDivElement>;}
+
+export interface MainProjectWebProps{
+  categories: IProjectCategories[];
+  numProjects: number;
+  projectsData: IProjects[];
+}
+
+
+export interface HeroProps {
+  projectsRef: React.RefObject<HTMLDivElement>;
 }
 
 export type ITokenParams = {
@@ -138,3 +149,4 @@ export type INewProjectNameParams = {
     newproject: string;
   };
 };
+

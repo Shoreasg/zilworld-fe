@@ -1,12 +1,10 @@
 import * as _ from "lodash";
 import MobileCarousellBanners from "../components/MobileCarousellBanners";
-import CarousellBanners from "../components/CarousellBanners";
-import Hero from "./components/Hero";
 import MobileHero from "./components/MobileHero";
 import { Metadata } from "next";
 import MobileSearchBar from "./components/MobileSearchBar";
-import ProjectsWithFilter from "./components/ProjectsWithFilter";
 import { getProjectsCategoriesData, getProjectsData } from "../functions";
+import MainProjectWeb from "./components/MainProjectWeb";
 
 export const metadata: Metadata = {
   title: "ZilWorld-Ecosystem of Zilliqa",
@@ -29,11 +27,9 @@ export default async function Projects() {
           <MobileSearchBar />
         </div>
       </div>
-      <div className="hidden lg:flex flex-grow basis-0 flex-shrink-0 self-stretch overflow-y-auto">
-        <div className="flex flex-col w-full h-full">
-          <CarousellBanners />
-          <Hero />
-          <ProjectsWithFilter categories={projectCategoriesData.data} numProjects={totalProjects} projectsData={projectsData.data}/>
+      <div className="hidden lg:flex flex-grow basis-0 flex-shrink-0 self-stretch ">
+        <div className="flex flex-col w-full h-full overflow-y-auto">
+          <MainProjectWeb categories={projectCategoriesData.data} numProjects={totalProjects} projectsData={projectsData.data}/>
         </div>
       </div>
     </>
