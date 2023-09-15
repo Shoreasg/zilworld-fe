@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { HeroProps, MainProjectWebProps } from "../../../types";
-import CarousellBanners from "../../components/CarousellBanners";
+import { MainProjectWebProps } from "../../../../types";
+import CarousellBanners from "../../../components/CarousellBanners";
 import Hero from "./Hero";
 import ProjectsWithFilter from "./ProjectsWithFilter";
 

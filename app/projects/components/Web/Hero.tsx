@@ -1,8 +1,7 @@
 "use client";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import { lato, plusJakartaSans } from "../../components/font";
-import { HeroProps } from "../../../types";
-import Link from "next/link";
+import { lato, plusJakartaSans } from "../../../components/font";
+import { HeroProps } from "../../../../types";
 
 export default function Hero({projectsRef}:HeroProps) {
 

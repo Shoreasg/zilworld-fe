@@ -58,8 +58,8 @@ export interface IProjects {
   announcements: [IAnnouncement];
 }
 
-export interface IProjectCategories{
-  name:string;
+export interface IProjectCategories {
+  name: string;
   numClicks: number;
   numCategories: number;
 }
@@ -98,35 +98,49 @@ export interface TokenChartProps {
 export interface CardProps {
   projectsData: IProjects[];
   selected: string;
-  setSelected:  Dispatch<SetStateAction<string>>
+  setSelected: Dispatch<SetStateAction<string>>;
   search: string;
 }
 
-export interface ProjectCategoriesProps{
+export interface SearchBarProps {
   categories: IProjectCategories[];
   numProjects: number;
   selected: string;
-  setSelected:  Dispatch<SetStateAction<string>>
-  setSearch: Dispatch<SetStateAction<string>>
+  setSelected: Dispatch<SetStateAction<string>>;
+  setSearch: Dispatch<SetStateAction<string>>;
 }
 
-export interface ProjectPopularFilterProps{
+export interface ProjectPopularFilterProps {
   categories: IProjectCategories[];
-  setSelected:  Dispatch<SetStateAction<string>>
+  setSelected: Dispatch<SetStateAction<string>>;
 }
 
-export interface ProjectWithFilterProps{
-  categories: IProjectCategories[];
-  numProjects: number;
-  projectsData: IProjects[];
-  projectsRef: React.RefObject<HTMLDivElement>;}
-
-export interface MainProjectWebProps{
+export interface ProjectWithFilterProps {
   categories: IProjectCategories[];
   numProjects: number;
   projectsData: IProjects[];
+  projectsRef: React.RefObject<HTMLDivElement>;
 }
 
+export interface MobileSearchBarProps {
+  categories: IProjectCategories[];
+  numProjects: number;
+  selected: string;
+  setSelected: Dispatch<SetStateAction<string>>;
+  setSearch: Dispatch<SetStateAction<string>>;
+}
+
+export interface MainProjectWebProps {
+  categories: IProjectCategories[];
+  numProjects: number;
+  projectsData: IProjects[];
+}
+
+export interface MainProjectMobileProps {
+  categories: IProjectCategories[];
+  numProjects: number;
+  projectsData: IProjects[];
+}
 
 export interface HeroProps {
   projectsRef: React.RefObject<HTMLDivElement>;
@@ -149,4 +163,3 @@ export type INewProjectNameParams = {
     newproject: string;
   };
 };
-

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import {ProjectWithFilterProps } from "../../../types";
+import {ProjectWithFilterProps } from "../../../../types";
 import PopularFilter from "./PopularFilter";
 import SearchBar from "./SearchBar";
 import ProjectsCard from "./ProjectsCard";

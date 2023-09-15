@@ -147,7 +147,7 @@ export default function NavBarV2({ setMenuClick }: NavBarProps) {
                   />
                   {isShownPopUp === item.name && (
                     <div
-                      className={`absolute left-[60px] inline-flex py-1 px-3 items-start gap-2 rounded-lg bg-[#E6EAEB] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)] ${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-[#06242E]`}
+                      className={`absolute left-[60px] inline-flex py-1 px-3 items-start gap-2 rounded-lg bg-[#E6EAEB] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)] ${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-[#06242E] z-30`}
                     >
                       {item.name}
                     </div>
@@ -203,7 +203,7 @@ export default function NavBarV2({ setMenuClick }: NavBarProps) {
                   )}
                   {isShownPopUp === item.name && (
                     <div
-                      className={`absolute left-[60px] inline-flex py-1 px-3 items-start gap-2 rounded-lg bg-[#E6EAEB] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)] ${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-[#06242E]`}
+                      className={`absolute left-[60px] inline-flex py-1 px-3 items-start gap-2 rounded-lg bg-[#E6EAEB] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)] ${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-[#06242E] z-30`}
                     >
                       {item.name}
                     </div>
@@ -259,7 +259,7 @@ export default function NavBarV2({ setMenuClick }: NavBarProps) {
                     )}
                     {isShownPopUp === item.name && (
                       <div
-                        className={`absolute left-[60px] inline-flex py-1 px-3 items-start gap-2 rounded-lg bg-[#E6EAEB] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)] ${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-[#06242E]`}
+                        className={`absolute left-[60px] inline-flex py-1 px-3 items-start gap-2 rounded-lg bg-[#E6EAEB] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)] ${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-[#06242E] z-30`}
                       >
                         {item.name}
                       </div>

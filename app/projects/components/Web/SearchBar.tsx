@@ -6,12 +6,12 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
-import { plusJakartaSans } from "../../components/font";
-import { IProjectCategories, ProjectCategoriesProps } from "../../../types";
-import { updateProjectCategoriesClicks } from "../../functions";
+import { plusJakartaSans } from "../../../components/font";
+import { IProjectCategories, SearchBarProps } from "../../../../types";
+import { updateProjectCategoriesClicks } from "../../../functions";
 
 
-export default function SearchBar({categories,numProjects,setSelected,selected, setSearch}:ProjectCategoriesProps) {
+export default function SearchBar({categories,numProjects,setSelected,selected, setSearch}:SearchBarProps) {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
 
   const onFilterChange = async (selectedValue:string) =>{

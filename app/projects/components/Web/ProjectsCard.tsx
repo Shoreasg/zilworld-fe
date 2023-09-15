@@ -1,7 +1,6 @@
 "use client";
-import { useContext, useState } from "react";
-import { CardProps } from "../../../types";
-import { mapProjects } from "../../functions";
+import { CardProps } from "../../../../types";
+import { mapProjects } from "../../../functions";
 
 export default function ProjectsCard({
   projectsData,

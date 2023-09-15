@@ -105,7 +105,7 @@ export default function MobileNavBar() {
       {menuClickContext ? (
         ''
       ) : (
-        <div className=" absolute flex flex-col w-[50vw] h-screen items-start flex-shrink-0 bg-[#097A8E] z-40">
+        <div className=" absolute flex flex-col w-[50vw] h-full self-stretch items-start flex-shrink-0 bg-[#097A8E] z-40">
         <div
           className={
             `flex pt-14 flex-col justify-between flex-grow flex-shrink-0 basis-0 self-stretch `
