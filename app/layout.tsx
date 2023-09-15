@@ -18,12 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="h-full w-full bg-[#F5F5F5]">
+      <body className="h-[100dvh] w-full bg-[#F5F5F5]">
         {/* Mobile View */}
         <onMenuClickContext.Provider value={onMenuClick}>
           <div className="block lg:hidden w-screen h-screen">
             <Header setMenuClick={setonMenuClick} />
-            <main className=" flex flex-col w-full h-[calc(100dvh)] overflow-y-scroll no-scrollbar">
+            <main className=" flex flex-col w-full h-[100dvh] overflow-y-scroll no-scrollbar">
               {onMenuClick ? (
                 <>
                   <MobileNavBar />
