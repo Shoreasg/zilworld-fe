@@ -23,7 +23,7 @@ export default function RootLayout({
         <onMenuClickContext.Provider value={onMenuClick}>
           <div className="block lg:hidden w-screen h-screen">
             <Header setMenuClick={setonMenuClick} />
-            <main className=" flex flex-col w-full h-full overflow-y-scroll no-scrollbar">
+            <main className=" flex flex-col w-full h-[calc(100dvh)] overflow-y-scroll no-scrollbar">
               {onMenuClick ? (
                 <>
                   <MobileNavBar />
