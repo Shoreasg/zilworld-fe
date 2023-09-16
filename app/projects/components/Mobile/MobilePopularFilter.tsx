@@ -48,14 +48,18 @@ export default function MobilePopularFilter({
 
   return (
     <div className="flex flex-col pt-6 pl-4 items-start bg-[#F5F5F5] z-10">
-      <div className="flex flex-col items-start gap-2 self-stretch">
-        <p
-          className={`${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-center text-[#06242E]`}
-        >
-          Popular
-        </p>
-        <div className="flex items-start gap-4 w-full overflow-x-auto no-scrollbar ">{mapPopularCategories}</div>
-      </div>
+      {mapPopularCategories.length > 0 && (
+        <div className="flex flex-col items-start gap-2 self-stretch">
+          <p
+            className={`${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-center text-[#06242E]`}
+          >
+            Popular
+          </p>
+          <div className="flex items-start gap-4 w-full overflow-x-auto no-scrollbar ">
+            {mapPopularCategories}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

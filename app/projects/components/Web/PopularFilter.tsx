@@ -46,16 +46,18 @@ export default function PopularFilter({
 
   return (
     <div className="flex flex-col pt-6 px-14 items-start bg-[#F5F5F5]">
-      <div className="flex flex-col items-start gap-2 self-stretch">
-        <p
-          className={`${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-center`}
-        >
-          Popular
-        </p>
-        <div className="flex items-start gap-4 w-full">
-          {mapPopularCategories}
+      {mapPopularCategories.length > 0 && (
+        <div className="flex flex-col items-start gap-2 self-stretch">
+          <p
+            className={`${plusJakartaSans.className} text-sm leading-[21px] font-semibold text-center`}
+          >
+            Popular
+          </p>
+          <div className="flex items-start gap-4 w-full">
+            {mapPopularCategories}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
