@@ -25,7 +25,7 @@ export default function MobileProjectsWithFilter({
         setSearch={setSearch}
       />
       </div>
-      <div className="border-t-[1px] border-[#D5DEE0]" />
+      <div className="border-t-[1px] border-[#D5DEE0] mx-4" />
       <MobilePopularFilter categories={categories} setSelected={setSelected} />
       <div className="flex w-full flex-col p-8 items-start gap-6">
           <MobileProjectsCard

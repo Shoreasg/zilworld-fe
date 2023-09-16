@@ -9,6 +9,7 @@ import { useState } from "react";
 import { plusJakartaSans } from "../../../components/font";
 import { MobileSearchBarProps } from "../../../../types";
 import { updateProjectCategoriesClicks } from "../../../functions";
+import OutsideClickHandler from "react-outside-click-handler";
 
 export default function MobileSearchBar({
   categories,
@@ -30,10 +31,12 @@ export default function MobileSearchBar({
         className={`flex items-start gap-1 pt-6 pr-4 pb-0 pl-4  ${plusJakartaSans.className} relative z-30`}
       >
         <p className="font-bold text-center text-lg text-[#06242E]">Projects</p>
+        <OutsideClickHandler onOutsideClick={()=> setIsShownPopUp(false)}>
         <InformationCircleIcon
           className=" w-[14px] h-[14px] cursor-pointer "
-          onClick={() => setIsShownPopUp(!isShownPopUp)}
+          onClick={() => setIsShownPopUp(true)}
         />
+        </OutsideClickHandler>
         {isShownPopUp && (
           <div className=" absolute w-[278px] top-[46px] left-[96px]  inline-flex px-6 py-4 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-[0_4px_16px_0_rgba(36,87,102,0.15)]">
             <p
@@ -84,7 +87,7 @@ export default function MobileSearchBar({
               )}
               <FunnelIcon className="w-5 h-5" />
             </div>
-            <Listbox.Options className=" absolute w-full top-16 self-stretch h-[272px] flex pt-[10px] pb-6 flex-col items-start gap-[2px] overflow-auto no-scrollbar rounded-lg border-[#D5DEE0] bg-[#ECF0F1] shadow-[0_6px_20px_0_rgba(13,50,62,0.05)] z-30">
+            <Listbox.Options className=" absolute w-full top-16 self-stretch h-[272px] flex pt-[10px] pb-6 flex-col items-start gap-[2px] overflow-auto no-scrollbar border rounded-lg border-[#D5DEE0] bg-[#ECF0F1] shadow-[0_6px_20px_0_rgba(13,50,62,0.05)] z-30">
               <Listbox.Option
                 key={0}
                 value={"All Projects"}

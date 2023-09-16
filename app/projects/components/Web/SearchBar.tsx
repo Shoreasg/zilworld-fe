@@ -48,7 +48,7 @@ export default function SearchBar({categories,numProjects,setSelected,selected, 
               <FunnelIcon className="w-5 h-5" />
             </div>
           </Listbox.Button>
-          <Listbox.Options className=" absolute -bottom-[256px] w-[268px] h-[272px] flex pt-2 pb-6 flex-col items-start gap-[2px] overflow-auto no-scrollbar rounded-lg border-[#D5DEE0] bg-[#ECF0F1] shadow-[0_6px_20px_0_rgba(13,50,62,0.05)]">
+          <Listbox.Options className=" absolute -bottom-[256px] w-[268px] h-[272px] flex pt-2 pb-6 flex-col items-start gap-[2px] overflow-auto no-scrollbar rounded-lg border border-[#D5DEE0] bg-[#ECF0F1] shadow-[0_6px_20px_0_rgba(13,50,62,0.05)]">
           <Listbox.Option
                 key={0}
                 value={"All Projects"}

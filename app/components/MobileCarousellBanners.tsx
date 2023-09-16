@@ -4,6 +4,7 @@ import Image from "next/image";
 import Carousel from "nuka-carousel";
 import { useState } from "react";
 import { plusJakartaSans } from "./font";
+import OutsideClickHandler from 'react-outside-click-handler';
 
 export default function MobileCarousellBanners() {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
@@ -51,10 +52,12 @@ export default function MobileCarousellBanners() {
             </a>
             <div className={`absolute inline-flex items-center gap-1 top-1 text-right right-1 font-normal text-[10px] leading-[15px] ${plusJakartaSans.className} text-[#F5F5F5] `}>
               Sponsored
+              <OutsideClickHandler onOutsideClick={()=> setIsShownPopUp(false)}>
               <InformationCircleIcon
-                onClick={() => setIsShownPopUp(!isShownPopUp)}
+                onClick={() => setIsShownPopUp(true)}
                 className="w-3 h-3"
               />
+              </OutsideClickHandler>
             </div>
           </div>
         ))}
