@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectWithFilterProps } from "../../../../types";
 import MobileSearchBar from "./MobileSearchBar";
 import MobilePopularFilter from "./MobilePopularFilter";
 import MobileProjectsCard from "./MobileProjectsCard";
+import MobileStickySearchBar from "./MobileStickySearchBar";
 
 export default function MobileProjectsWithFilter({
   categories,
@@ -13,28 +14,57 @@ export default function MobileProjectsWithFilter({
 }: ProjectWithFilterProps) {
   const [selected, setSelected] = useState<string>("");
   const [search, setSearch] = useState("");
+  const [searchBarReachTop, setSearchBarReachTop] = useState(false);
+
+  const handleSearchBarScroll = () => {
+    if (projectsRef.current) {
+      const container = projectsRef.current;
+      const containerRect = container.getBoundingClientRect();
+      if (containerRect.top <= 100) {
+        setSearchBarReachTop(true);
+      } else {
+        setSearchBarReachTop(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const container = projectsRef.current;
+    if (container) {
+      window.addEventListener("scroll", handleSearchBarScroll);
+      return () => {
+        container.removeEventListener("scroll", handleSearchBarScroll);
+      };
+    }
+  }, []);
 
   return (
     <div className="flex flex-col">
-      <div ref={projectsRef}>
-      <MobileSearchBar
-        categories={categories}
-        numProjects={numProjects}
-        setSelected={setSelected}
-        selected={selected}
-        setSearch={setSearch}
-      />
+      <div className={`${searchBarReachTop === true ? " sticky top-0 z-30 w-full flex flex-col h-20 p-4 justify-between items-center flex-shrink-0 bg-[#F5F5F5]":""}`}>
+      <div ref={projectsRef} className={`${searchBarReachTop === true ? "flex justify-end items-start gap-4 self-stretch":""}`}>
+        {searchBarReachTop === true ? (
+          <MobileStickySearchBar/>
+        ) : (
+          <MobileSearchBar
+            categories={categories}
+            numProjects={numProjects}
+            setSelected={setSelected}
+            selected={selected}
+            setSearch={setSearch}
+          />
+        )}
+        </div>
       </div>
       <div className="border-t-[1px] border-[#D5DEE0] mx-4" />
       <MobilePopularFilter categories={categories} setSelected={setSelected} />
       <div className="flex w-full flex-col p-8 items-start gap-6">
-          <MobileProjectsCard
-            projectsData={projectsData}
-            selected={selected}
-            setSelected={setSelected}
-            search={search}
-          />
-        </div>
+        <MobileProjectsCard
+          projectsData={projectsData}
+          selected={selected}
+          setSelected={setSelected}
+          search={search}
+        />
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default async function Projects() {
   const totalProjects:number = projectsData.data.length;
   return (
     <>
-      <div className="block lg:hidden pt-[54px] z-20">
+      <div className="block lg:hidden z-20 ">
         <div className="flex flex-col w-full h-full">
           <MainProjectMobile categories={projectCategoriesData.data} numProjects={totalProjects} projectsData={projectsData.data}/>
         </div>

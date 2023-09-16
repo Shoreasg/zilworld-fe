@@ -7,6 +7,7 @@ import "./globals.css";
 import MobileNavBar from "./components/MobileNavBar";
 import Overlay from "./components/Overlay";
 import { onMenuClickContext } from "./context/MenuContext";
+import { RemoveScroll } from "react-remove-scroll";
 
 export default function RootLayout({
   children,
@@ -23,16 +24,19 @@ export default function RootLayout({
         <onMenuClickContext.Provider value={onMenuClick}>
           <div className="block lg:hidden w-screen h-screen">
             <Header setMenuClick={setonMenuClick} />
-            <main className=" flex flex-col w-full h-[100dvh] overflow-y-scroll no-scrollbar">
+            <main className={`flex flex-col w-full h-[100dvh]`}>
               {onMenuClick ? (
                 <>
                   <MobileNavBar />
                 </>
               ) : (
+                <RemoveScroll>
                 <>
                   <Overlay setMenuClick={setonMenuClick} />
                   <MobileNavBar />
+              
                 </>
+                </RemoveScroll>
               )}
               {children}
             </main>

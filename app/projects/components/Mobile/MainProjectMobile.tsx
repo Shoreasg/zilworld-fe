@@ -22,14 +22,6 @@ export default function MainProjectMobile({
         projectsData={projectsData}
         projectsRef={projectsRef}
       />
-      {/* <CarousellBanners />
-        <Hero projectsRef={projectsRef}/>
-      <ProjectsWithFilter
-        categories={categories}
-        numProjects={numProjects}
-        projectsData={projectsData}
-        projectsRef={projectsRef}
-      /> */}
     </>
   );
 }

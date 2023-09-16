@@ -12,7 +12,7 @@ export default function Overlay({setMenuClick}:overlayProps){
 
     return(
         <div
-        className="fixed w-full h-[100dvh] bg-black opacity-50 z-30 "
+        className="fixed w-full h-[100dvh] bg-black opacity-50 z-30  "
         onClick={()=>setMenuClick(!menuClickContext)}
       />
     )

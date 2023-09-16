@@ -14,7 +14,7 @@ export default function Header({setMenuClick }: HeaderProps){
 
 return(
     <>
-    <div className="fixed flex w-full h-[56px] pt-1 pb-1 pr-6 pl-6 justify-between items-center border-b border-gray-300 bg-white z-50">
+    <div className=" flex w-full h-[56px] pt-1 pb-1 pr-6 pl-6 justify-between items-center border-b border-gray-300 bg-white z-50">
             <Image
               className="flex-shrink-0"
               src="/ZilWorld Logo.png"
