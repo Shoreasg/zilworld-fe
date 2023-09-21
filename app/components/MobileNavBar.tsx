@@ -108,7 +108,7 @@ export default function MobileNavBar() {
         <div className=" fixed flex flex-col w-[50vw] h-[100dvh] self-stretch items-start flex-shrink-0 bg-[#097A8E] z-40">
         <div
           className={
-            `flex pt-14 flex-col justify-between flex-grow flex-shrink-0 basis-0 self-stretch `
+            `flex pb-14 flex-col justify-between flex-grow flex-shrink-0 basis-0 self-stretch `
           }
         >
           <div className=" flex flex-col justify-center items-center self-stretch">
