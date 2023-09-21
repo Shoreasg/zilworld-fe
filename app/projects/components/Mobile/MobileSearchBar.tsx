@@ -142,7 +142,7 @@ export default function MobileSearchBar({
                         <div
                           className={` ${plusJakartaSans.className} text-xs leading-[18px] font-normal text-center`}
                         >
-                          (1)
+                        {`(${category.numCategories})`}
                         </div>
                       </div>
                       {selected ? (
