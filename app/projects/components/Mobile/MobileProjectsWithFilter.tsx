@@ -24,7 +24,7 @@ export default function MobileProjectsWithFilter({
     if (projectsRef.current) {
       const container = projectsRef.current;
       const containerRect = container.getBoundingClientRect();
-      if (containerRect.top <= 500) {
+      if (containerRect.top <= 20) {
         setSearchBarReachTop(true);
       } else {
         setSearch("")
@@ -57,9 +57,7 @@ export default function MobileProjectsWithFilter({
           ref={projectsRef}
           className={`${
             searchBarReachTop === true
-              ? `flex justify-end items-start ${
-                  isClickSearch ? "" : "pl-4"
-                } gap-4 self-stretch`
+              ? `flex justify-end items-start gap-4 self-stretch`
               : ""
           }`}
         >
