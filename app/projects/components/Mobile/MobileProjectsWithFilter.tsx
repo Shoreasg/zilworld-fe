@@ -26,8 +26,9 @@ export default function MobileProjectsWithFilter({
       const containerRect = container.getBoundingClientRect();
       if (containerRect.top <= 20) {
         setSearchBarReachTop(true);
+        setIsClickSearch(false)
+        setIsClickFilter(false)
       } else {
-        setSearch("")
         setSearchBarReachTop(false);
       }
     }
@@ -71,6 +72,7 @@ export default function MobileProjectsWithFilter({
               isClickSearch={isClickSearch}
               setIsClickSearch={setIsClickSearch}
               isClickedFilter= {isClickFilter}
+              search={search}
               setIsClickedFilter = {setIsClickFilter}
               isClickSearchRef={isClickSearchRef}
               isClickedFilterRef={isClickedFilterRef}
@@ -80,6 +82,7 @@ export default function MobileProjectsWithFilter({
               categories={categories}
               numProjects={numProjects}
               setSelected={setSelected}
+              search={search}
               selected={selected}
               setSearch={setSearch}
             />

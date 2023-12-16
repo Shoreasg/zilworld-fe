@@ -16,6 +16,7 @@ export default function MobileSearchBar({
   numProjects,
   setSelected,
   selected,
+  search,
   setSearch,
 }: MobileSearchBarProps) {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
@@ -69,6 +70,7 @@ export default function MobileSearchBar({
           <input
             type="text"
             placeholder="Search projects"
+            value={search}
             className={`${plusJakartaSans.className} text-base leading-[26px] font-normal bg-[#ECF0F1] text-left focus:outline-none`}
             onChange={(e) => setSearch(e.target.value)}
           />

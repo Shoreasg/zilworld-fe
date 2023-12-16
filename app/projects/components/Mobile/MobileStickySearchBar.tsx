@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { updateProjectCategoriesClicks } from "../../../functions";
 
-export default function MobileStickySearchBar({categories,numProjects,setSelected,selected,setSearch,isClickSearch,setIsClickSearch,isClickSearchRef,isClickedFilter,setIsClickedFilter,isClickedFilterRef}:MobileSearchStickyBarProps) {
+export default function MobileStickySearchBar({categories,numProjects,setSelected,selected,setSearch,search,isClickSearch,setIsClickSearch,isClickSearchRef,isClickedFilter,setIsClickedFilter,isClickedFilterRef}:MobileSearchStickyBarProps) {
  
 
   const handleClickOutside = (e: MouseEvent)=> {
@@ -38,6 +38,7 @@ export default function MobileStickySearchBar({categories,numProjects,setSelecte
             placeholder="Search"
             className={`focus:outline-none bg-[#ECF0F1] ${plusJakartaSans.className} text-base leading-[26px] font-normal text-left placeholder-[#9AA3A3] ${isClickSearch ? 'w-full':'max-w-[50%]'}`}
             onClick={()=>setIsClickSearch(true)}
+            value={search}
             onChange={(e)=>setSearch(e.target.value)}
             ref={isClickSearchRef}
           />
@@ -132,9 +133,6 @@ export default function MobileStickySearchBar({categories,numProjects,setSelecte
             </Listbox.Options>
           </Listbox.Button>
         </Listbox>
-
-       
-  
   </>
   );
 }

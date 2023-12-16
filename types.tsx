@@ -127,6 +127,7 @@ export interface MobileSearchBarProps {
   numProjects: number;
   selected: string;
   setSelected: Dispatch<SetStateAction<string>>;
+  search: string;
   setSearch: Dispatch<SetStateAction<string>>;
 }
 
@@ -140,6 +141,7 @@ export interface MobileSearchStickyBarProps {
   setIsClickSearch: Dispatch<SetStateAction<boolean>>;
   isClickSearchRef: React.RefObject<HTMLInputElement>;
   isClickedFilter: boolean;
+  search: string;
   setIsClickedFilter: Dispatch<SetStateAction<boolean>>;
   isClickedFilterRef: React.RefObject<HTMLButtonElement>;
 }
