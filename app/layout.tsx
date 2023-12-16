@@ -7,7 +7,6 @@ import "./globals.css";
 import MobileNavBar from "./components/MobileNavBar";
 import Overlay from "./components/Overlay";
 import { onMenuClickContext } from "./context/MenuContext";
-import { RemoveScroll } from "react-remove-scroll";
 
 export default function RootLayout({
   children,
@@ -22,7 +21,7 @@ export default function RootLayout({
       <body className="h-[100dvh] w-full bg-[#F5F5F5]">
         {/* Mobile View */}
         <onMenuClickContext.Provider value={onMenuClick}>
-          <div className="block lg:hidden w-screen h-screen">
+          <div className={`block xl:hidden w-screen h-screen ${onMenuClick === false? "overflow-y-hidden":""}`}>
             <Header setMenuClick={setonMenuClick} />
             <main className={`flex flex-col w-full h-[100dvh]`}>
               {onMenuClick ? (
@@ -30,19 +29,17 @@ export default function RootLayout({
                   <MobileNavBar />
                 </>
               ) : (
-                <RemoveScroll>
                 <>
                   <Overlay setMenuClick={setonMenuClick} />
                   <MobileNavBar />
               
                 </>
-                </RemoveScroll>
               )}
               {children}
             </main>
           </div>
           {/* Web View */}
-          <div className="hidden lg:block w-screen h-screen">
+          <div className="hidden xl:block w-screen h-screen">
             <main className="flex w-full h-full">
               <NavBarV2 setMenuClick={setonMenuClick} />
               {children}

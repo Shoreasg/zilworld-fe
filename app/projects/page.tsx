@@ -24,7 +24,7 @@ export default async function Projects() {
         </div>
       </div>
       <div className="hidden lg:flex flex-grow basis-0 flex-shrink-0 self-stretch ">
-        <div className="flex flex-col w-full h-full overflow-y-auto no-scrollbar">
+        <div className="flex flex-col w-full h-full overflow-y-auto">
           <MainProjectWeb categories={projectCategoriesData.data} numProjects={totalProjects} projectsData={projectsData.data}/>
         </div>
       </div>
