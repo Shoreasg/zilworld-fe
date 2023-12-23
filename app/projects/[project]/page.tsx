@@ -3,6 +3,7 @@ import ProjectDetailsCard from "./components/ProjectDetailsCard";
 import ProjectTwitterWidget from "./components/ProjectTwitterWidget";
 import { redirect } from "next/navigation";
 import ProjectAnnouncement from "./components/ProjectAnnouncement";
+import ProjectWeb from "./components/ProjectWeb/ProjectWeb";
 
 async function getProjectData(projectName: string) {
   const res = await fetch(
@@ -20,9 +21,25 @@ export default async function Project({ params }: IProjectNameParams) {
   }
   return (
     <>
-      <ProjectDetailsCard projectData={project} />
-      <ProjectAnnouncement projectData={project} />
-      <ProjectTwitterWidget projectData={project} />
+      <>
+        {/* Mobile View */}
+        <div className="block lg:hidden z-20 ">
+          <div className="flex flex-col w-full h-full">
+            <ProjectDetailsCard projectData={project} />
+            <ProjectAnnouncement projectData={project} />
+            <ProjectTwitterWidget projectData={project} />
+          </div>
+        </div>
+        {/* web View */}
+        <div className="hidden lg:flex flex-grow basis-0 flex-shrink-0 self-stretch ">
+          <div className="flex flex-col w-full h-full overflow-y-auto">
+            <ProjectWeb projectData={project} />
+            {/* <ProjectDetailsCard projectData={project} />
+            <ProjectAnnouncement projectData={project} />
+            <ProjectTwitterWidget projectData={project} /> */}
+          </div>
+        </div>
+      </>
     </>
   );
 }

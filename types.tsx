@@ -37,6 +37,10 @@ export interface ITokens {
   marketdata: IMarketdata;
 }
 
+export interface ProjectLogoProps {
+  projectIcon:string;
+}
+
 export interface IProjects {
   name: string;
   description: string;

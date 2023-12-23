@@ -39,7 +39,7 @@ export default function MobileProjectsWithFilter({
     if (container) {
       window.addEventListener("scroll", handleSearchBarScroll);
       return () => {
-        container.removeEventListener("scroll", handleSearchBarScroll);
+        window.removeEventListener("scroll", handleSearchBarScroll);
       };
     }
   }, []);
