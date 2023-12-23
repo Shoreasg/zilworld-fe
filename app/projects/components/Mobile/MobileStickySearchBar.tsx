@@ -40,6 +40,7 @@ export default function MobileStickySearchBar({categories,numProjects,setSelecte
             onClick={()=>setIsClickSearch(true)}
             value={search}
             onChange={(e)=>setSearch(e.target.value)}
+            {...(search.length > 0? {autoFocus: true}:{})}
             ref={isClickSearchRef}
           />
           <MagnifyingGlassIcon className="w-5 h-5" />

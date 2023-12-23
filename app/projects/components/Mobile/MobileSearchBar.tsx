@@ -71,6 +71,7 @@ export default function MobileSearchBar({
             type="text"
             placeholder="Search projects"
             value={search}
+            {...(search.length > 0? {autoFocus: true}:{})}
             className={`${plusJakartaSans.className} text-base leading-[26px] font-normal bg-[#ECF0F1] text-left focus:outline-none`}
             onChange={(e) => setSearch(e.target.value)}
           />
