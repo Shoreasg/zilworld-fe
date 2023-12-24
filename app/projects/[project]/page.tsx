@@ -13,7 +13,7 @@ async function getProjectData(projectName: string) {
   return res.json();
 }
 
-export default async function Project({ params }: IProjectNameParams) {
+export default async function Project({ params }: Readonly<IProjectNameParams>) {
   const projectData = await getProjectData(params.project);
   const project = projectData.data;
   if (project === "No projects found") {
@@ -21,7 +21,6 @@ export default async function Project({ params }: IProjectNameParams) {
   }
   return (
     <>
-      <>
         {/* Mobile View */}
         <div className="block lg:hidden z-20 ">
           <div className="flex flex-col w-full h-full">
@@ -34,12 +33,8 @@ export default async function Project({ params }: IProjectNameParams) {
         <div className="hidden lg:flex flex-grow basis-0 flex-shrink-0 self-stretch ">
           <div className="flex flex-col w-full h-full overflow-y-auto">
             <ProjectWeb projectData={project} />
-            {/* <ProjectDetailsCard projectData={project} />
-            <ProjectAnnouncement projectData={project} />
-            <ProjectTwitterWidget projectData={project} /> */}
           </div>
         </div>
-      </>
     </>
   );
 }

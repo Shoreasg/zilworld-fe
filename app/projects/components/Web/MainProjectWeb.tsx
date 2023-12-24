@@ -6,7 +6,7 @@ import CarousellBanners from "../../../components/CarousellBanners";
 import Hero from "./Hero";
 import ProjectsWithFilter from "./ProjectsWithFilter";
 
-export default function MainProjectWeb({categories,numProjects,projectsData}:MainProjectWebProps) {
+export default function MainProjectWeb({categories,numProjects,projectsData}:Readonly<MainProjectWebProps>) {
     const projectsRef = useRef<HTMLDivElement>(null); 
   return (
     <>

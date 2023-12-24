@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ProjectDetailsCard({
   projectData,
-}: ProjectDetailsCardProps) {
+}: Readonly<ProjectDetailsCardProps>) {
   return (
     <div className="flex flex-1 flex-col md:pl-64">
       <div className="p-6">

@@ -5,7 +5,7 @@ import PopularFilter from "./PopularFilter";
 import SearchBar from "./SearchBar";
 import ProjectsCard from "./ProjectsCard";
 
-export default function ProjectsWithFilter({categories,numProjects,projectsData, projectsRef}:ProjectWithFilterProps) {
+export default function ProjectsWithFilter({categories,numProjects,projectsData, projectsRef}:Readonly<ProjectWithFilterProps>) {
   const [selected, setSelected] = useState<string>("");
   const [search, setSearch] = useState("");
 
