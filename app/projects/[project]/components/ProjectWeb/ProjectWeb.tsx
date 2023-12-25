@@ -3,9 +3,6 @@ import CarousellBanners from "../../../../components/CarousellBanners";
 import BackButton from "../../../../components/BackButton";
 import { ProjectDetailsCardProps } from "../../../../../types";
 import ProjectLogo from "./ProjectLogo";
-import ProjectDetailsCard from "../ProjectDetailsCard";
-import ProjectAnnouncement from "../ProjectAnnouncement";
-import ProjectTwitterWidget from "../ProjectTwitterWidget";
 import ProjectDetails from "../../../../components/ProjectDetails";
 
 export default function ProjectWeb({
@@ -14,16 +11,14 @@ export default function ProjectWeb({
   return (
     <>
       <CarousellBanners />
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full h-full pr-[213px]">
         <BackButton text={"Projects"} />
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row w-full">
         <ProjectLogo projectIcon={projectData.icon} />
         <ProjectDetails projectData={projectData}/>
         </div>
-        {/* <ProjectDetailsCard projectData={projectData}/>
-        <ProjectAnnouncement projectData={projectData} />
-        <ProjectTwitterWidget projectData={projectData} /> */}
       </div>
+      
     </>
   );
 }

@@ -9,16 +9,18 @@ export default function ProjectLogo({
 }: Readonly<ProjectLogoProps>) {
   const menuClickContext = useContext(onMenuClickContext);
   return (
-    <div className=" sticky top-[68px] flex">
+    <div
+      className={`sticky top-[68px] flex w-16 h-16 mt-[22px]  ${
+        menuClickContext ? "ml-[222px]" : "ml-[142px]"
+      }  `}
+    >
       <div
-        className={`inline-flex pt-[68px] ${
-          menuClickContext ? "pl-[222px]" : "pl-[142px]"
-        } items-start gap-2`}
+        className={`inline-flex  
+      items-start gap-2`}
       >
         <Image
           src={projectIcon}
-          width={64}
-          height={64}
+          fill={true}
           alt={"projectLogo"}
           className=" rounded-lg flex-shrink-0"
         />

@@ -22,7 +22,7 @@ export default async function Project({ params }: Readonly<IProjectNameParams>) 
   return (
     <>
         {/* Mobile View */}
-        <div className="block lg:hidden z-20 ">
+        <div className="block xl:hidden z-20 ">
           <div className="flex flex-col w-full h-full">
             <ProjectDetailsCard projectData={project} />
             <ProjectAnnouncement projectData={project} />
@@ -30,7 +30,7 @@ export default async function Project({ params }: Readonly<IProjectNameParams>) 
           </div>
         </div>
         {/* web View */}
-        <div className="hidden lg:flex flex-grow basis-0 flex-shrink-0 self-stretch ">
+        <div className="hidden xl:flex flex-grow basis-0 flex-shrink-0 self-stretch ">
           <div className="flex flex-col w-full h-full overflow-y-auto">
             <ProjectWeb projectData={project} />
           </div>
