@@ -11,7 +11,7 @@ import { IProjectCategories, SearchBarProps } from "../../../../types";
 import { updateProjectCategoriesClicks } from "../../../functions";
 
 
-export default function SearchBar({categories,numProjects,setSelected,selected, setSearch}:SearchBarProps) {
+export default function SearchBar({categories,numProjects,setSelected,selected, setSearch}:Readonly<SearchBarProps>) {
   const [isShownPopUp, setIsShownPopUp] = useState(false);
 
   const onFilterChange = async (selectedValue:string) =>{

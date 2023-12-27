@@ -262,3 +262,14 @@ export async function updateProjectCategoriesClicks(catName: string) {
   );
   return res.json();
 }
+
+export const trimDescription= (description:string)=>
+{
+  const trimDescription = description.trim().slice(0,265);
+
+  return trimDescription;
+}
+
+export const getCharLength = (description:string)=>{
+  return description.length;
+}
