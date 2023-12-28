@@ -19,6 +19,7 @@ export default function ProjectDetails({
     try {
       await navigator.clipboard.writeText(window.location.href);
       setCopied(true);
+      setOnHoverCopy(false);
       setTimeout(() => setCopied(false), 2000); // Display copied message for 2 seconds
     } catch (error) {
       console.error("Failed to copy URL:", error);
@@ -116,7 +117,7 @@ export default function ProjectDetails({
               </div>
             )}
             {copied && (
-              <div className="tooltip absolute top-[46px] left-[74px] inline-flex px-3 py-1 gap-2 rounded-lg bg-[#3B98444C] shadow-md w-fit font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap">
+              <div className="tooltip absolute top-[46px] right-4  inline-flex px-3 py-1 gap-2 rounded-lg bg-[#3B98444C] shadow-md w-fit font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap">
                 Copied to Clipboard
               </div>
             )}
