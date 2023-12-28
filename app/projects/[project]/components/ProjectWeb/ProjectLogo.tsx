@@ -15,14 +15,14 @@ export default function ProjectLogo({
       }  `}
     >
       <div
-        className={`inline-flex  
+        className={`inline-flex w-16 h-16 
       items-start gap-2`}
       >
         <Image
           src={projectIcon}
           fill={true}
           alt={"projectLogo"}
-          className=" rounded-lg flex-shrink-0"
+          className=" rounded-lg"
         />
       </div>
     </div>
