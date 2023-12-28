@@ -185,9 +185,18 @@ export default function NavBarV2({ setMenuClick }: NavBarProps) {
                       aria-hidden="true"
                     />
                   ) : (
-                    <Image
-                      className={classNames("p-0")} src={"/X-logo-white.png"} alt="x-logo" width={24} height={24}/>
-                      
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.6748 7.62242L17.2279 0.00488281H15.6751L9.98493 6.61908L5.44024 0.00488281H0.198486L7.07094 10.0067L0.198486 17.9949H1.75147L7.76039 11.0101L12.5599 17.9949H17.8017L10.6744 7.62242H10.6748ZM8.54774 10.0948L7.85142 9.09889L2.31103 1.17394H4.69632L9.16748 7.56962L9.8638 8.56558L15.6758 16.879H13.2905L8.54774 10.0952V10.0948Z"
+                        fill="#275B6B"
+                      />
+                    </svg>
                   )}
                   {isShownPopUp === item.name && (
                     <div
@@ -330,8 +339,18 @@ export default function NavBarV2({ setMenuClick }: NavBarProps) {
                       aria-hidden="true"
                     />
                   ) : (
-                    <Image
-                    className={classNames("p-0")} src={"/X-logo-white.png"} alt="x-logo" width={24} height={24}/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.6748 7.62242L17.2279 0.00488281H15.6751L9.98493 6.61908L5.44024 0.00488281H0.198486L7.07094 10.0067L0.198486 17.9949H1.75147L7.76039 11.0101L12.5599 17.9949H17.8017L10.6744 7.62242H10.6748ZM8.54774 10.0948L7.85142 9.09889L2.31103 1.17394H4.69632L9.16748 7.56962L9.8638 8.56558L15.6758 16.879H13.2905L8.54774 10.0952V10.0948Z"
+                        fill="#275B6B"
+                      />
+                    </svg>
                   )}
 
                   <span
