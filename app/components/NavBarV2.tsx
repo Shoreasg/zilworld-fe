@@ -186,7 +186,7 @@ export default function NavBarV2({ setMenuClick }: NavBarProps) {
                     />
                   ) : (
                     <svg
-                    className={classNames("w-[1.5rem] h-[1.5rem] pl-1")}
+                    className={classNames("w-[1.5rem] h-[1.5rem] pl-1 pt-1")}
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -340,7 +340,7 @@ export default function NavBarV2({ setMenuClick }: NavBarProps) {
                     />
                   ) : (
                     <svg
-                    className={classNames("w-[1.5rem] h-[1.5rem] pl-1")}
+                    className={classNames("w-[1.5rem] h-[1.5rem] pl-1 pt-1")}
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       strokeWidth={1}
