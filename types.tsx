@@ -23,6 +23,66 @@ export interface IAnnouncement {
   preview: string;
 }
 
+export interface IProjectTokens {
+  tokenAddress: string;
+  zilworldURL: string;
+  tokenCategory: string;
+  tokenLogo: string;
+}
+
+export interface IProjectWebsite{
+  websiteURL: string;
+}
+
+export interface IProjectTelegram{
+  telegramURL: string;
+}
+
+export interface IProjectTwitter{
+  twitterURL: string;
+}
+
+export interface IProjectDiscord{
+  discordURL: string;
+}
+
+export interface IProjectViewBlock{
+  viewblockURL: string;
+}
+
+export interface IProjectWhitepaper{
+  whitepaperURL: string;
+}
+
+export interface IProjectGithub{
+  githubURL: string;
+}
+
+export interface IProjectMedium{
+  mediumURL: string;
+}
+
+export interface IProjectLinkedin{
+  linkedinURL: string;
+}
+
+export interface IProjectYoutube{
+  youtubeURL: string;
+}
+
+export interface IProjectReddit{
+  redditURL: string;
+}
+
+export interface IProjectFacebook{
+  facebookURL: string;
+}
+
+export interface IProjectRelated{
+  relatedName: string;
+  relatedURL: string;
+}
+
 export interface ITokens {
   name: string;
   symbol: string;
@@ -47,15 +107,24 @@ export interface IProjects {
   icon: string;
   updated_at: string;
   category: string[];
-  tokens: string[];
+  tokens: [IProjectTokens];
   NFT_address: string[];
   marketplace_arky: boolean;
   marketplace_zildex: boolean;
   marketplace_cathulu: boolean;
-  website: string;
-  telegram: string;
-  twitter: string;
-  discord: string;
+  website: [IProjectWebsite];
+  telegram: [IProjectTelegram];
+  twitter: [IProjectTwitter];
+  discord: [IProjectDiscord];
+  viewblock: [IProjectViewBlock];
+  whitepaper: [IProjectWhitepaper];
+  github: [IProjectGithub];
+  medium: [IProjectMedium];
+  linkedin: [IProjectLinkedin];
+  youtube: [IProjectYoutube];
+  reddit: [IProjectReddit];
+  facebook: [IProjectFacebook];
+  related: [IProjectRelated]
   isActive: boolean;
   isBuilding: boolean;
   isNew: boolean;

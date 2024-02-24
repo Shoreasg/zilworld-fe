@@ -24,9 +24,9 @@ export default async function Project({ params }: Readonly<IProjectNameParams>) 
         {/* Mobile View */}
         <div className="block xl:hidden z-20 ">
           <div className="flex flex-col w-full h-full">
-            <ProjectDetailsCard projectData={project} />
+            {/* <ProjectDetailsCard projectData={project} />
             <ProjectAnnouncement projectData={project} />
-            <ProjectTwitterWidget projectData={project} />
+            <ProjectTwitterWidget projectData={project} /> */}
           </div>
         </div>
         {/* web View */}
