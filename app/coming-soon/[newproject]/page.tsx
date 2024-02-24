@@ -20,9 +20,9 @@ export default async function NewProject({ params }: INewProjectNameParams) {
   }
   return (
     <>
-      <NewProjectDetailsCard NewProjectData={project} />
+      {/* <NewProjectDetailsCard NewProjectData={project} />
       <NewProjectAnnouncement NewProjectData={project} />
-      <NewProjectTwitterWidget NewProjectData={project} />
+      <NewProjectTwitterWidget NewProjectData={project} /> */}
     </>
   );
 }
