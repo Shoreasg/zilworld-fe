@@ -151,7 +151,7 @@ export default function ProjectDetails({
                         <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                           {projectData.website.map((project, index) => {
                             return (
-                              <div className="flex flex-row">
+                              <div className="flex flex-row" key={index}>
                                 <GlobeAltIcon
                                   width={20}
                                   height={20}
