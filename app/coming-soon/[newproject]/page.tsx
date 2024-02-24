@@ -1,6 +1,6 @@
 import { INewProjectNameParams } from "../../../types";
 import { redirect } from "next/navigation";
-import NewProjectDetailsCard from "./NewProjectDetailsCard";
+// import NewProjectDetailsCard from "./NewProjectDetailsCard";
 import NewProjectAnnouncement from "./NewProjectAnnouncement";
 import NewProjectTwitterWidget from "./NewProjectTwitterWidget";
 
