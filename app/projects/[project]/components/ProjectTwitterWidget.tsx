@@ -9,7 +9,6 @@ export default function ProjectTwitterWidget({
 }: ProjectDetailsCardProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  console.log(isLoading);
   return (
     <div className="flex flex-1 flex-col md:pl-64">
       <div className="p-6">
