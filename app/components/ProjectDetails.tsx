@@ -3,13 +3,14 @@ import {
   DocumentTextIcon,
   GlobeAltIcon,
   InformationCircleIcon,
-  MagnifyingGlassIcon,
   ShareIcon,
 } from "@heroicons/react/24/outline";
 import { ProjectDetailsCardProps } from "../../types";
 import { useState } from "react";
 import { getCharLength, trimDescription } from "../functions";
 import Link from "next/link";
+import Image from "next/image";
+import numWords from "num-words";
 
 export default function ProjectDetails({
   projectData,
@@ -18,10 +19,69 @@ export default function ProjectDetails({
   const [onHoverCopy, setOnHoverCopy] = useState(false);
   const [onHoverInactive, setOnHoverInactive] = useState(false);
   const [showMore, setShowMore] = useState(false);
-  const [onHoverWeb, setOnHoverWeb] = useState(false);
+  const [onClickWeb, setOnClickWeb] = useState(false);
+  const [onClickToken, setOnClickToken] = useState(false);
+  const [onClickViewBlock, setOnClickViewBlock] = useState(false);
+  const [onClickWhitePaper, setOnClickWhitePaper] = useState(false);
+  const [onClickGithub, setOnClickGithub] = useState(false);
+  const [onClickTwitter, setOnClickTwitter] = useState(false);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
+  };
+
+  const handleOnClickWeb = () => {
+    setOnClickToken(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickWeb(!onClickWeb);
+  };
+
+  const handleOnClickToken = () => {
+    setOnClickWeb(false);
+    setOnClickWhitePaper(false);
+    setOnClickViewBlock(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickToken(!onClickToken);
+  };
+
+  const handleOnClickViewBlock = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickViewBlock(!onClickViewBlock);
+  };
+
+  const handleOnClickWhitePaper = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickWhitePaper(!onClickWhitePaper);
+  };
+
+  const handleOnClickGithub = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickTwitter(false);
+    setOnClickGithub(!onClickGithub);
+  };
+
+  const handleOnClickTwitter = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(!onClickTwitter);
   };
 
   const handleCopyUrl = async () => {
@@ -144,26 +204,38 @@ export default function ProjectDetails({
                     <GlobeAltIcon
                       width={20}
                       height={20}
-                      onClick={() => setOnHoverWeb(!onHoverWeb)}
+                      onClick={() => handleOnClickWeb()}
+                      className={`${
+                        onClickWeb ? `text-[#097A8E]` : " hover:text-[#097A8E]"
+                      }`}
                     />
-                    {onHoverWeb && (
-                      <div className="absolute bottom-[30px]">
+                    {onClickWeb && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickWeb(false)}
+                      >
                         <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                           {projectData.website.map((project, index) => {
                             return (
-                              <div className="flex flex-row" key={index}>
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
                                 <GlobeAltIcon
-                                  width={20}
-                                  height={20}
-                                  onClick={() => setOnHoverWeb(!onHoverWeb)}
+                                  width={12}
+                                  height={12}
                                   className="mr-1"
                                 />
                                 <Link
                                   href={`${project.websiteURL}`}
                                   target="_blank"
-                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
                                 >
-                                  Website {index + 1}
+                                  Website{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
                                 </Link>
                               </div>
                             );
@@ -177,35 +249,299 @@ export default function ProjectDetails({
                     href={`${projectData.website[0].websiteURL}`}
                     target="_blank"
                   >
-                    <GlobeAltIcon width={20} height={20} />
+                    <GlobeAltIcon
+                      width={12}
+                      height={12}
+                      className=" hover:text-[#097A8E]"
+                    />
                   </Link>
                 )}
-                {projectData.tokens.length > 0 ? (
-                  <CurrencyDollarIcon width={20} height={20} />
+                {projectData.tokens.length > 1 ? (
+                  <button className="relative inline-block">
+                    <CurrencyDollarIcon
+                      width={20}
+                      height={20}
+                      onClick={() => handleOnClickToken()}
+                      className={`${
+                        onClickToken
+                          ? `text-[#097A8E]`
+                          : " hover:text-[#097A8E]"
+                      }`}
+                    />
+                    {onClickToken && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickToken(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.tokens.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center"
+                                key={index}
+                              >
+                                <Image
+                                  height={12}
+                                  width={12}
+                                  src={project.tokenLogo}
+                                  alt={project.tokenAddress}
+                                  className="mr-1"
+                                />
+                                <Link
+                                  href={`${project.zilworldURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Token{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
                 ) : (
-                  ""
-                )}
-                {projectData.viewblock.length > 0 ? (
-                  <MagnifyingGlassIcon width={20} height={20} />
-                ) : (
-                  ""
-                )}
-                {projectData.whitepaper.length > 0 ? (
-                  <DocumentTextIcon width={20} height={20} />
-                ) : (
-                  ""
-                )}
-                {projectData.github.length > 0 ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
+                  <Link
+                    href={`${projectData.tokens[0].zilworldURL}`}
+                    target="_blank"
                   >
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
+                    <CurrencyDollarIcon
+                      width={20}
+                      height={20}
+                      className=" hover:text-[#097A8E]"
+                    />
+                  </Link>
+                )}
+                {projectData.viewblock.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      onClick={() => handleOnClickViewBlock()}
+                      className={`${
+                        onClickViewBlock
+                          ? `text-[#097A8E]`
+                          : " hover:text-[#097A8E]"
+                      }`}
+                    >
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                      <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                      <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    {onClickViewBlock && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickViewBlock(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.viewblock.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  className="mr-1"
+                                >
+                                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                  <line
+                                    x1="12"
+                                    y1="22.08"
+                                    x2="12"
+                                    y2="12"
+                                  ></line>
+                                </svg>
+                                <Link
+                                  href={`${project.viewblockURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  ViewBlock{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
                 ) : (
-                  ""
+                  <Link
+                    href={`${projectData.viewblock[0].viewblockURL}`}
+                    target="_blank"
+                    className="hover:text-[#097A8E]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                      <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                      <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                  </Link>
+                )}
+                {projectData.whitepaper.length > 1 ? (
+                  <button className="relative inline-block">
+                    <DocumentTextIcon
+                      width={20}
+                      height={20}
+                      onClick={() => handleOnClickWhitePaper()}
+                      className={`${
+                        onClickWhitePaper
+                          ? `text-[#097A8E]`
+                          : " hover:text-[#097A8E]"
+                      }`}
+                    />
+                    {onClickWhitePaper && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickWhitePaper(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.whitepaper.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <DocumentTextIcon
+                                  width={12}
+                                  height={12}
+                                  className="mr-1"
+                                />
+                                <Link
+                                  href={`${project.whitepaperURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Whitepaper{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
+                ) : (
+                  <Link
+                    href={`${projectData.whitepaper[0].whitepaperURL}`}
+                    target="_blank"
+                  >
+                    <DocumentTextIcon
+                      width={20}
+                      height={20}
+                      className=" hover:text-[#097A8E]"
+                    />
+                  </Link>
+                )}
+                {projectData.github.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      onClick={() => handleOnClickGithub()}
+                      className="hover:text-[#097A8E]"
+                    >
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    {onClickGithub && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickGithub(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.github.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 24 24"
+                                  fill="currentColor"
+                                  className="mr-1"
+                                >
+                                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                <Link
+                                  href={`${project.githubURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Github{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
+                ) : (
+                  <Link
+                    href={`${projectData.github[0].githubURL}`}
+                    target="_blank"
+                    className=" hover:text-[#097A8E]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                  </Link>
                 )}
               </div>
             </div>
@@ -214,22 +550,89 @@ export default function ProjectDetails({
                 Socials
               </p>
               <div className=" flex items-start gap-x-3">
-                {projectData.twitter.length > 0 ? (
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="Vector"
-                      d="M9.39528 6.85212L14.8557 0.504883H13.5617L8.82048 6.0161L5.03366 0.504883H0.666016L6.39243 8.83883L0.666016 15.4949H1.96002L6.9669 9.67485L10.9661 15.4949H15.3337L9.39496 6.85212H9.39528ZM7.62296 8.91225L7.04275 8.08238L2.42627 1.47899H4.41379L8.13935 6.80813L8.71955 7.63801L13.5623 14.5651H11.5748L7.62296 8.91257V8.91225Z"
-                      fill="#3B4242"
-                    />
-                  </svg>
+                {projectData.twitter.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 16"
+                      stroke="currentColor"
+                      strokeWidth={0.5}
+                      xmlns="http://www.w3.org/2000/svg"
+                      onClick={() => handleOnClickTwitter()}
+                    >
+                      <path
+                        id="Vector"
+                        d="M9.39528 6.85212L14.8557 0.504883H13.5617L8.82048 6.0161L5.03366 0.504883H0.666016L6.39243 8.83883L0.666016 15.4949H1.96002L6.9669 9.67485L10.9661 15.4949H15.3337L9.39496 6.85212H9.39528ZM7.62296 8.91225L7.04275 8.08238L2.42627 1.47899H4.41379L8.13935 6.80813L8.71955 7.63801L13.5623 14.5651H11.5748L7.62296 8.91257V8.91225Z"
+                        fill="#3B4242"
+                      />
+                    </svg>
+                    {onClickTwitter && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickTwitter(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.twitter.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 20 16"
+                                  stroke="currentColor"
+                                  strokeWidth={0.5}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="mr-1"
+                                >
+                                  <path
+                                    id="Vector"
+                                    d="M9.39528 6.85212L14.8557 0.504883H13.5617L8.82048 6.0161L5.03366 0.504883H0.666016L6.39243 8.83883L0.666016 15.4949H1.96002L6.9669 9.67485L10.9661 15.4949H15.3337L9.39496 6.85212H9.39528ZM7.62296 8.91225L7.04275 8.08238L2.42627 1.47899H4.41379L8.13935 6.80813L8.71955 7.63801L13.5623 14.5651H11.5748L7.62296 8.91257V8.91225Z"
+                                    fill="#3B4242"
+                                  />
+                                </svg>
+                                <Link
+                                  href={`${project.twitterURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Twitter{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
                 ) : (
-                  ""
+                  <Link
+                    href={`${projectData.twitter[0].twitterURL}`}
+                    target="_blank"
+                    className=" hover:text-[#097A8E]"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 16"
+                      stroke="currentColor"
+                      strokeWidth={0.5}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        id="Vector"
+                        d="M9.39528 6.85212L14.8557 0.504883H13.5617L8.82048 6.0161L5.03366 0.504883H0.666016L6.39243 8.83883L0.666016 15.4949H1.96002L6.9669 9.67485L10.9661 15.4949H15.3337L9.39496 6.85212H9.39528ZM7.62296 8.91225L7.04275 8.08238L2.42627 1.47899H4.41379L8.13935 6.80813L8.71955 7.63801L13.5623 14.5651H11.5748L7.62296 8.91257V8.91225Z"
+                        fill="#3B4242"
+                      />
+                    </svg>
+                  </Link>
                 )}
                 {projectData.discord.length > 0 ? (
                   <svg

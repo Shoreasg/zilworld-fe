@@ -17,6 +17,7 @@ const nextConfig = {
         port: '',
       },
     ],
+    dangerouslyAllowSVG: true,
   },
 }
 
