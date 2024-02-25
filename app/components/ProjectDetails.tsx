@@ -81,7 +81,7 @@ export default function ProjectDetails({
                 return (
                   <div
                     key={name}
-                    className="flex h-5 py-[6px] px-2 justify-center items-center gap-1 rounded bg-[#D5DEE0]"
+                    className="flex h-5 py-[6px] px-2 justify-center items-center gap-1 rounded bg-[#D5DEE0] ${plusJakartaSans.className} text-[10px] leadiing-[15px] font-normal"
                   >
                     {name}
                   </div>
@@ -218,7 +218,7 @@ export default function ProjectDetails({
                   <svg
                     width="20"
                     height="20"
-                    viewBox="0 0 16 16"
+                    viewBox="0 0 20 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
