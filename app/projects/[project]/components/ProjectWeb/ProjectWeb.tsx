@@ -18,7 +18,6 @@ export default function ProjectWeb({
         <ProjectDetails projectData={projectData}/>
         </div>
       </div>
-      
     </>
   );
 }

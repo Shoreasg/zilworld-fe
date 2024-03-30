@@ -353,7 +353,7 @@ export default function ProjectDetails({
             )}
           </button>
         </div>
-        <div className="flex flex-col items-start gap-4">
+        <div className="flex flex-col items-start gap-4 mb-2">
           <div className="flex py-2 items-start content-start gap-x-14 gap-y-8 self-stretch flex-wrap">
             <div className="flex flex-col items-start gap-y-2">
               <p className=" font-lato text-sm font-extrabold leading-5 tracking-[1px]">
@@ -1290,7 +1290,7 @@ export default function ProjectDetails({
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                       className=" hover:text-[#097A8E]"
-                      onClick={()=>handleOnClickFacebook()}
+                      onClick={() => handleOnClickFacebook()}
                     >
                       <g id="icons/social/facebook">
                         <path
@@ -1459,8 +1459,27 @@ export default function ProjectDetails({
               ""
             )}
           </div>
+          <div className="flex flex-col justify-start items-start gap-2 p-0">
+            <p className=" font-lato text-sm font-extrabold leading-5 tracking-[1px]">
+              Related
+            </p>
+            <div className="flex flex-row justify-start items-start gap-2">
+              {projectData.related.map((related, index) => {
+                return (
+                  <Link href={related.relatedURL} key={index} target="_blank">
+                    <p className=" text-sm leading-[1.5] tracking-normal text-left font-plusjakartasans text-[#097a8e] underline">
+                      {related.relatedName}
+                    </p>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
+      <div className="flex flex-col justify-start self-stretch px-6 py-8 w-full h-16">
+        <hr className="border-t-[1px] self-stretch flex-grow-0 border-[#D5DEE0] w-full"/>
+        </div>
     </div>
   );
 }
