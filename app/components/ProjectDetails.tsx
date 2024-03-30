@@ -25,6 +25,13 @@ export default function ProjectDetails({
   const [onClickWhitePaper, setOnClickWhitePaper] = useState(false);
   const [onClickGithub, setOnClickGithub] = useState(false);
   const [onClickTwitter, setOnClickTwitter] = useState(false);
+  const [onClickkDiscord, setOnClickDiscord] = useState(false);
+  const [onClickTelegram, setOnClickTelegram] = useState(false);
+  const [onClickLinkedin, setOnClickLinkedin] = useState(false);
+  const [onClickMedium, setOnClickMedium] = useState(false);
+  const [onClickReddit, setOnClickReddit] = useState(false);
+  const [onClickYoutube, setOnClickYoutube] = useState(false);
+  const [onClickFacebook, setOnClickFacebook] = useState(false);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
@@ -36,6 +43,13 @@ export default function ProjectDetails({
     setOnClickWhitePaper(false);
     setOnClickGithub(false);
     setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickLinkedin(false);
+    setOnClickTelegram(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
     setOnClickWeb(!onClickWeb);
   };
 
@@ -45,6 +59,13 @@ export default function ProjectDetails({
     setOnClickViewBlock(false);
     setOnClickGithub(false);
     setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickLinkedin(false);
+    setOnClickTelegram(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
     setOnClickToken(!onClickToken);
   };
 
@@ -54,6 +75,13 @@ export default function ProjectDetails({
     setOnClickWhitePaper(false);
     setOnClickGithub(false);
     setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickLinkedin(false);
+    setOnClickTelegram(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
     setOnClickViewBlock(!onClickViewBlock);
   };
 
@@ -63,6 +91,13 @@ export default function ProjectDetails({
     setOnClickViewBlock(false);
     setOnClickGithub(false);
     setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickLinkedin(false);
+    setOnClickTelegram(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
     setOnClickWhitePaper(!onClickWhitePaper);
   };
 
@@ -72,6 +107,13 @@ export default function ProjectDetails({
     setOnClickViewBlock(false);
     setOnClickWhitePaper(false);
     setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickLinkedin(false);
+    setOnClickTelegram(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
     setOnClickGithub(!onClickGithub);
   };
 
@@ -81,7 +123,126 @@ export default function ProjectDetails({
     setOnClickViewBlock(false);
     setOnClickWhitePaper(false);
     setOnClickGithub(false);
+    setOnClickDiscord(false);
+    setOnClickLinkedin(false);
+    setOnClickTelegram(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
     setOnClickTwitter(!onClickTwitter);
+  };
+
+  const handleOnClickDiscord = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickLinkedin(false);
+    setOnClickTelegram(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
+    setOnClickDiscord(!onClickkDiscord);
+  };
+
+  const handleOnClickTelegram = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickLinkedin(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
+    setOnClickTelegram(!onClickTelegram);
+  };
+
+  const handleOnClickLinkedin = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickTelegram(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
+    setOnClickLinkedin(!onClickLinkedin);
+  };
+
+  const handleOnClickMedium = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickTelegram(false);
+    setOnClickLinkedin(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
+    setOnClickMedium(!onClickMedium);
+  };
+
+  const handleOnClickReddit = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickTelegram(false);
+    setOnClickLinkedin(false);
+    setOnClickMedium(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(false);
+    setOnClickReddit(!onClickReddit);
+  };
+
+  const handleOnClickYoutube = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickTelegram(false);
+    setOnClickLinkedin(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickFacebook(false);
+    setOnClickYoutube(!onClickYoutube);
+  };
+
+  const handleOnClickFacebook = () => {
+    setOnClickToken(false);
+    setOnClickWeb(false);
+    setOnClickViewBlock(false);
+    setOnClickWhitePaper(false);
+    setOnClickGithub(false);
+    setOnClickTwitter(false);
+    setOnClickDiscord(false);
+    setOnClickTelegram(false);
+    setOnClickLinkedin(false);
+    setOnClickMedium(false);
+    setOnClickReddit(false);
+    setOnClickYoutube(false);
+    setOnClickFacebook(!onClickFacebook);
   };
 
   const handleCopyUrl = async () => {
@@ -559,6 +720,7 @@ export default function ProjectDetails({
                       stroke="currentColor"
                       strokeWidth={0.5}
                       xmlns="http://www.w3.org/2000/svg"
+                      className="hover:text-[#097A8E]"
                       onClick={() => handleOnClickTwitter()}
                     >
                       <path
@@ -624,6 +786,7 @@ export default function ProjectDetails({
                       viewBox="0 0 20 16"
                       stroke="currentColor"
                       strokeWidth={0.5}
+                      className="hover:text-[#097A8E]"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -634,129 +797,578 @@ export default function ProjectDetails({
                     </svg>
                   </Link>
                 )}
-                {projectData.discord.length > 0 ? (
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="Vector"
-                      d="M16.6061 1.98698C16.6008 1.97676 16.592 1.96874 16.5814 1.96438C15.35 1.39942 14.0506 0.996559 12.7156 0.765881C12.7035 0.763626 12.691 0.765253 12.6798 0.770529C12.6687 0.775806 12.6594 0.784465 12.6535 0.795273C12.4766 1.11642 12.3159 1.44629 12.1722 1.78363C10.7332 1.56518 9.26943 1.56518 7.83039 1.78363C7.68575 1.44544 7.52255 1.11548 7.34155 0.795273C7.33534 0.784699 7.32609 0.776241 7.315 0.770998C7.30392 0.765755 7.29151 0.763972 7.2794 0.765881C5.94427 0.996075 4.64476 1.39896 3.41358 1.96441C3.40304 1.96888 3.39414 1.9765 3.38812 1.98624C0.925988 5.66312 0.251516 9.24959 0.582389 12.7916C0.58332 12.8003 0.585987 12.8087 0.590231 12.8164C0.594476 12.824 0.600212 12.8307 0.607098 12.8361C2.04078 13.8976 3.64436 14.7079 5.34943 15.2323C5.36143 15.2359 5.37426 15.2357 5.38617 15.2318C5.39808 15.2279 5.40851 15.2205 5.41606 15.2105C5.78227 14.7122 6.10676 14.1845 6.38623 13.6329C6.39007 13.6253 6.39226 13.617 6.39266 13.6086C6.39306 13.6001 6.39166 13.5916 6.38855 13.5837C6.38544 13.5758 6.3807 13.5687 6.37462 13.5627C6.36855 13.5568 6.36129 13.5522 6.35332 13.5493C5.84162 13.3535 5.34624 13.1175 4.87182 12.8435C4.8632 12.8384 4.85596 12.8313 4.85074 12.8228C4.84553 12.8143 4.84249 12.8046 4.8419 12.7946C4.84131 12.7846 4.84318 12.7746 4.84736 12.7656C4.85153 12.7565 4.85788 12.7486 4.86584 12.7425C4.96539 12.6679 5.065 12.5904 5.16006 12.512C5.1685 12.505 5.17872 12.5006 5.18956 12.4991C5.20041 12.4977 5.21144 12.4993 5.22143 12.5037C8.32955 13.9222 11.6945 13.9222 14.7658 12.5037C14.7758 12.499 14.787 12.4972 14.798 12.4985C14.809 12.4998 14.8194 12.5043 14.828 12.5113C14.9231 12.5896 15.0226 12.6679 15.1229 12.7425C15.1309 12.7485 15.1373 12.7564 15.1416 12.7654C15.1458 12.7745 15.1478 12.7844 15.1473 12.7944C15.1467 12.8044 15.1438 12.8141 15.1386 12.8226C15.1335 12.8312 15.1263 12.8384 15.1177 12.8435C14.6444 13.1198 14.1485 13.3557 13.6355 13.5486C13.6275 13.5516 13.6203 13.5563 13.6143 13.5623C13.6082 13.5683 13.6035 13.5756 13.6005 13.5835C13.5974 13.5915 13.5961 13.6 13.5966 13.6085C13.597 13.617 13.5993 13.6253 13.6032 13.6329C13.8873 14.1815 14.2114 14.7085 14.5726 15.2096C14.58 15.2199 14.5903 15.2276 14.6023 15.2317C14.6143 15.2357 14.6272 15.2359 14.6393 15.2322C16.3474 14.7095 17.9538 13.8992 19.3892 12.8361C19.3962 12.831 19.4021 12.8244 19.4063 12.8169C19.4106 12.8094 19.4132 12.801 19.414 12.7924C19.8101 8.6974 18.7508 5.14032 16.6061 1.98698ZM6.8504 10.6349C5.91463 10.6349 5.14358 9.77616 5.14358 8.72153C5.14358 7.6669 5.89968 6.80809 6.8504 6.80809C7.80856 6.80809 8.57215 7.67436 8.55719 8.72146C8.55719 9.77616 7.80107 10.6349 6.8504 10.6349ZM13.161 10.6349C12.2253 10.6349 11.4542 9.77616 11.4542 8.72153C11.4542 7.6669 12.2103 6.80809 13.161 6.80809C14.1192 6.80809 14.8828 7.67436 14.8678 8.72146C14.8678 9.77616 14.1192 10.6349 13.161 10.6349Z"
-                      fill="#3B4242"
-                    />
-                  </svg>
+                {projectData.discord.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      className="bi bi-discord hover:text-[#097A8E]"
+                      viewBox="0 0 16 16"
+                      onClick={() => handleOnClickDiscord()}
+                    >
+                      <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                    </svg>
+                    {onClickkDiscord && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickDiscord(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.discord.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 16 16"
+                                  fill="currentColor"
+                                  className="bi bi-discord hover:text-[#097A8E] mr-1"
+                                >
+                                  <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                                </svg>
+
+                                <Link
+                                  href={`${project.discordURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Discord{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
                 ) : (
-                  ""
-                )}
-                {projectData.telegram.length > 0 ? (
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <Link
+                    href={`${projectData.discord[0].discordURL}`}
+                    target="_blank"
+                    className=" hover:text-[#097A8E]"
                   >
-                    <path
-                      id="Path-3"
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M1.67391 6.8879C6.8565 4.62993 10.3124 3.14134 12.0415 2.42212C16.9786 0.36862 18.0045 0.0119045 18.6731 0.00012559C18.8202 -0.00246506 19.149 0.0339819 19.362 0.206816C19.5419 0.352754 19.5914 0.549895 19.615 0.68826C19.6387 0.826626 19.6682 1.14183 19.6448 1.38811C19.3772 4.1992 18.2196 11.021 17.6306 14.1694C17.3814 15.5017 16.8907 15.9484 16.4157 15.9921C15.3833 16.0871 14.5993 15.3098 13.5994 14.6543C12.0347 13.6287 11.1508 12.9902 9.63202 11.9893C7.87679 10.8327 9.01463 10.1969 10.0149 9.15799C10.2767 8.88609 14.8254 4.74867 14.9135 4.37335C14.9245 4.32641 14.9347 4.15143 14.8308 4.05904C14.7268 3.96664 14.5734 3.99824 14.4627 4.02337C14.3057 4.05898 11.8062 5.71112 6.96391 8.97978C6.25441 9.46697 5.61177 9.70435 5.03598 9.69191C4.40122 9.6782 3.1802 9.33301 2.2725 9.03795C1.15916 8.67605 0.274306 8.48471 0.351357 7.87009C0.39149 7.54996 0.832342 7.22256 1.67391 6.8879Z"
-                      fill="#3B4242"
-                    />
-                  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      className="bi bi-discord hover:text-[#097A8E]"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                    </svg>
+                  </Link>
+                )}
+                {projectData.telegram.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 32 32"
+                      fill="currentColor"
+                      className=" hover:text-[#097A8E]"
+                      onClick={() => handleOnClickTelegram()}
+                    >
+                      {" "}
+                      <path d="M29.919 6.163l-4.225 19.925c-0.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-0.344 0.344-0.631 0.631-1.294 0.631l0.463-6.556 11.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75 9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z" />{" "}
+                    </svg>
+                    {onClickTelegram && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickTelegram(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.telegram.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 32 32"
+                                  fill="currentColor"
+                                  className=" hover:text-[#097A8E] mr-1"
+                                >
+                                  {" "}
+                                  <path d="M29.919 6.163l-4.225 19.925c-0.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-0.344 0.344-0.631 0.631-1.294 0.631l0.463-6.556 11.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75 9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z" />{" "}
+                                </svg>
+
+                                <Link
+                                  href={`${project.telegramURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Telegram{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
                 ) : (
-                  ""
-                )}
-                {projectData.linkedin.length > 0 ? (
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <Link
+                    href={`${projectData.telegram[0].telegramURL}`}
+                    target="_blank"
                   >
-                    <g id="icons/social/linkdin">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      className=" hover:text-[#097A8E]"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 32 32"
+                    >
+                      {" "}
+                      <path d="M29.919 6.163l-4.225 19.925c-0.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-0.344 0.344-0.631 0.631-1.294 0.631l0.463-6.556 11.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75 9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z" />{" "}
+                    </svg>
+                  </Link>
+                )}
+                {projectData.linkedin.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className=" hover:text-[#097A8E]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      onClick={() => handleOnClickLinkedin()}
+                    >
+                      <g id="icons/social/linkdin">
+                        <path
+                          id="Vector"
+                          d="M16.424 2.00011H3.15173C3.00254 1.99804 2.8544 2.02538 2.71577 2.08056C2.57714 2.13575 2.45074 2.2177 2.34379 2.32174C2.23684 2.42578 2.15143 2.54987 2.09245 2.68692C2.03346 2.82398 2.00204 2.97131 2 3.1205V16.5495C2.00204 16.6987 2.03346 16.846 2.09245 16.9831C2.15143 17.1201 2.23684 17.2442 2.34379 17.3483C2.45074 17.4523 2.57714 17.5343 2.71577 17.5894C2.8544 17.6446 3.00254 17.672 3.15173 17.6699H16.424C16.5732 17.672 16.7214 17.6446 16.86 17.5894C16.9986 17.5343 17.125 17.4523 17.232 17.3483C17.3389 17.2442 17.4243 17.1201 17.4833 16.9831C17.5423 16.846 17.5737 16.6987 17.5758 16.5495V3.1205C17.5737 2.97131 17.5423 2.82398 17.4833 2.68692C17.4243 2.54987 17.3389 2.42578 17.232 2.32174C17.125 2.2177 16.9986 2.13575 16.86 2.08056C16.7214 2.02538 16.5732 1.99804 16.424 2.00011ZM6.72444 15.1157H4.37397V8.06431H6.72444V15.1157ZM5.54921 7.07712C5.22505 7.07712 4.91416 6.94835 4.68495 6.71913C4.45573 6.48992 4.32696 6.17903 4.32696 5.85488C4.32696 5.53072 4.45573 5.21983 4.68495 4.99062C4.91416 4.7614 5.22505 4.63263 5.54921 4.63263C5.72133 4.61311 5.89565 4.63017 6.06073 4.68268C6.22581 4.7352 6.37793 4.82199 6.50714 4.93738C6.63635 5.05277 6.73974 5.19414 6.81052 5.35225C6.88131 5.51036 6.9179 5.68164 6.9179 5.85488C6.9179 6.02811 6.88131 6.19939 6.81052 6.3575C6.73974 6.51561 6.63635 6.65699 6.50714 6.77237C6.37793 6.88776 6.22581 6.97455 6.06073 7.02707C5.89565 7.07958 5.72133 7.09664 5.54921 7.07712ZM15.2018 15.1157H12.8513V11.3315C12.8513 10.3834 12.5144 9.76449 11.6604 9.76449C11.3961 9.76642 11.1388 9.84932 10.923 10.002C10.7073 10.1547 10.5435 10.3699 10.4538 10.6185C10.3925 10.8026 10.366 10.9966 10.3755 11.1904V15.1079H8.02503C8.02503 15.1079 8.02503 8.69894 8.02503 8.05648H10.3755V9.05151C10.589 8.681 10.8996 8.37577 11.2737 8.16868C11.6479 7.96159 12.0714 7.86049 12.4988 7.87628C14.0657 7.87628 15.2018 8.88698 15.2018 11.0572V15.1157Z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                    {onClickLinkedin && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickLinkedin(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.linkedin.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                  className=" hover:text-[#097A8E] mr-1"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g id="icons/social/linkdin">
+                                    <path
+                                      id="Vector"
+                                      d="M16.424 2.00011H3.15173C3.00254 1.99804 2.8544 2.02538 2.71577 2.08056C2.57714 2.13575 2.45074 2.2177 2.34379 2.32174C2.23684 2.42578 2.15143 2.54987 2.09245 2.68692C2.03346 2.82398 2.00204 2.97131 2 3.1205V16.5495C2.00204 16.6987 2.03346 16.846 2.09245 16.9831C2.15143 17.1201 2.23684 17.2442 2.34379 17.3483C2.45074 17.4523 2.57714 17.5343 2.71577 17.5894C2.8544 17.6446 3.00254 17.672 3.15173 17.6699H16.424C16.5732 17.672 16.7214 17.6446 16.86 17.5894C16.9986 17.5343 17.125 17.4523 17.232 17.3483C17.3389 17.2442 17.4243 17.1201 17.4833 16.9831C17.5423 16.846 17.5737 16.6987 17.5758 16.5495V3.1205C17.5737 2.97131 17.5423 2.82398 17.4833 2.68692C17.4243 2.54987 17.3389 2.42578 17.232 2.32174C17.125 2.2177 16.9986 2.13575 16.86 2.08056C16.7214 2.02538 16.5732 1.99804 16.424 2.00011ZM6.72444 15.1157H4.37397V8.06431H6.72444V15.1157ZM5.54921 7.07712C5.22505 7.07712 4.91416 6.94835 4.68495 6.71913C4.45573 6.48992 4.32696 6.17903 4.32696 5.85488C4.32696 5.53072 4.45573 5.21983 4.68495 4.99062C4.91416 4.7614 5.22505 4.63263 5.54921 4.63263C5.72133 4.61311 5.89565 4.63017 6.06073 4.68268C6.22581 4.7352 6.37793 4.82199 6.50714 4.93738C6.63635 5.05277 6.73974 5.19414 6.81052 5.35225C6.88131 5.51036 6.9179 5.68164 6.9179 5.85488C6.9179 6.02811 6.88131 6.19939 6.81052 6.3575C6.73974 6.51561 6.63635 6.65699 6.50714 6.77237C6.37793 6.88776 6.22581 6.97455 6.06073 7.02707C5.89565 7.07958 5.72133 7.09664 5.54921 7.07712ZM15.2018 15.1157H12.8513V11.3315C12.8513 10.3834 12.5144 9.76449 11.6604 9.76449C11.3961 9.76642 11.1388 9.84932 10.923 10.002C10.7073 10.1547 10.5435 10.3699 10.4538 10.6185C10.3925 10.8026 10.366 10.9966 10.3755 11.1904V15.1079H8.02503C8.02503 15.1079 8.02503 8.69894 8.02503 8.05648H10.3755V9.05151C10.589 8.681 10.8996 8.37577 11.2737 8.16868C11.6479 7.96159 12.0714 7.86049 12.4988 7.87628C14.0657 7.87628 15.2018 8.88698 15.2018 11.0572V15.1157Z"
+                                      fill="currentColor"
+                                    />
+                                  </g>
+                                </svg>
+
+                                <Link
+                                  href={`${project.linkedinURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Linkedin{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
+                ) : (
+                  <Link
+                    href={`${projectData.linkedin[0].linkedinURL}`}
+                    target="_blank"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className=" hover:text-[#097A8E]"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="icons/social/linkdin">
+                        <path
+                          id="Vector"
+                          d="M16.424 2.00011H3.15173C3.00254 1.99804 2.8544 2.02538 2.71577 2.08056C2.57714 2.13575 2.45074 2.2177 2.34379 2.32174C2.23684 2.42578 2.15143 2.54987 2.09245 2.68692C2.03346 2.82398 2.00204 2.97131 2 3.1205V16.5495C2.00204 16.6987 2.03346 16.846 2.09245 16.9831C2.15143 17.1201 2.23684 17.2442 2.34379 17.3483C2.45074 17.4523 2.57714 17.5343 2.71577 17.5894C2.8544 17.6446 3.00254 17.672 3.15173 17.6699H16.424C16.5732 17.672 16.7214 17.6446 16.86 17.5894C16.9986 17.5343 17.125 17.4523 17.232 17.3483C17.3389 17.2442 17.4243 17.1201 17.4833 16.9831C17.5423 16.846 17.5737 16.6987 17.5758 16.5495V3.1205C17.5737 2.97131 17.5423 2.82398 17.4833 2.68692C17.4243 2.54987 17.3389 2.42578 17.232 2.32174C17.125 2.2177 16.9986 2.13575 16.86 2.08056C16.7214 2.02538 16.5732 1.99804 16.424 2.00011ZM6.72444 15.1157H4.37397V8.06431H6.72444V15.1157ZM5.54921 7.07712C5.22505 7.07712 4.91416 6.94835 4.68495 6.71913C4.45573 6.48992 4.32696 6.17903 4.32696 5.85488C4.32696 5.53072 4.45573 5.21983 4.68495 4.99062C4.91416 4.7614 5.22505 4.63263 5.54921 4.63263C5.72133 4.61311 5.89565 4.63017 6.06073 4.68268C6.22581 4.7352 6.37793 4.82199 6.50714 4.93738C6.63635 5.05277 6.73974 5.19414 6.81052 5.35225C6.88131 5.51036 6.9179 5.68164 6.9179 5.85488C6.9179 6.02811 6.88131 6.19939 6.81052 6.3575C6.73974 6.51561 6.63635 6.65699 6.50714 6.77237C6.37793 6.88776 6.22581 6.97455 6.06073 7.02707C5.89565 7.07958 5.72133 7.09664 5.54921 7.07712ZM15.2018 15.1157H12.8513V11.3315C12.8513 10.3834 12.5144 9.76449 11.6604 9.76449C11.3961 9.76642 11.1388 9.84932 10.923 10.002C10.7073 10.1547 10.5435 10.3699 10.4538 10.6185C10.3925 10.8026 10.366 10.9966 10.3755 11.1904V15.1079H8.02503C8.02503 15.1079 8.02503 8.69894 8.02503 8.05648H10.3755V9.05151C10.589 8.681 10.8996 8.37577 11.2737 8.16868C11.6479 7.96159 12.0714 7.86049 12.4988 7.87628C14.0657 7.87628 15.2018 8.88698 15.2018 11.0572V15.1157Z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </Link>
+                )}
+                {projectData.medium.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      className=" hover:text-[#097A8E]"
+                      onClick={() => handleOnClickMedium()}
+                    >
                       <path
-                        id="Vector"
-                        d="M16.424 2.00011H3.15173C3.00254 1.99804 2.8544 2.02538 2.71577 2.08056C2.57714 2.13575 2.45074 2.2177 2.34379 2.32174C2.23684 2.42578 2.15143 2.54987 2.09245 2.68692C2.03346 2.82398 2.00204 2.97131 2 3.1205V16.5495C2.00204 16.6987 2.03346 16.846 2.09245 16.9831C2.15143 17.1201 2.23684 17.2442 2.34379 17.3483C2.45074 17.4523 2.57714 17.5343 2.71577 17.5894C2.8544 17.6446 3.00254 17.672 3.15173 17.6699H16.424C16.5732 17.672 16.7214 17.6446 16.86 17.5894C16.9986 17.5343 17.125 17.4523 17.232 17.3483C17.3389 17.2442 17.4243 17.1201 17.4833 16.9831C17.5423 16.846 17.5737 16.6987 17.5758 16.5495V3.1205C17.5737 2.97131 17.5423 2.82398 17.4833 2.68692C17.4243 2.54987 17.3389 2.42578 17.232 2.32174C17.125 2.2177 16.9986 2.13575 16.86 2.08056C16.7214 2.02538 16.5732 1.99804 16.424 2.00011ZM6.72444 15.1157H4.37397V8.06431H6.72444V15.1157ZM5.54921 7.07712C5.22505 7.07712 4.91416 6.94835 4.68495 6.71913C4.45573 6.48992 4.32696 6.17903 4.32696 5.85488C4.32696 5.53072 4.45573 5.21983 4.68495 4.99062C4.91416 4.7614 5.22505 4.63263 5.54921 4.63263C5.72133 4.61311 5.89565 4.63017 6.06073 4.68268C6.22581 4.7352 6.37793 4.82199 6.50714 4.93738C6.63635 5.05277 6.73974 5.19414 6.81052 5.35225C6.88131 5.51036 6.9179 5.68164 6.9179 5.85488C6.9179 6.02811 6.88131 6.19939 6.81052 6.3575C6.73974 6.51561 6.63635 6.65699 6.50714 6.77237C6.37793 6.88776 6.22581 6.97455 6.06073 7.02707C5.89565 7.07958 5.72133 7.09664 5.54921 7.07712ZM15.2018 15.1157H12.8513V11.3315C12.8513 10.3834 12.5144 9.76449 11.6604 9.76449C11.3961 9.76642 11.1388 9.84932 10.923 10.002C10.7073 10.1547 10.5435 10.3699 10.4538 10.6185C10.3925 10.8026 10.366 10.9966 10.3755 11.1904V15.1079H8.02503C8.02503 15.1079 8.02503 8.69894 8.02503 8.05648H10.3755V9.05151C10.589 8.681 10.8996 8.37577 11.2737 8.16868C11.6479 7.96159 12.0714 7.86049 12.4988 7.87628C14.0657 7.87628 15.2018 8.88698 15.2018 11.0572V15.1157Z"
-                        fill="#3B4242"
+                        className="uim-primary"
+                        d="M22,6.41668h-.791a.89762.89762,0,0,0-.709.69479v9.83021a.83938.83938,0,0,0,.709.64164H22V19.9167H14.83334V17.58332h1.50008V7.25h-.07353L12.75706,19.9167H10.04512L6.58751,7.25H6.5V17.58332H8V19.9167H2V17.58332h.76835A.841.841,0,0,0,3.5,16.94168V7.11139a.89588.89588,0,0,0-.73166-.69479H2V4.0833H9.50266L11.96593,13.25h.068L14.51976,4.0833H22V6.41668"
                       />
-                    </g>
-                  </svg>
+                    </svg>
+                    {onClickMedium && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickMedium(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.medium.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  width="12"
+                                  height="12"
+                                  fill="currentColor"
+                                  className=" hover:text-[#097A8E] mr-1"
+                                >
+                                  <path
+                                    className="uim-primary"
+                                    d="M22,6.41668h-.791a.89762.89762,0,0,0-.709.69479v9.83021a.83938.83938,0,0,0,.709.64164H22V19.9167H14.83334V17.58332h1.50008V7.25h-.07353L12.75706,19.9167H10.04512L6.58751,7.25H6.5V17.58332H8V19.9167H2V17.58332h.76835A.841.841,0,0,0,3.5,16.94168V7.11139a.89588.89588,0,0,0-.73166-.69479H2V4.0833H9.50266L11.96593,13.25h.068L14.51976,4.0833H22V6.41668"
+                                  />
+                                </svg>
+
+                                <Link
+                                  href={`${project.mediumURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Medium{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
                 ) : (
-                  ""
-                )}
-                {projectData.medium.length > 0 ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
+                  <Link
+                    href={`${projectData.medium[0].mediumURL}`}
+                    target="_blank"
                   >
-                    <path
-                      className="uim-primary"
-                      d="M22,6.41668h-.791a.89762.89762,0,0,0-.709.69479v9.83021a.83938.83938,0,0,0,.709.64164H22V19.9167H14.83334V17.58332h1.50008V7.25h-.07353L12.75706,19.9167H10.04512L6.58751,7.25H6.5V17.58332H8V19.9167H2V17.58332h.76835A.841.841,0,0,0,3.5,16.94168V7.11139a.89588.89588,0,0,0-.73166-.69479H2V4.0833H9.50266L11.96593,13.25h.068L14.51976,4.0833H22V6.41668"
-                    />
-                  </svg>
-                ) : (
-                  ""
-                )}
-                {projectData.reddit.length > 0 ? (
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M18.3341 9.85149C18.3341 8.66336 17.4314 7.69803 16.3203 7.69803C15.8341 7.69803 15.4175 7.84654 15.0703 8.14356C13.8203 7.32674 12.2925 6.80692 10.6258 6.73267L11.4592 3.83664L13.8203 4.43069C13.8898 5.32179 14.5841 6.06436 15.4869 6.06436C16.3898 6.06436 17.1536 5.24752 17.1536 4.28218C17.1536 3.31684 16.3898 2.5 15.4869 2.5C14.8619 2.5 14.3064 2.87129 14.0286 3.46535L11.2508 2.79703C11.0425 2.72278 10.7647 2.87129 10.6953 3.09406L9.65359 6.73267C7.91748 6.80692 6.18138 7.25248 4.93138 8.14356C4.58416 7.84654 4.16748 7.69803 3.68138 7.69803C2.57027 7.69803 1.66748 8.66336 1.66748 9.85149C1.66748 10.5941 2.01471 11.2624 2.50082 11.6337C2.50082 11.7822 2.50082 12.0049 2.50082 12.1535C2.50082 13.6386 3.33416 14.9753 4.79248 16.0149C6.18138 16.9803 8.05638 17.5 10.0008 17.5C11.9453 17.5 13.8203 16.9803 15.2091 16.0149C16.6675 14.9753 17.5009 13.6386 17.5009 12.1535C17.5009 12.0049 17.5009 11.8564 17.5009 11.7079C17.9869 11.2624 18.3341 10.5941 18.3341 9.85149ZM15.5564 3.46535C15.973 3.46535 16.3203 3.83664 16.3203 4.28218C16.3203 4.72773 15.973 5.09901 15.5564 5.09901C15.1398 5.09901 14.7925 4.72773 14.7925 4.28218C14.7925 3.83664 15.1398 3.46535 15.5564 3.46535ZM6.38971 11.1881C6.38971 10.5198 6.94527 10 7.50082 10C8.12582 10 8.61193 10.5941 8.61193 11.1881C8.61193 11.7822 8.12582 12.3762 7.50082 12.3762C6.94527 12.3762 6.38971 11.8564 6.38971 11.1881ZM12.7786 14.6783C12.223 15.2723 11.3203 15.5693 10.0703 15.5693C8.82027 15.5693 7.91748 15.2723 7.36193 14.6783C7.15359 14.4555 7.15359 14.1584 7.36193 14.0099C7.57027 13.7871 7.84804 13.7871 7.98693 14.0099C8.40359 14.4555 9.09804 14.6783 10.0703 14.6783C11.0425 14.6783 11.7369 14.4555 12.1536 14.0099C12.3619 13.7871 12.6398 13.7871 12.7786 14.0099C12.9175 14.2326 12.9175 14.5298 12.7786 14.6783ZM12.5009 12.3762C11.8758 12.3762 11.3203 11.8564 11.3203 11.1881C11.3203 10.5198 11.8758 10 12.5009 10C13.1259 10 13.6119 10.5941 13.6119 11.1881C13.6119 11.7822 13.1259 12.3762 12.5009 12.3762Z"
-                      fill="#3B4242"
-                    />
-                  </svg>
-                ) : (
-                  ""
-                )}
-                {projectData.youtube.length ? (
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g id="Brands / youtube">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      className=" hover:text-[#097A8E]"
+                    >
                       <path
-                        id="Vector"
-                        d="M19.1669 8.09165C19.2081 6.89886 18.9472 5.715 18.4085 4.64999C18.043 4.21299 17.5358 3.91808 16.9752 3.81665C14.6565 3.60626 12.3281 3.52002 10.0002 3.55832C7.68072 3.51829 5.36078 3.60174 3.05019 3.80832C2.59337 3.89142 2.17062 4.10569 1.83352 4.42499C1.08352 5.11665 1.00019 6.29999 0.916852 7.29999C0.795945 9.09796 0.795945 10.902 0.916852 12.7C0.94096 13.2628 1.02476 13.8215 1.16685 14.3667C1.26733 14.7875 1.47062 15.1769 1.75852 15.5C2.09791 15.8362 2.53051 16.0627 3.00019 16.15C4.79678 16.3717 6.60703 16.4637 8.41685 16.425C11.3335 16.4667 13.8919 16.425 16.9169 16.1917C17.3981 16.1097 17.8428 15.8829 18.1919 15.5417C18.4252 15.3082 18.5994 15.0226 18.7002 14.7083C18.9982 13.7938 19.1446 12.8367 19.1335 11.875C19.1669 11.4083 19.1669 8.59165 19.1669 8.09165ZM8.11685 12.375V7.21665L13.0502 9.80832C11.6669 10.575 9.84185 11.4417 8.11685 12.375Z"
-                        fill="#3B4242"
+                        className="uim-primary"
+                        d="M22,6.41668h-.791a.89762.89762,0,0,0-.709.69479v9.83021a.83938.83938,0,0,0,.709.64164H22V19.9167H14.83334V17.58332h1.50008V7.25h-.07353L12.75706,19.9167H10.04512L6.58751,7.25H6.5V17.58332H8V19.9167H2V17.58332h.76835A.841.841,0,0,0,3.5,16.94168V7.11139a.89588.89588,0,0,0-.73166-.69479H2V4.0833H9.50266L11.96593,13.25h.068L14.51976,4.0833H22V6.41668"
                       />
-                    </g>
-                  </svg>
-                ) : (
-                  ""
+                    </svg>
+                  </Link>
                 )}
-                {projectData.facebook.length ? (
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g id="icons/social/facebook">
+                {projectData.reddit.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className=" hover:text-[#097A8E]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      onClick={() => handleOnClickReddit()}
+                    >
                       <path
-                        id="Vector"
-                        d="M12.2421 5.43548H13.6211V3.10296C12.9534 3.03353 12.2825 2.99925 11.6113 3.00027C9.61615 3.00027 8.25184 4.21787 8.25184 6.44771V8.36948H6V10.9807H8.25184V17.6702H10.9511V10.9807H13.1956L13.533 8.36948H10.9511V6.70444C10.9511 5.93426 11.1565 5.43548 12.2421 5.43548Z"
-                        fill="#3B4242"
+                        d="M18.3341 9.85149C18.3341 8.66336 17.4314 7.69803 16.3203 7.69803C15.8341 7.69803 15.4175 7.84654 15.0703 8.14356C13.8203 7.32674 12.2925 6.80692 10.6258 6.73267L11.4592 3.83664L13.8203 4.43069C13.8898 5.32179 14.5841 6.06436 15.4869 6.06436C16.3898 6.06436 17.1536 5.24752 17.1536 4.28218C17.1536 3.31684 16.3898 2.5 15.4869 2.5C14.8619 2.5 14.3064 2.87129 14.0286 3.46535L11.2508 2.79703C11.0425 2.72278 10.7647 2.87129 10.6953 3.09406L9.65359 6.73267C7.91748 6.80692 6.18138 7.25248 4.93138 8.14356C4.58416 7.84654 4.16748 7.69803 3.68138 7.69803C2.57027 7.69803 1.66748 8.66336 1.66748 9.85149C1.66748 10.5941 2.01471 11.2624 2.50082 11.6337C2.50082 11.7822 2.50082 12.0049 2.50082 12.1535C2.50082 13.6386 3.33416 14.9753 4.79248 16.0149C6.18138 16.9803 8.05638 17.5 10.0008 17.5C11.9453 17.5 13.8203 16.9803 15.2091 16.0149C16.6675 14.9753 17.5009 13.6386 17.5009 12.1535C17.5009 12.0049 17.5009 11.8564 17.5009 11.7079C17.9869 11.2624 18.3341 10.5941 18.3341 9.85149ZM15.5564 3.46535C15.973 3.46535 16.3203 3.83664 16.3203 4.28218C16.3203 4.72773 15.973 5.09901 15.5564 5.09901C15.1398 5.09901 14.7925 4.72773 14.7925 4.28218C14.7925 3.83664 15.1398 3.46535 15.5564 3.46535ZM6.38971 11.1881C6.38971 10.5198 6.94527 10 7.50082 10C8.12582 10 8.61193 10.5941 8.61193 11.1881C8.61193 11.7822 8.12582 12.3762 7.50082 12.3762C6.94527 12.3762 6.38971 11.8564 6.38971 11.1881ZM12.7786 14.6783C12.223 15.2723 11.3203 15.5693 10.0703 15.5693C8.82027 15.5693 7.91748 15.2723 7.36193 14.6783C7.15359 14.4555 7.15359 14.1584 7.36193 14.0099C7.57027 13.7871 7.84804 13.7871 7.98693 14.0099C8.40359 14.4555 9.09804 14.6783 10.0703 14.6783C11.0425 14.6783 11.7369 14.4555 12.1536 14.0099C12.3619 13.7871 12.6398 13.7871 12.7786 14.0099C12.9175 14.2326 12.9175 14.5298 12.7786 14.6783ZM12.5009 12.3762C11.8758 12.3762 11.3203 11.8564 11.3203 11.1881C11.3203 10.5198 11.8758 10 12.5009 10C13.1259 10 13.6119 10.5941 13.6119 11.1881C13.6119 11.7822 13.1259 12.3762 12.5009 12.3762Z"
+                        fill="currentColor"
                       />
-                    </g>
-                  </svg>
+                    </svg>
+                    {onClickReddit && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickReddit(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.reddit.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                  className=" hover:text-[#097A8E] mr-1"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M18.3341 9.85149C18.3341 8.66336 17.4314 7.69803 16.3203 7.69803C15.8341 7.69803 15.4175 7.84654 15.0703 8.14356C13.8203 7.32674 12.2925 6.80692 10.6258 6.73267L11.4592 3.83664L13.8203 4.43069C13.8898 5.32179 14.5841 6.06436 15.4869 6.06436C16.3898 6.06436 17.1536 5.24752 17.1536 4.28218C17.1536 3.31684 16.3898 2.5 15.4869 2.5C14.8619 2.5 14.3064 2.87129 14.0286 3.46535L11.2508 2.79703C11.0425 2.72278 10.7647 2.87129 10.6953 3.09406L9.65359 6.73267C7.91748 6.80692 6.18138 7.25248 4.93138 8.14356C4.58416 7.84654 4.16748 7.69803 3.68138 7.69803C2.57027 7.69803 1.66748 8.66336 1.66748 9.85149C1.66748 10.5941 2.01471 11.2624 2.50082 11.6337C2.50082 11.7822 2.50082 12.0049 2.50082 12.1535C2.50082 13.6386 3.33416 14.9753 4.79248 16.0149C6.18138 16.9803 8.05638 17.5 10.0008 17.5C11.9453 17.5 13.8203 16.9803 15.2091 16.0149C16.6675 14.9753 17.5009 13.6386 17.5009 12.1535C17.5009 12.0049 17.5009 11.8564 17.5009 11.7079C17.9869 11.2624 18.3341 10.5941 18.3341 9.85149ZM15.5564 3.46535C15.973 3.46535 16.3203 3.83664 16.3203 4.28218C16.3203 4.72773 15.973 5.09901 15.5564 5.09901C15.1398 5.09901 14.7925 4.72773 14.7925 4.28218C14.7925 3.83664 15.1398 3.46535 15.5564 3.46535ZM6.38971 11.1881C6.38971 10.5198 6.94527 10 7.50082 10C8.12582 10 8.61193 10.5941 8.61193 11.1881C8.61193 11.7822 8.12582 12.3762 7.50082 12.3762C6.94527 12.3762 6.38971 11.8564 6.38971 11.1881ZM12.7786 14.6783C12.223 15.2723 11.3203 15.5693 10.0703 15.5693C8.82027 15.5693 7.91748 15.2723 7.36193 14.6783C7.15359 14.4555 7.15359 14.1584 7.36193 14.0099C7.57027 13.7871 7.84804 13.7871 7.98693 14.0099C8.40359 14.4555 9.09804 14.6783 10.0703 14.6783C11.0425 14.6783 11.7369 14.4555 12.1536 14.0099C12.3619 13.7871 12.6398 13.7871 12.7786 14.0099C12.9175 14.2326 12.9175 14.5298 12.7786 14.6783ZM12.5009 12.3762C11.8758 12.3762 11.3203 11.8564 11.3203 11.1881C11.3203 10.5198 11.8758 10 12.5009 10C13.1259 10 13.6119 10.5941 13.6119 11.1881C13.6119 11.7822 13.1259 12.3762 12.5009 12.3762Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+
+                                <Link
+                                  href={`${project.redditURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Reddit{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
                 ) : (
-                  ""
+                  <Link
+                    href={`${projectData.reddit[0].redditURL}`}
+                    target="_blank"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" hover:text-[#097A8E]"
+                    >
+                      <path
+                        d="M18.3341 9.85149C18.3341 8.66336 17.4314 7.69803 16.3203 7.69803C15.8341 7.69803 15.4175 7.84654 15.0703 8.14356C13.8203 7.32674 12.2925 6.80692 10.6258 6.73267L11.4592 3.83664L13.8203 4.43069C13.8898 5.32179 14.5841 6.06436 15.4869 6.06436C16.3898 6.06436 17.1536 5.24752 17.1536 4.28218C17.1536 3.31684 16.3898 2.5 15.4869 2.5C14.8619 2.5 14.3064 2.87129 14.0286 3.46535L11.2508 2.79703C11.0425 2.72278 10.7647 2.87129 10.6953 3.09406L9.65359 6.73267C7.91748 6.80692 6.18138 7.25248 4.93138 8.14356C4.58416 7.84654 4.16748 7.69803 3.68138 7.69803C2.57027 7.69803 1.66748 8.66336 1.66748 9.85149C1.66748 10.5941 2.01471 11.2624 2.50082 11.6337C2.50082 11.7822 2.50082 12.0049 2.50082 12.1535C2.50082 13.6386 3.33416 14.9753 4.79248 16.0149C6.18138 16.9803 8.05638 17.5 10.0008 17.5C11.9453 17.5 13.8203 16.9803 15.2091 16.0149C16.6675 14.9753 17.5009 13.6386 17.5009 12.1535C17.5009 12.0049 17.5009 11.8564 17.5009 11.7079C17.9869 11.2624 18.3341 10.5941 18.3341 9.85149ZM15.5564 3.46535C15.973 3.46535 16.3203 3.83664 16.3203 4.28218C16.3203 4.72773 15.973 5.09901 15.5564 5.09901C15.1398 5.09901 14.7925 4.72773 14.7925 4.28218C14.7925 3.83664 15.1398 3.46535 15.5564 3.46535ZM6.38971 11.1881C6.38971 10.5198 6.94527 10 7.50082 10C8.12582 10 8.61193 10.5941 8.61193 11.1881C8.61193 11.7822 8.12582 12.3762 7.50082 12.3762C6.94527 12.3762 6.38971 11.8564 6.38971 11.1881ZM12.7786 14.6783C12.223 15.2723 11.3203 15.5693 10.0703 15.5693C8.82027 15.5693 7.91748 15.2723 7.36193 14.6783C7.15359 14.4555 7.15359 14.1584 7.36193 14.0099C7.57027 13.7871 7.84804 13.7871 7.98693 14.0099C8.40359 14.4555 9.09804 14.6783 10.0703 14.6783C11.0425 14.6783 11.7369 14.4555 12.1536 14.0099C12.3619 13.7871 12.6398 13.7871 12.7786 14.0099C12.9175 14.2326 12.9175 14.5298 12.7786 14.6783ZM12.5009 12.3762C11.8758 12.3762 11.3203 11.8564 11.3203 11.1881C11.3203 10.5198 11.8758 10 12.5009 10C13.1259 10 13.6119 10.5941 13.6119 11.1881C13.6119 11.7822 13.1259 12.3762 12.5009 12.3762Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </Link>
+                )}
+                {projectData.youtube.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" hover:text-[#097A8E]"
+                      onClick={() => handleOnClickYoutube()}
+                    >
+                      <g id="Brands / youtube">
+                        <path
+                          id="Vector"
+                          d="M19.1669 8.09165C19.2081 6.89886 18.9472 5.715 18.4085 4.64999C18.043 4.21299 17.5358 3.91808 16.9752 3.81665C14.6565 3.60626 12.3281 3.52002 10.0002 3.55832C7.68072 3.51829 5.36078 3.60174 3.05019 3.80832C2.59337 3.89142 2.17062 4.10569 1.83352 4.42499C1.08352 5.11665 1.00019 6.29999 0.916852 7.29999C0.795945 9.09796 0.795945 10.902 0.916852 12.7C0.94096 13.2628 1.02476 13.8215 1.16685 14.3667C1.26733 14.7875 1.47062 15.1769 1.75852 15.5C2.09791 15.8362 2.53051 16.0627 3.00019 16.15C4.79678 16.3717 6.60703 16.4637 8.41685 16.425C11.3335 16.4667 13.8919 16.425 16.9169 16.1917C17.3981 16.1097 17.8428 15.8829 18.1919 15.5417C18.4252 15.3082 18.5994 15.0226 18.7002 14.7083C18.9982 13.7938 19.1446 12.8367 19.1335 11.875C19.1669 11.4083 19.1669 8.59165 19.1669 8.09165ZM8.11685 12.375V7.21665L13.0502 9.80832C11.6669 10.575 9.84185 11.4417 8.11685 12.375Z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                    {onClickYoutube && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickYoutube(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.youtube.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className=" hover:text-[#097A8E] mr-1"
+                                >
+                                  <g id="Brands / youtube">
+                                    <path
+                                      id="Vector"
+                                      d="M19.1669 8.09165C19.2081 6.89886 18.9472 5.715 18.4085 4.64999C18.043 4.21299 17.5358 3.91808 16.9752 3.81665C14.6565 3.60626 12.3281 3.52002 10.0002 3.55832C7.68072 3.51829 5.36078 3.60174 3.05019 3.80832C2.59337 3.89142 2.17062 4.10569 1.83352 4.42499C1.08352 5.11665 1.00019 6.29999 0.916852 7.29999C0.795945 9.09796 0.795945 10.902 0.916852 12.7C0.94096 13.2628 1.02476 13.8215 1.16685 14.3667C1.26733 14.7875 1.47062 15.1769 1.75852 15.5C2.09791 15.8362 2.53051 16.0627 3.00019 16.15C4.79678 16.3717 6.60703 16.4637 8.41685 16.425C11.3335 16.4667 13.8919 16.425 16.9169 16.1917C17.3981 16.1097 17.8428 15.8829 18.1919 15.5417C18.4252 15.3082 18.5994 15.0226 18.7002 14.7083C18.9982 13.7938 19.1446 12.8367 19.1335 11.875C19.1669 11.4083 19.1669 8.59165 19.1669 8.09165ZM8.11685 12.375V7.21665L13.0502 9.80832C11.6669 10.575 9.84185 11.4417 8.11685 12.375Z"
+                                      fill="currentColor"
+                                    />
+                                  </g>
+                                </svg>
+
+                                <Link
+                                  href={`${project.youtubeURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Youtube{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
+                ) : (
+                  <Link
+                    href={`${projectData.youtube[0].youtubeURL}`}
+                    target="_blank"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" hover:text-[#097A8E]"
+                    >
+                      <g id="Brands / youtube">
+                        <path
+                          id="Vector"
+                          d="M19.1669 8.09165C19.2081 6.89886 18.9472 5.715 18.4085 4.64999C18.043 4.21299 17.5358 3.91808 16.9752 3.81665C14.6565 3.60626 12.3281 3.52002 10.0002 3.55832C7.68072 3.51829 5.36078 3.60174 3.05019 3.80832C2.59337 3.89142 2.17062 4.10569 1.83352 4.42499C1.08352 5.11665 1.00019 6.29999 0.916852 7.29999C0.795945 9.09796 0.795945 10.902 0.916852 12.7C0.94096 13.2628 1.02476 13.8215 1.16685 14.3667C1.26733 14.7875 1.47062 15.1769 1.75852 15.5C2.09791 15.8362 2.53051 16.0627 3.00019 16.15C4.79678 16.3717 6.60703 16.4637 8.41685 16.425C11.3335 16.4667 13.8919 16.425 16.9169 16.1917C17.3981 16.1097 17.8428 15.8829 18.1919 15.5417C18.4252 15.3082 18.5994 15.0226 18.7002 14.7083C18.9982 13.7938 19.1446 12.8367 19.1335 11.875C19.1669 11.4083 19.1669 8.59165 19.1669 8.09165ZM8.11685 12.375V7.21665L13.0502 9.80832C11.6669 10.575 9.84185 11.4417 8.11685 12.375Z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </Link>
+                )}
+                {projectData.facebook.length > 1 ? (
+                  <button className="relative inline-block">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" hover:text-[#097A8E]"
+                      onClick={()=>handleOnClickFacebook()}
+                    >
+                      <g id="icons/social/facebook">
+                        <path
+                          id="Vector"
+                          d="M12.2421 5.43548H13.6211V3.10296C12.9534 3.03353 12.2825 2.99925 11.6113 3.00027C9.61615 3.00027 8.25184 4.21787 8.25184 6.44771V8.36948H6V10.9807H8.25184V17.6702H10.9511V10.9807H13.1956L13.533 8.36948H10.9511V6.70444C10.9511 5.93426 11.1565 5.43548 12.2421 5.43548Z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                    {onClickFacebook && (
+                      <div
+                        className="absolute bottom-[30px]"
+                        onMouseLeave={() => setOnClickFacebook(false)}
+                      >
+                        <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
+                          {projectData.facebook.map((project, index) => {
+                            return (
+                              <div
+                                className="flex flex-row justify-center items-center hover:text-[#097A8E]"
+                                key={index}
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className=" hover:text-[#097A8E] mr-1"
+                                >
+                                  <g id="icons/social/facebook">
+                                    <path
+                                      id="Vector"
+                                      d="M12.2421 5.43548H13.6211V3.10296C12.9534 3.03353 12.2825 2.99925 11.6113 3.00027C9.61615 3.00027 8.25184 4.21787 8.25184 6.44771V8.36948H6V10.9807H8.25184V17.6702H10.9511V10.9807H13.1956L13.533 8.36948H10.9511V6.70444C10.9511 5.93426 11.1565 5.43548 12.2421 5.43548Z"
+                                      fill="currentColor"
+                                    />
+                                  </g>
+                                </svg>
+
+                                <Link
+                                  href={`${project.facebookURL}`}
+                                  target="_blank"
+                                  className=" text-[#06242E] font-plusjakartasans text-xs font-normal leading-[18px] whitespace-nowrap hover:text-[#097A8E]"
+                                >
+                                  Facebook{" "}
+                                  {numWords(index + 1)
+                                    .charAt(0)
+                                    .toUpperCase() +
+                                    numWords(index + 1).slice(1)}
+                                </Link>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </button>
+                ) : (
+                  <Link
+                    href={`${projectData.facebook[0].facebookURL}`}
+                    target="_blank"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className=" hover:text-[#097A8E]"
+                    >
+                      <g id="icons/social/facebook">
+                        <path
+                          id="Vector"
+                          d="M12.2421 5.43548H13.6211V3.10296C12.9534 3.03353 12.2825 2.99925 11.6113 3.00027C9.61615 3.00027 8.25184 4.21787 8.25184 6.44771V8.36948H6V10.9807H8.25184V17.6702H10.9511V10.9807H13.1956L13.533 8.36948H10.9511V6.70444C10.9511 5.93426 11.1565 5.43548 12.2421 5.43548Z"
+                          fill="currentColor"
+                        />
+                      </g>
+                    </svg>
+                  </Link>
                 )}
               </div>
             </div>
