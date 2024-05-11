@@ -14,8 +14,8 @@ export default function ProjectWeb({
       <div className="flex flex-col w-full h-full pr-[213px]">
         <BackButton text={"Projects"} />
         <div className="flex flex-row w-full">
-        <ProjectLogo projectIcon={projectData.icon} />
-        <ProjectDetails projectData={projectData}/>
+          <ProjectLogo projectIcon={projectData.icon} />
+          <ProjectDetails projectData={projectData} />
         </div>
       </div>
     </>

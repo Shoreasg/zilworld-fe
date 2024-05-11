@@ -11,6 +11,7 @@ import { getCharLength, trimDescription } from "../functions";
 import Link from "next/link";
 import Image from "next/image";
 import numWords from "num-words";
+import ProjectUpdates from "./ProjectsUpdates";
 
 export default function ProjectDetails({
   projectData,
@@ -1478,8 +1479,9 @@ export default function ProjectDetails({
         </div>
       </div>
       <div className="flex flex-col justify-start self-stretch px-6 py-8 w-full h-16">
-        <hr className="border-t-[1px] self-stretch flex-grow-0 border-[#D5DEE0] w-full"/>
-        </div>
+        <hr className="border-t-[1px] self-stretch flex-grow-0 border-[#D5DEE0] w-full" />
+        <ProjectUpdates />
+      </div>
     </div>
   );
 }
