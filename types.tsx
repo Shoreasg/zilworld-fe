@@ -252,3 +252,24 @@ export type INewProjectNameParams = {
     newproject: string;
   };
 };
+
+
+export interface projectDetailsStateType {
+  onClickWeb: boolean;
+  onClickToken: boolean;
+  onClickViewBlock: boolean;
+  onClickWhitePaper: boolean;
+  onClickGithub: boolean;
+  onClickTwitter: boolean;
+  onClickDiscord: boolean;
+  onClickLinkedin: boolean;
+  onClickTelegram: boolean;
+  onClickMedium: boolean;
+  onClickReddit: boolean;
+  onClickYoutube: boolean;
+  onClickFacebook: boolean;
+}
+
+export type projectDetailsActionType = 
+| { type: 'SHOW_MORE' }
+| { type: 'TOGGLE'; payload: keyof projectDetailsStateType };

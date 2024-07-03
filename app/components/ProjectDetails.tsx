@@ -5,8 +5,12 @@ import {
   InformationCircleIcon,
   ShareIcon,
 } from "@heroicons/react/24/outline";
-import { ProjectDetailsCardProps } from "../../types";
-import { useState } from "react";
+import {
+  ProjectDetailsCardProps,
+  projectDetailsActionType,
+  projectDetailsStateType,
+} from "../../types";
+import { useReducer, useState } from "react";
 import { getCharLength, trimDescription } from "../functions";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,230 +24,41 @@ export default function ProjectDetails({
   const [onHoverCopy, setOnHoverCopy] = useState(false);
   const [onHoverInactive, setOnHoverInactive] = useState(false);
   const [showMore, setShowMore] = useState(false);
-  const [onClickWeb, setOnClickWeb] = useState(false);
-  const [onClickToken, setOnClickToken] = useState(false);
-  const [onClickViewBlock, setOnClickViewBlock] = useState(false);
-  const [onClickWhitePaper, setOnClickWhitePaper] = useState(false);
-  const [onClickGithub, setOnClickGithub] = useState(false);
-  const [onClickTwitter, setOnClickTwitter] = useState(false);
-  const [onClickkDiscord, setOnClickDiscord] = useState(false);
-  const [onClickTelegram, setOnClickTelegram] = useState(false);
-  const [onClickLinkedin, setOnClickLinkedin] = useState(false);
-  const [onClickMedium, setOnClickMedium] = useState(false);
-  const [onClickReddit, setOnClickReddit] = useState(false);
-  const [onClickYoutube, setOnClickYoutube] = useState(false);
-  const [onClickFacebook, setOnClickFacebook] = useState(false);
+  const initialState = {
+    onClickWeb: false,
+    onClickToken: false,
+    onClickViewBlock: false,
+    onClickWhitePaper: false,
+    onClickGithub: false,
+    onClickTwitter: false,
+    onClickDiscord: false,
+    onClickLinkedin: false,
+    onClickTelegram: false,
+    onClickMedium: false,
+    onClickReddit: false,
+    onClickYoutube: false,
+    onClickFacebook: false,
+  };
+
+  const reducer = (
+    state: projectDetailsStateType,
+    action: projectDetailsActionType
+  ) => {
+    switch (action.type) {
+      case "TOGGLE":
+        return {
+          ...initialState,
+          [action.payload]: !state[action.payload],
+        };
+      default:
+        return state;
+    }
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleShowMore = () => {
     setShowMore(!showMore);
-  };
-
-  const handleOnClickWeb = () => {
-    setOnClickToken(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickLinkedin(false);
-    setOnClickTelegram(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickWeb(!onClickWeb);
-  };
-
-  const handleOnClickToken = () => {
-    setOnClickWeb(false);
-    setOnClickWhitePaper(false);
-    setOnClickViewBlock(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickLinkedin(false);
-    setOnClickTelegram(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickToken(!onClickToken);
-  };
-
-  const handleOnClickViewBlock = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickLinkedin(false);
-    setOnClickTelegram(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickViewBlock(!onClickViewBlock);
-  };
-
-  const handleOnClickWhitePaper = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickLinkedin(false);
-    setOnClickTelegram(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickWhitePaper(!onClickWhitePaper);
-  };
-
-  const handleOnClickGithub = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickLinkedin(false);
-    setOnClickTelegram(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickGithub(!onClickGithub);
-  };
-
-  const handleOnClickTwitter = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickDiscord(false);
-    setOnClickLinkedin(false);
-    setOnClickTelegram(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickTwitter(!onClickTwitter);
-  };
-
-  const handleOnClickDiscord = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickLinkedin(false);
-    setOnClickTelegram(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickDiscord(!onClickkDiscord);
-  };
-
-  const handleOnClickTelegram = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickLinkedin(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickTelegram(!onClickTelegram);
-  };
-
-  const handleOnClickLinkedin = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickTelegram(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickLinkedin(!onClickLinkedin);
-  };
-
-  const handleOnClickMedium = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickTelegram(false);
-    setOnClickLinkedin(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickMedium(!onClickMedium);
-  };
-
-  const handleOnClickReddit = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickTelegram(false);
-    setOnClickLinkedin(false);
-    setOnClickMedium(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(false);
-    setOnClickReddit(!onClickReddit);
-  };
-
-  const handleOnClickYoutube = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickTelegram(false);
-    setOnClickLinkedin(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickFacebook(false);
-    setOnClickYoutube(!onClickYoutube);
-  };
-
-  const handleOnClickFacebook = () => {
-    setOnClickToken(false);
-    setOnClickWeb(false);
-    setOnClickViewBlock(false);
-    setOnClickWhitePaper(false);
-    setOnClickGithub(false);
-    setOnClickTwitter(false);
-    setOnClickDiscord(false);
-    setOnClickTelegram(false);
-    setOnClickLinkedin(false);
-    setOnClickMedium(false);
-    setOnClickReddit(false);
-    setOnClickYoutube(false);
-    setOnClickFacebook(!onClickFacebook);
   };
 
   const handleCopyUrl = async () => {
@@ -256,6 +71,7 @@ export default function ProjectDetails({
       console.error("Failed to copy URL:", error);
     }
   };
+
   return (
     <div className=" inline-flex flex-col items-start w-full">
       <div className="flex pt-4 px-6 flex-col items-start gap-6 w-full">
@@ -368,17 +184,24 @@ export default function ProjectDetails({
                         <GlobeAltIcon
                           width={20}
                           height={20}
-                          onClick={() => handleOnClickWeb()}
+                          onClick={() =>
+                            dispatch({ type: "TOGGLE", payload: "onClickWeb" })
+                          }
                           className={`${
-                            onClickWeb
+                            state.onClickWeb
                               ? `text-[#097A8E]`
                               : " hover:text-[#097A8E]"
                           }`}
                         />
-                        {onClickWeb && (
+                        {state.onClickWeb && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickWeb(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickWeb",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.website.map((project, index) => {
@@ -433,17 +256,27 @@ export default function ProjectDetails({
                         <CurrencyDollarIcon
                           width={20}
                           height={20}
-                          onClick={() => handleOnClickToken()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickToken",
+                            })
+                          }
                           className={`${
-                            onClickToken
+                            state.onClickToken
                               ? `text-[#097A8E]`
                               : " hover:text-[#097A8E]"
                           }`}
                         />
-                        {onClickToken && (
+                        {state.onClickToken && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickToken(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickToken",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.tokens.map((project, index) => {
@@ -507,9 +340,14 @@ export default function ProjectDetails({
                           stroke-width="1.5"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          onClick={() => handleOnClickViewBlock()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickViewBlock",
+                            })
+                          }
                           className={`${
-                            onClickViewBlock
+                            state.onClickViewBlock
                               ? `text-[#097A8E]`
                               : " hover:text-[#097A8E]"
                           }`}
@@ -518,10 +356,15 @@ export default function ProjectDetails({
                           <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                           <line x1="12" y1="22.08" x2="12" y2="12"></line>
                         </svg>
-                        {onClickViewBlock && (
+                        {state.onClickViewBlock && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickViewBlock(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickViewBlock",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.viewblock.map((project, index) => {
@@ -603,17 +446,27 @@ export default function ProjectDetails({
                         <DocumentTextIcon
                           width={20}
                           height={20}
-                          onClick={() => handleOnClickWhitePaper()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickWhitePaper",
+                            })
+                          }
                           className={`${
-                            onClickWhitePaper
+                            state.onClickWhitePaper
                               ? `text-[#097A8E]`
                               : " hover:text-[#097A8E]"
                           }`}
                         />
-                        {onClickWhitePaper && (
+                        {state.onClickWhitePaper && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickWhitePaper(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickWhitePaper",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.whitepaper.map((project, index) => {
@@ -671,15 +524,25 @@ export default function ProjectDetails({
                           height="20"
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          onClick={() => handleOnClickGithub()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickGithub",
+                            })
+                          }
                           className="hover:text-[#097A8E]"
                         >
                           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
-                        {onClickGithub && (
+                        {state.onClickGithub && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickGithub(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickGithub",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.github.map((project, index) => {
@@ -756,7 +619,12 @@ export default function ProjectDetails({
                           strokeWidth={0.5}
                           xmlns="http://www.w3.org/2000/svg"
                           className="hover:text-[#097A8E]"
-                          onClick={() => handleOnClickTwitter()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickTwitter",
+                            })
+                          }
                         >
                           <path
                             id="Vector"
@@ -764,10 +632,15 @@ export default function ProjectDetails({
                             fill="#3B4242"
                           />
                         </svg>
-                        {onClickTwitter && (
+                        {state.onClickTwitter && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickTwitter(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickTwitter",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.twitter.map((project, index) => {
@@ -847,14 +720,24 @@ export default function ProjectDetails({
                           fill="currentColor"
                           className="bi bi-discord hover:text-[#097A8E]"
                           viewBox="0 0 16 16"
-                          onClick={() => handleOnClickDiscord()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickDiscord",
+                            })
+                          }
                         >
                           <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
                         </svg>
-                        {onClickkDiscord && (
+                        {state.onClickDiscord && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickDiscord(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickDiscord",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.discord.map((project, index) => {
@@ -925,15 +808,25 @@ export default function ProjectDetails({
                           viewBox="0 0 32 32"
                           fill="currentColor"
                           className=" hover:text-[#097A8E]"
-                          onClick={() => handleOnClickTelegram()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickTelegram",
+                            })
+                          }
                         >
                           {" "}
                           <path d="M29.919 6.163l-4.225 19.925c-0.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-0.344 0.344-0.631 0.631-1.294 0.631l0.463-6.556 11.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75 9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z" />{" "}
                         </svg>
-                        {onClickTelegram && (
+                        {state.onClickTelegram && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickTelegram(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickTelegram",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.telegram.map((project, index) => {
@@ -1005,7 +898,12 @@ export default function ProjectDetails({
                           fill="currentColor"
                           className=" hover:text-[#097A8E]"
                           xmlns="http://www.w3.org/2000/svg"
-                          onClick={() => handleOnClickLinkedin()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickLinkedin",
+                            })
+                          }
                         >
                           <g id="icons/social/linkdin">
                             <path
@@ -1015,10 +913,15 @@ export default function ProjectDetails({
                             />
                           </g>
                         </svg>
-                        {onClickLinkedin && (
+                        {state.onClickLinkedin && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickLinkedin(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickLinkedin",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.linkedin.map((project, index) => {
@@ -1100,17 +1003,27 @@ export default function ProjectDetails({
                           height="20"
                           fill="currentColor"
                           className=" hover:text-[#097A8E]"
-                          onClick={() => handleOnClickMedium()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickMedium",
+                            })
+                          }
                         >
                           <path
                             className="uim-primary"
                             d="M22,6.41668h-.791a.89762.89762,0,0,0-.709.69479v9.83021a.83938.83938,0,0,0,.709.64164H22V19.9167H14.83334V17.58332h1.50008V7.25h-.07353L12.75706,19.9167H10.04512L6.58751,7.25H6.5V17.58332H8V19.9167H2V17.58332h.76835A.841.841,0,0,0,3.5,16.94168V7.11139a.89588.89588,0,0,0-.73166-.69479H2V4.0833H9.50266L11.96593,13.25h.068L14.51976,4.0833H22V6.41668"
                           />
                         </svg>
-                        {onClickMedium && (
+                        {state.onClickMedium && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickMedium(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickMedium",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.medium.map((project, index) => {
@@ -1186,17 +1099,27 @@ export default function ProjectDetails({
                           fill="currentColor"
                           className=" hover:text-[#097A8E]"
                           xmlns="http://www.w3.org/2000/svg"
-                          onClick={() => handleOnClickReddit()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickReddit",
+                            })
+                          }
                         >
                           <path
                             d="M18.3341 9.85149C18.3341 8.66336 17.4314 7.69803 16.3203 7.69803C15.8341 7.69803 15.4175 7.84654 15.0703 8.14356C13.8203 7.32674 12.2925 6.80692 10.6258 6.73267L11.4592 3.83664L13.8203 4.43069C13.8898 5.32179 14.5841 6.06436 15.4869 6.06436C16.3898 6.06436 17.1536 5.24752 17.1536 4.28218C17.1536 3.31684 16.3898 2.5 15.4869 2.5C14.8619 2.5 14.3064 2.87129 14.0286 3.46535L11.2508 2.79703C11.0425 2.72278 10.7647 2.87129 10.6953 3.09406L9.65359 6.73267C7.91748 6.80692 6.18138 7.25248 4.93138 8.14356C4.58416 7.84654 4.16748 7.69803 3.68138 7.69803C2.57027 7.69803 1.66748 8.66336 1.66748 9.85149C1.66748 10.5941 2.01471 11.2624 2.50082 11.6337C2.50082 11.7822 2.50082 12.0049 2.50082 12.1535C2.50082 13.6386 3.33416 14.9753 4.79248 16.0149C6.18138 16.9803 8.05638 17.5 10.0008 17.5C11.9453 17.5 13.8203 16.9803 15.2091 16.0149C16.6675 14.9753 17.5009 13.6386 17.5009 12.1535C17.5009 12.0049 17.5009 11.8564 17.5009 11.7079C17.9869 11.2624 18.3341 10.5941 18.3341 9.85149ZM15.5564 3.46535C15.973 3.46535 16.3203 3.83664 16.3203 4.28218C16.3203 4.72773 15.973 5.09901 15.5564 5.09901C15.1398 5.09901 14.7925 4.72773 14.7925 4.28218C14.7925 3.83664 15.1398 3.46535 15.5564 3.46535ZM6.38971 11.1881C6.38971 10.5198 6.94527 10 7.50082 10C8.12582 10 8.61193 10.5941 8.61193 11.1881C8.61193 11.7822 8.12582 12.3762 7.50082 12.3762C6.94527 12.3762 6.38971 11.8564 6.38971 11.1881ZM12.7786 14.6783C12.223 15.2723 11.3203 15.5693 10.0703 15.5693C8.82027 15.5693 7.91748 15.2723 7.36193 14.6783C7.15359 14.4555 7.15359 14.1584 7.36193 14.0099C7.57027 13.7871 7.84804 13.7871 7.98693 14.0099C8.40359 14.4555 9.09804 14.6783 10.0703 14.6783C11.0425 14.6783 11.7369 14.4555 12.1536 14.0099C12.3619 13.7871 12.6398 13.7871 12.7786 14.0099C12.9175 14.2326 12.9175 14.5298 12.7786 14.6783ZM12.5009 12.3762C11.8758 12.3762 11.3203 11.8564 11.3203 11.1881C11.3203 10.5198 11.8758 10 12.5009 10C13.1259 10 13.6119 10.5941 13.6119 11.1881C13.6119 11.7822 13.1259 12.3762 12.5009 12.3762Z"
                             fill="currentColor"
                           />
                         </svg>
-                        {onClickReddit && (
+                        {state.onClickReddit && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickReddit(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickReddit",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.reddit.map((project, index) => {
@@ -1272,7 +1195,12 @@ export default function ProjectDetails({
                           fill="currentColor"
                           xmlns="http://www.w3.org/2000/svg"
                           className=" hover:text-[#097A8E]"
-                          onClick={() => handleOnClickYoutube()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickYoutube",
+                            })
+                          }
                         >
                           <g id="Brands / youtube">
                             <path
@@ -1282,10 +1210,15 @@ export default function ProjectDetails({
                             />
                           </g>
                         </svg>
-                        {onClickYoutube && (
+                        {state.onClickYoutube && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickYoutube(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickYoutube",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.youtube.map((project, index) => {
@@ -1367,7 +1300,12 @@ export default function ProjectDetails({
                           fill="currentColor"
                           xmlns="http://www.w3.org/2000/svg"
                           className=" hover:text-[#097A8E]"
-                          onClick={() => handleOnClickFacebook()}
+                          onClick={() =>
+                            dispatch({
+                              type: "TOGGLE",
+                              payload: "onClickFacebook",
+                            })
+                          }
                         >
                           <g id="icons/social/facebook">
                             <path
@@ -1377,10 +1315,15 @@ export default function ProjectDetails({
                             />
                           </g>
                         </svg>
-                        {onClickFacebook && (
+                        {state.onClickFacebook && (
                           <div
                             className="absolute bottom-[30px]"
-                            onMouseLeave={() => setOnClickFacebook(false)}
+                            onMouseLeave={() =>
+                              dispatch({
+                                type: "TOGGLE",
+                                payload: "onClickFacebook",
+                              })
+                            }
                           >
                             <div className="flex px-3 py-2 flex-col items-start gap-2 rounded-lg bg-[#F5F5F5] shadow-md">
                               {projectData.facebook.map((project, index) => {
