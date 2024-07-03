@@ -21,6 +21,7 @@ export interface IMarketdata {
 export interface IAnnouncement {
   title: string;
   preview: string;
+  pinned: boolean;
 }
 
 export interface IProjectTokens {

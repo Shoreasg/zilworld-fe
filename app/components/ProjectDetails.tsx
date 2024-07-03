@@ -211,8 +211,8 @@ export default function ProjectDetails({
                                     key={index}
                                   >
                                     <GlobeAltIcon
-                                      width={20}
-                                      height={20}
+                                      width={12}
+                                      height={12}
                                       className="mr-1"
                                     />
                                     <Link
@@ -1503,7 +1503,7 @@ export default function ProjectDetails({
       </div>
       <div className="flex flex-col justify-start self-stretch px-6 py-8 w-full h-16">
         <hr className="border-t-[1px] self-stretch flex-grow-0 border-[#D5DEE0] w-full" />
-        <ProjectUpdates />
+        <ProjectUpdates projectData={projectData}/>
       </div>
     </div>
   );
