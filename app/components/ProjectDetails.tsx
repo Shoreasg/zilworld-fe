@@ -337,9 +337,9 @@ export default function ProjectDetails({
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                           onClick={() =>
                             dispatch({
                               type: "TOGGLE",
@@ -380,9 +380,9 @@ export default function ProjectDetails({
                                       viewBox="0 0 24 24"
                                       fill="none"
                                       stroke="currentColor"
-                                      stroke-width="1.5"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
                                       className="mr-1"
                                     >
                                       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -425,9 +425,9 @@ export default function ProjectDetails({
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         >
                           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                           <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
@@ -1422,7 +1422,7 @@ export default function ProjectDetails({
                       >
                         <g
                           id="User Interface / External Link"
-                          clip-path="url(#clip0_5650_5412)"
+                          clipPath="url(#clip0_5650_5412)"
                         >
                           <path
                             id="Vector"
@@ -1459,7 +1459,7 @@ export default function ProjectDetails({
                       >
                         <g
                           id="User Interface / External Link"
-                          clip-path="url(#clip0_5650_5412)"
+                          clipPath="url(#clip0_5650_5412)"
                         >
                           <path
                             id="Vector"

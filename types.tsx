@@ -22,6 +22,8 @@ export interface IAnnouncement {
   title: string;
   preview: string;
   pinned: boolean;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface IProjectTokens {

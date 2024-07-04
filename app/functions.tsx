@@ -270,6 +270,13 @@ export const trimDescription= (description:string)=>
   return trimDescription;
 }
 
+export const trimAnnouncement= (announcement:string)=>
+  {
+    const trimDescription = announcement.trim().slice(0,165);
+  
+    return trimDescription;
+  }
+
 export const getCharLength = (description:string)=>{
   return description.length;
 }
