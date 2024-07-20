@@ -163,6 +163,10 @@ export interface NewProjectDetailsCardProps {
   NewProjectData: IProjects;
 }
 
+export interface NewMobileProjectDetailsCardProps {
+  NewProjectData: IProjects;
+}
+
 export interface TokenStatsCardProps {
   marketData: IMarketdata;
 }
@@ -177,6 +181,16 @@ export interface CardProps {
   setSelected: Dispatch<SetStateAction<string>>;
   search: string;
 }
+
+export interface ComingSoonCardProps {
+  projectsData: IProjects[];
+}
+
+export interface ComingSoonMobileCardProps {
+  projectsData: IProjects[];
+}
+
+
 
 export interface SearchBarProps {
   categories: IProjectCategories[];
@@ -225,6 +239,14 @@ export interface MobileSearchStickyBarProps {
 export interface MainProjectWebProps {
   categories: IProjectCategories[];
   numProjects: number;
+  projectsData: IProjects[];
+}
+
+export interface MainComingSoonWebProps {
+  projectsData: IProjects[];
+}
+
+export interface MainComingSoonMobileProps {
   projectsData: IProjects[];
 }
 

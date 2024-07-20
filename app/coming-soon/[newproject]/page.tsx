@@ -1,8 +1,16 @@
 import { INewProjectNameParams } from "../../../types";
 import { redirect } from "next/navigation";
-// import NewProjectDetailsCard from "./NewProjectDetailsCard";
-import NewProjectAnnouncement from "./NewProjectAnnouncement";
-import NewProjectTwitterWidget from "./NewProjectTwitterWidget";
+import Coming_Soon_Web from "../components/ComingSoonWeb";
+import { Metadata } from "next";
+import Coming_Soon_Mobile from "../components/ComingSoonMobile";
+
+export const metadata: Metadata = {
+  title: "ZilWorld-Ecosystem of Zilliqa",
+  description: "Ecosystem of Zilliqa",
+  icons: {
+    icon: "/ZilWorld Logo.png",
+  },
+};
 
 async function getProjectData(projectName: string) {
   const res = await fetch(
@@ -12,17 +20,26 @@ async function getProjectData(projectName: string) {
   return res.json();
 }
 
-export default async function NewProject({ params }: INewProjectNameParams) {
+export default async function Coming_Soon_Projects({ params }: Readonly<INewProjectNameParams>) {
   const projectData = await getProjectData(params.newproject);
   const project = projectData.data;
   if (project === "No projects found") {
-    redirect("/projects");
+    redirect("/coming-soon");
   }
   return (
     <>
-      {/* <NewProjectDetailsCard NewProjectData={project} />
-      <NewProjectAnnouncement NewProjectData={project} />
-      <NewProjectTwitterWidget NewProjectData={project} /> */}
+        {/* Mobile View */}
+        <div className="block xl:hidden z-20 ">
+        <div className="flex flex-col w-full h-full overflow-y-auto">
+          <Coming_Soon_Mobile NewProjectData={project}/>
+          </div>
+        </div>
+        {/* web View */}
+        <div className="hidden xl:flex flex-grow basis-0 flex-shrink-0 self-stretch ">
+          <div className="flex flex-col w-full h-full overflow-y-auto">
+            <Coming_Soon_Web NewProjectData={project} />
+          </div>
+        </div>
     </>
   );
 }

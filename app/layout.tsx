@@ -8,6 +8,8 @@ import MobileNavBar from "./components/MobileNavBar";
 import Overlay from "./components/Overlay";
 import { onMenuClickContext } from "./context/MenuContext";
 
+
+
 export default function RootLayout({
   children,
 }: {

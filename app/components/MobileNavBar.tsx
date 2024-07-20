@@ -27,12 +27,12 @@ export default function MobileNavBar() {
       href: "/projects",
       current: pathname?.includes("/projects"),
     },
-    {
-      name: "Tokens",
-      icon: CurrencyDollarIcon,
-      href: "/tokens",
-      current: pathname?.includes("/tokens"),
-    },
+    // {
+    //   name: "Tokens",
+    //   icon: CurrencyDollarIcon,
+    //   href: "/tokens",
+    //   current: pathname?.includes("/tokens"),
+    // },
 
     {
       name: "Coming Soon",

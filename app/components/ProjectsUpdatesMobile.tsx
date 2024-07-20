@@ -5,7 +5,7 @@ import { BellIcon } from "@heroicons/react/20/solid";
 import moment from "moment";
 import { getCharLength, trimAnnouncement } from "../functions";
 
-export default function ProjectUpdates({
+export default function ProjectUpdatesMobile({
   projectData,
 }: Readonly<ProjectDetailsCardProps>) {
   const [selectedUpdate, setSelectedUpdate] = useState(true);
@@ -169,7 +169,7 @@ export default function ProjectUpdates({
                 )}
               </>
             ) : (
-              <div className="mt-[31px] h-[21px] self-stretch flex-grow-0 font-plusjakartasans text-sm leading-[1.5px] text-left text-[#3b4242]">
+              <div className="mt-[31px] h-full w-full font-plusjakartasans text-sm leading-[1.5] text-[#3b4242]">
                 {`${projectData.name} has not provided any recent updates. Please check again soon!`}
               </div>
             )}

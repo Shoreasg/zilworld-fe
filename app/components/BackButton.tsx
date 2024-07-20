@@ -11,14 +11,22 @@ export default function BackButton({ text }: Readonly<{ text: string }>) {
 
   return (
     <div className={`sticky top-0 flex py-6 gap-2 items-start ${backButtonClass} z-20`}>
-      <Link href={`/${text.toLowerCase()}`}>
+      {text==="Coming Soon" ? <Link href={`/coming-soon`}>
         <div className="flex items-center gap-2">
           <ChevronLeftIcon className=" w-5 h-5" />
           <div className=" font-plusjakartasans text-sm font-bold leading-[21px]">
             {text}
           </div>
         </div>
-      </Link>
+      </Link> : <Link href={`/${text.toLowerCase()}`}>
+        <div className="flex items-center gap-2">
+          <ChevronLeftIcon className=" w-5 h-5" />
+          <div className=" font-plusjakartasans text-sm font-bold leading-[21px]">
+            {text}
+          </div>
+        </div>
+      </Link> }
+     
     </div>
   );
 }
