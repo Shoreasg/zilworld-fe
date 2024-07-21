@@ -56,18 +56,18 @@ export default function MobileNavBar() {
       href: "/faq",
       current: pathname === "/faq",
     },
-    {
-      name: "Listing",
-      icon: SquaresPlusIcon,
-      href: "/listing",
-      current: pathname === "/listing",
-    },
-    {
-      name: "Advertise",
-      icon: PhotoIcon,
-      href: "/advertise",
-      current: pathname === "/advertise",
-    },
+    // {
+    //   name: "Listing",
+    //   icon: SquaresPlusIcon,
+    //   href: "/listing",
+    //   current: pathname === "/listing",
+    // },
+    // {
+    //   name: "Advertise",
+    //   icon: PhotoIcon,
+    //   href: "/advertise",
+    //   current: pathname === "/advertise",
+    // },
     {
       name: "Donate",
       icon: GiftIcon,
