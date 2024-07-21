@@ -33,55 +33,55 @@ export interface IProjectTokens {
   tokenLogo: string;
 }
 
-export interface IProjectWebsite{
+export interface IProjectWebsite {
   websiteURL: string;
 }
 
-export interface IProjectTelegram{
+export interface IProjectTelegram {
   telegramURL: string;
 }
 
-export interface IProjectTwitter{
+export interface IProjectTwitter {
   twitterURL: string;
 }
 
-export interface IProjectDiscord{
+export interface IProjectDiscord {
   discordURL: string;
 }
 
-export interface IProjectViewBlock{
+export interface IProjectViewBlock {
   viewblockURL: string;
 }
 
-export interface IProjectWhitepaper{
+export interface IProjectWhitepaper {
   whitepaperURL: string;
 }
 
-export interface IProjectGithub{
+export interface IProjectGithub {
   githubURL: string;
 }
 
-export interface IProjectMedium{
+export interface IProjectMedium {
   mediumURL: string;
 }
 
-export interface IProjectLinkedin{
+export interface IProjectLinkedin {
   linkedinURL: string;
 }
 
-export interface IProjectYoutube{
+export interface IProjectYoutube {
   youtubeURL: string;
 }
 
-export interface IProjectReddit{
+export interface IProjectReddit {
   redditURL: string;
 }
 
-export interface IProjectFacebook{
+export interface IProjectFacebook {
   facebookURL: string;
 }
 
-export interface IProjectRelated{
+export interface IProjectRelated {
   relatedName: string;
   relatedURL: string;
 }
@@ -101,7 +101,7 @@ export interface ITokens {
 }
 
 export interface ProjectLogoProps {
-  projectIcon:string;
+  projectIcon: string;
 }
 
 export interface IProjects {
@@ -127,7 +127,7 @@ export interface IProjects {
   youtube: [IProjectYoutube];
   reddit: [IProjectReddit];
   facebook: [IProjectFacebook];
-  related: [IProjectRelated]
+  related: [IProjectRelated];
   isActive: boolean;
   isBuilding: boolean;
   isNew: boolean;
@@ -189,8 +189,6 @@ export interface ComingSoonCardProps {
 export interface ComingSoonMobileCardProps {
   projectsData: IProjects[];
 }
-
-
 
 export interface SearchBarProps {
   categories: IProjectCategories[];
@@ -278,7 +276,6 @@ export type INewProjectNameParams = {
   };
 };
 
-
 export interface projectDetailsStateType {
   onClickWeb: boolean;
   onClickToken: boolean;
@@ -295,6 +292,6 @@ export interface projectDetailsStateType {
   onClickFacebook: boolean;
 }
 
-export type projectDetailsActionType = 
-| { type: 'SHOW_MORE' }
-| { type: 'TOGGLE'; payload: keyof projectDetailsStateType };
+export type projectDetailsActionType =
+  | { type: "SHOW_MORE" }
+  | { type: "TOGGLE"; payload: keyof projectDetailsStateType };
