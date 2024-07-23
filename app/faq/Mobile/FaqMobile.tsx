@@ -38,7 +38,7 @@ export default function FaqMobile() {
           <div className=" font-plusjakartasans font-bold text-center text-base text-[#06242E]">
             FREQUENTLY ASKED QUESTIONS
           </div>
-          <div className="font-plusjakartasans text-xl font-extrabold leading-[1.4] text-[#06242e]">
+          <div className="font-plusjakartasans text-lg font-extrabold leading-[1.4] text-[#06242e]">
             Connect On Twitter If You Have Additional Questions
           </div>
         </div>
@@ -50,9 +50,9 @@ export default function FaqMobile() {
             <Disclosure as="div" key={faq.question} className="pt-4">
               {({ open }) => (
                 <>
-                  <dt className="text-lg">
+                  <dt className="">
                     <Disclosure.Button className="flex w-full items-start justify-between text-left">
-                      <span className="font-bold leading-normal text-[#06242e] font-plusjakartasans text-lg">
+                      <span className="font-bold leading-normal text-[#06242e] font-plusjakartasans">
                         {faq.question}
                       </span>
                       <span className="ml-6 flex h-7 items-center">
@@ -67,7 +67,7 @@ export default function FaqMobile() {
                     </Disclosure.Button>
                   </dt>
                   <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                    <p className="font-plusjakartasans leading-relaxed text-left text-[#143e4a] text-base">{faq.answer}</p>
+                    <p className="font-plusjakartasans leading-relaxed text-left text-[#143e4a] text-sm">{faq.answer}</p>
                   </Disclosure.Panel>
                 </>
               )}

@@ -18,7 +18,7 @@ export default function MainComingSoonMobile({
           <div className=" font-plusjakartasans font-bold text-center text-base text-[#06242E]">
             Discover
           </div>
-          <div className="font-plusjakartasans text-xl font-extrabold leading-[1.4] text-[#06242e]">
+          <div className="font-plusjakartasans text-lg font-extrabold leading-[1.4] text-[#06242e]">
             Upcoming Projects joining the Zilliqa Ecosystem
             <div className=" inline-flex relative">
               <InformationCircleIcon
