@@ -91,7 +91,7 @@ export default function NavBarV2({ setMenuClick }: NavBarProps) {
     {
       name: "Connect",
       icon: "",
-      href: "/connect",
+      href: "https://x.com/zilworldapp",
       current: pathname === "/connect",
     },
   ];
