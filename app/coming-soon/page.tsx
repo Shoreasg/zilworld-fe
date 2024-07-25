@@ -1,39 +1,28 @@
-import _ from "lodash";
-import { IProjects } from "../../types";
-import CarousellBanners from "../components/CarousellBanners";
-import Note from "../components/Note";
-import getProjectsData from "../functions";
-import ComingSoonCard from "./components/ComingSoonCard";
+import { Metadata } from "next";
+import { getProjectsData } from "../functions";
+import MainComingSoonWeb from "./Web/MainComingSoonWeb";
+import MainComingSoonMobile from "./Mobile/MainComingSoonMobile";
 
-export default async function Coming_Soon() {
+export const metadata: Metadata = {
+  title: "ZilWorld-Ecosystem of Zilliqa",
+  description: "Ecosystem of Zilliqa",
+  icons: {
+    icon: "/ZilWorld Logo.png",
+  },
+};
+
+export default async function ComingSoon() {
   const projectsData = await getProjectsData();
-  const projects: IProjects[] = _.shuffle(projectsData.data);
   return (
     <>
-      <div className="flex flex-1 flex-col md:pl-64">
-        <CarousellBanners />
-        <div className="border-t"></div>
-        <div className="flex flex-row justify-center mt-6">
-          <div className="flex flex-col items-center w-fit lg:w-1/2  justify-center">
-            <p className="text-center text-xl">
-              This page highlights some of the entities and applications
-              currently building within the Zilliqa ecosystem, but it may not
-              encompass all of them. Additionally, due to the rapid growth of
-              the ecosystem, some information presented here may be outdated.
-              Nonetheless, this list serves as a helpful introduction to
-              exploring the Zilliqa ecosystem and the exciting projects
-              currently being built on the platform.
-            </p>
-          </div>
+      <div className="block lg:hidden z-20 ">
+        <div className="flex flex-col w-full h-full">
+          <MainComingSoonMobile projectsData={projectsData.data} />
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <div className=" w-fit lg:w-[700px] rounded-md p-4">
-            <Note />
-          </div>
-        </div>
-
-        <div className="mx-auto py-6 max-w-7xl px-4 sm:px-6 md:px-8 flex justify-center">
-          <ComingSoonCard projectsData={projects} />
+      </div>
+      <div className="hidden lg:flex flex-grow basis-0 flex-shrink-0 self-stretch ">
+        <div className="flex flex-col w-full h-full overflow-y-auto">
+          <MainComingSoonWeb projectsData={projectsData.data} />
         </div>
       </div>
     </>

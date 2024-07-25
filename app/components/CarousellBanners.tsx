@@ -1,68 +1,75 @@
 "use client";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Carousel from "nuka-carousel";
+import { useContext, useState } from "react";
+import { onMenuClickContext } from "../context/MenuContext";
+import Image from "next/image";
+import { plusJakartaSans } from "./font";
 
 export default function CarousellBanners() {
+  const [isShownPopUp, setIsShownPopUp] = useState(false);
+
+  const menuClickContext = useContext(onMenuClickContext)
+
+  const carouselClass = menuClickContext ? "px-36  rounded-b-lg" : "px-14  rounded-b-lg";
+
+  const SponsoredClass = menuClickContext ? `absolute top-8 right-[152px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-[0_4px_16px_0_rgba(36,87,102,0.15) ${plusJakartaSans.className} text-[#143E4A] text-sm leading-[21px] font-normal`:
+  `absolute top-8 right-[64px] inline-flex flex-col items-start px-6 py-4 gap-2 rounded-lg bg-[#F5F5F5] text-center shadow-[0_4px_16px_0_rgba(36,87,102,0.15) ${plusJakartaSans.className} text-[#143E4A] text-sm leading-[21px] font-normal`
+
   const BannerImages: {
     href: string;
     src: string;
     alt: string;
-    ImageWidth: number;
-    ImageHeight: number;
     target: string;
   }[] = [
     {
       href: "https://torchwallet.io/",
-      src: "/TorchWalletBanner.png",
+      src: "/samplebanner-min.png",
       alt: "TorchBanner",
-      ImageWidth: 728,
-      ImageHeight: 90,
       target: "_blank",
-    }
+    },
   ];
 
   return BannerImages.length === 0 ? (
     <></>
   ) : (
-    <Carousel
-      animation="fade"
-      autoplay={true}
-      autoplayReverse={true}
-      wrapAround={true}
-      renderCenterLeftControls={null}
-      renderCenterRightControls={null}
-      autoplayInterval={5000}
-      className="mt-6 pb-8"
-    >
-      {BannerImages.map((item) => (
-        <a href={item.href} target={item.target} key={item.alt}>
-          <img
-            src={item.src}
-            alt={item.alt}
-            width={item.ImageWidth}
-            height={item.ImageHeight}
-            className="m-auto"
-          />
-          <div className="flex justify-center">
-            <div className="w-[700px] flex justify-center rounded-md p-4">
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <InformationCircleIcon
-                    className="h-5 w-5 text-red-400"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="ml-3 flex-1 md:flex md:justify-between">
-                  <p className=" text-xs text-red-400">
-                    This is a sponsored banner. Sponsored banners contribute to
-                    the development of our site
-                  </p>
-                </div>
-              </div>
+    <>
+      <Carousel
+        animation="fade"
+        autoplay={true}
+        autoplayReverse={true}
+        wrapAround={true}
+        renderCenterLeftControls={null}
+        renderCenterRightControls={null}
+        autoplayInterval={5000}
+        renderBottomCenterControls={({ currentSlide }) => null}
+        className={carouselClass}
+        beforeSlide={() => setIsShownPopUp(false)}
+        dragging={false}
+        swiping={false}
+      >
+        {BannerImages.map((item, index) => (
+          <div key={index} className="relative h-[180px]">
+            <a href={item.href} target={item.target} key={item.alt} rel="noreferrer">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill={true}
+                className=" w-full flex-shrink-0  rounded-b-lg]"
+              />
+            </a>
+            <div className={`absolute inline-flex items-center gap-1 top-2 text-right right-1 font-normal text-[12px] leading-[18px] ${plusJakartaSans.className} text-[#F5F5F5] `}>
+              Sponsored
+              <InformationCircleIcon className=" w-3 h-3 cursor-pointer" onMouseEnter={()=> setIsShownPopUp(true)} onMouseLeave={()=>setIsShownPopUp(false)} />
             </div>
           </div>
-        </a>
-      ))}
-    </Carousel>
+        ))}
+      </Carousel>
+      {isShownPopUp && (
+        <p className={SponsoredClass}>
+          Advertising helps fund ZilWorld development.
+        </p>
+      )}
+    </>
   );
 }

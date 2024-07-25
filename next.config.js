@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: true,
   },
   async redirects(){
     return[{
@@ -9,7 +8,17 @@ const nextConfig = {
       destination: '/projects',
       permanent: true,
     }]
-  }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*',
+        port: '',
+      },
+    ],
+    dangerouslyAllowSVG: true,
+  },
 }
 
 module.exports = nextConfig
