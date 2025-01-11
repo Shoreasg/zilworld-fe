@@ -318,6 +318,13 @@ export async function getProjectsData() {
   return res.json();
 }
 
+export async function getTwitterList() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/latestNews/getTweets`, {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
 export async function getProjectsCategoriesData() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/ProjectCategories`,

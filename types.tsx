@@ -240,6 +240,14 @@ export interface MainProjectWebProps {
   projectsData: IProjects[];
 }
 
+export interface twitterListProps{
+  twitterList: ITwitterData[];
+}
+
+export interface ITwitterData{
+  id: string;
+}
+
 export interface MainComingSoonWebProps {
   projectsData: IProjects[];
 }

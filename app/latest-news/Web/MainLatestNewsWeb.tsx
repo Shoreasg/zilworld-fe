@@ -1,8 +1,10 @@
+import { twitterListProps } from "../../../types";
 import CarousellBanners from "../../components/CarousellBanners";
 import LatestNewsTwitterWidget from "../components/LatestNewsTwitterWidget";
 
 
-export default function MainLatestNewsWeb(){
+// export default function MainLatestNewsWeb({twitterList}:Readonly<twitterListProps>){
+  export default function MainLatestNewsWeb(){
   return (
     <>
       <CarousellBanners />
@@ -21,7 +23,8 @@ export default function MainLatestNewsWeb(){
    
       </div>
       <div className="mx-14">
-      <LatestNewsTwitterWidget/>
+      {/* <LatestNewsTwitterWidget twitterList={twitterList}/> */}
+      <LatestNewsTwitterWidget />
       </div>
     </>
   );
